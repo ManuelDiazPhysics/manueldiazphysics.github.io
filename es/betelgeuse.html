@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../betelgeuse.html">
+  <link rel="alternate" hreflang="es-MX" href="betelgeuse.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Betelgeuse | Manuel Díaz</title>
+  <meta name="description" content="Modelos de evolución estelar de la supergigante roja Betelgeuse: su rotación, una posible fusión en el pasado y lo que podrían revelar las ondas de su interior.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+    /* Moments example */
+    .lab { margin-block: 2.1rem; padding: 1.6rem clamp(1rem, 3vw, 1.8rem) 1.4rem; background: var(--night-deep); border-radius: 0.6rem; }
+    .lab__controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; }
+    .control-label { display: block; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--mist); }
+    .readout { margin-top: 1.1rem; min-height: 3.3em; font-size: 1rem; line-height: 1.6; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { display: block; width: 100%; height: auto; margin-top: 0.6rem; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .moments { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .classical { fill: none; stroke: var(--mist); stroke-width: 1.4; stroke-dasharray: 1.5 3; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.09); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-moments::before { border-top: 2.2px dashed var(--brick); }
+    .legend .leg-classical::before { border-top: 1.6px dotted var(--mist); }
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+    .fig--movie video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #04202b; }
+    .fig--movie video[hidden], .fig--movie [data-pane][hidden] { display: none; }
+    .fig--movie .switch { margin-bottom: 1.1rem; }
+
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+      <a href="research.html" aria-current="page">Investigación</a>
+      <a href="publications.html">Publicaciones</a>
+      <a href="talks.html">Pláticas y conferencias</a>
+      <a href="teaching.html">Enseñanza y mentoría</a>
+      <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../betelgeuse.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Betelgeuse</h1>
+      <p class="lede">Lo que revelan la rotación y la convección de una supergigante roja que algún día explotará.</p>
+      <p class="who">Con J. Craig Wheeler y el Proyecto Betelgeuse.</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="En esta página">
+        <ol>
+          <li><a href="#project">El proyecto</a></li>
+          <li><a href="#movie">Un modelo de 20 masas solares</a></li>
+          <li><a href="#rotation">Una estrella que gira demasiado rápido</a></li>
+          <li><a href="#seismology">Escuchar el interior de la estrella</a></li>
+          <li><a href="#papers">Artículos</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="project">El proyecto</h2>
+        <p>Betelgeuse (Alfa Orionis) es una supergigante roja, una estrella masiva en las etapas finales de su vida que se espera que termine como supernova (<a href="https://doi.org/10.1007/978-3-662-55054-0" target="_blank" rel="noopener">Branch y Wheeler, 2017</a>). El Proyecto Betelgeuse, dirigido por J. Craig Wheeler, buscó indicadores que permitieran determinar cuándo explotará la estrella. El proyecto usó modelos de evolución estelar para identificar su etapa evolutiva actual y deducir propiedades de su interior. Realicé simulaciones de progenitores de supernovas para el proyecto con el código de evolución estelar MESA. Se comparó un conjunto de modelos de 15 a 25 masas solares, con y sin rotación, con la luminosidad, la temperatura y el radio observados de Betelgeuse.</p>
+        <figure class="fig fig--l">
+          <img src="../figures/betelgeuse_hr.svg" width="501" height="408" alt="Diagrama de Hertzsprung-Russell con trayectorias evolutivas de modelos de 15, 20 y 25 masas solares, con y sin rotación. Las trayectorias van de temperaturas altas a bajas con una luminosidad casi constante. En el extremo de menor temperatura se muestra la posición de Betelgeuse con barras de error.">
+          <figcaption>Trayectorias evolutivas de modelos de 15 (azul), 20 (claro) y 25 (rojo) masas solares en el diagrama de Hertzsprung-Russell, con la luminosidad en función de la temperatura superficial, ambas en escala logarítmica. Las líneas discontinuas corresponden a modelos sin rotación. Las líneas continuas corresponden a modelos que comenzaron con una velocidad ecuatorial de 200 km/s. El punto con barras de error es Betelgeuse, con sus incertidumbres de 1σ y 3σ. Adaptación de <i>The Betelgeuse Project: Constraints from Rotation</i>, figura 1.</figcaption>
+        </figure>
+        <p>Sin rotación, los modelos reproducen sin mucha dificultad la luminosidad, la temperatura y el radio observados dentro de las incertidumbres más amplias, aunque es más difícil obtener concordancia dentro de 1σ. La rotación es lo que hace difícil explicar las observaciones.</p>
+
+        <h2 id="movie">Un modelo de 20 masas solares</h2>
+        <figure class="fig fig--l fig--movie">
+          <video controls preload="none" playsinline width="1280" height="720" poster="../movies/betelgeuse_20M_norot_poster.webp" aria-label="Video del modelo de 20 masas solares sin rotación, desde la secuencia principal">
+            <source src="../movies/betelgeuse_20M_norot.webm" type="video/webm">
+            <source src="../movies/betelgeuse_20M_norot.mp4" type="video/mp4">
+          </video>
+          <figcaption>Evolución de una estrella de 20 masas solares sin rotación, desde el inicio del quemado de H en el núcleo hasta 8.7 millones de años después. El modelo usa el criterio de Schwarzschild para la convección, sin extensión convectiva más allá del límite. A la izquierda, la trayectoria en el diagrama de Hertzsprung-Russell muestra cómo la estrella sale de la secuencia principal, pasa un largo periodo como supergigante azul y llega a la rama de las supergigantes rojas. A la derecha, el diagrama de Kippenhahn y el corte transversal muestran las regiones convectivas, las regiones de quemado nuclear y el crecimiento de los núcleos de He y C/O. Los puntos numerados marcan 1) la secuencia principal de edad cero, 2) el fin del quemado de H en el núcleo, 3) el mínimo de luminosidad en la base de la rama de las supergigantes rojas, 6) el fin del quemado de He en el núcleo, 7) el inicio del quemado de C en el núcleo, 8) el fin del quemado de C en el núcleo y 9) el inicio del colapso del núcleo. El video termina cuando el núcleo de hierro de 1.6 masas solares comienza a colapsar.</figcaption>
+        </figure>
+
+        <h2 id="rotation">Una estrella que gira demasiado rápido</h2>
+        <p>Una estrella debería girar más despacio al expandirse hasta convertirse en una supergigante roja, como una patinadora artística que abre los brazos, ya que ambas conservan el momento angular. La superficie de Betelgeuse parece girar a unos 15 km/s. En los modelos, esta velocidad solo se alcanza brevemente, cuando la estrella llega por primera vez a la base de la rama de las supergigantes rojas tras cruzar la hueco de Hertzsprung. Los modelos que reproducen a la vez la luminosidad, la temperatura, el radio y la rotación corresponden a esa breve etapa, de unos mil años, por lo que es poco probable que Betelgeuse se encuentre ahí justo ahora. En el extremo superior de la rama de las supergigantes rojas, los modelos giran a solo unos 0.1 km/s, para cualquier rotación inicial razonable, unas 150 veces más despacio de lo que parece girar Betelgeuse.</p>
+        <figure class="fig fig--m">
+          <img src="../figures/betelgeuse_rotation.svg" width="360" height="225" alt="Velocidad de rotación superficial en función del tiempo para tres modelos cerca de la base de la rama de las supergigantes rojas. En cada modelo baja de más de 30 km/s a menos de 1 km/s en unos 1500 años, y las tres curvas pasan por 15 km/s al mismo tiempo.">
+          <figcaption>Velocidad promedio de rotación superficial de los modelos de 15 (verde), 20 (naranja) y 25 (azul) masas solares cerca de la base de la rama de las supergigantes rojas, donde la velocidad disminuye y pasa por 15 km/s. Los tiempos corresponden al modelo de 25 masas solares. Las otras curvas se desplazan para que coincidan en 15 km/s. Adaptación de <i>The Betelgeuse Project: Constraints from Rotation</i>, figura 7.</figcaption>
+        </figure>
+        <p>Wheeler sugirió que el momento angular adicional provenía de una estrella compañera de alrededor de una masa solar, que Betelgeuse engulló durante su ascenso por la rama de las supergigantes rojas. Esta fusión también podría explicar el anillo de material observado a unos 7 minutos de arco de la estrella. Sin embargo, una fusión en el pasado dificulta reconstruir la historia de Betelgeuse y predecir su evolución futura.</p>
+        <p>Pensábamos que Betelgeuse ya había engullido a su compañera. Puede que esta siga en órbita. En 2024, dos grupos propusieron que el ciclo de seis años en el brillo de Betelgeuse y en su velocidad hacia nosotros se debe a la órbita de una compañera de alrededor de una masa solar, a una distancia del centro de Betelgeuse de poco más del doble del radio de la estrella (<a href="https://doi.org/10.3847/1538-4357/ad87f4" target="_blank" rel="noopener">Goldberg, Joyce y Molnár, 2024</a>; <a href="https://doi.org/10.3847/1538-4357/ad93c8" target="_blank" rel="noopener">MacLeod et al., 2025</a>). Probablemente se obtuvo una imagen de la compañera con el telescopio Gemini Norte y se le dio el nombre de Siwarha (<a href="https://doi.org/10.3847/2041-8213/adeaaf" target="_blank" rel="noopener">Howell et al., 2025</a>). A principios de 2026 se detectó con el telescopio Hubble su estela en la atmósfera exterior de Betelgeuse (<a href="https://arxiv.org/abs/2601.00470" target="_blank" rel="noopener">Dupree et al., 2026</a>). Si MacLeod y sus colaboradores tienen razón, las mareas que produce la compañera aceleran el giro de Betelgeuse, que la engullirá en unos diez mil años.</p>
+
+        <h2 id="seismology">Escuchar el interior de la estrella</h2>
+        <p>En un segundo artículo preguntamos si es posible estudiar el interior de una supergigante roja desde su superficie mediante las ondas que genera la convección en las regiones interiores donde ocurren reacciones nucleares. Estimamos las frecuencias características de las zonas convectivas en dos etapas, la quema de helio en el núcleo y la quema de carbono fuera del centro, y la potencia que las ondas podrían transmitir hasta la superficie.</p>
+        <figure class="fig fig--l">
+          <img src="../figures/betelgeuse_frequencies.svg" width="637" height="424" alt="Logaritmo de la frecuencia característica en función de la masa inicial, de 15 a 25 masas solares, para cuatro curvas: el núcleo de helio cerca de −5.4, la frecuencia de corte entre −5.5 y −6.2, una capa de hidrógeno cerca de −6.8 y la envoltura exterior cerca de −7.3.">
+          <figcaption>Frecuencias características ω de las zonas convectivas de los modelos sin rotación en la base de la rama de las supergigantes rojas, en s<sup>−1</sup> en escala logarítmica, en función de la masa inicial. De arriba hacia abajo: el núcleo convectivo de helio (claro), la frecuencia de corte por debajo de la cual no se espera que las ondas lleguen a la superficie (morado), una capa convectiva a unos 10<sup>6</sup> K (rojo) y la envoltura convectiva exterior (azul). Solo el núcleo de helio queda por encima de la frecuencia de corte. Adaptación de <i>The Betelgeuse Project II: Asteroseismology</i>, figura 4.</figcaption>
+        </figure>
+        <p>Las ondas de la convección en el núcleo de helio tendrían periodos de unos 20 días. Las de la capa donde se quema helio tendrían periodos de unos 10 días, y las de una capa donde se quema carbono, de 0.1 a 1 día. En el caso más favorable, al comienzo de la quema de helio en el núcleo, podrían producir fluctuaciones de luminosidad de unas pocas milimagnitudes en la superficie, pero es probable que las capas más externas de la envoltura las amortigüen considerablemente.</p>
+
+        <h2 id="papers">Artículos</h2>
+        <ol class="refs">
+          <li><span class="ref-title">The Betelgeuse Project: Constraints from Rotation</span><span class="ref-meta">J. C. Wheeler, S. Nance, M. Díaz, S. G. Smith, J. Hickey, L. Zhou, M. Koutoulaki, J. M. Sullivan y J. M. Fowler, <i>Monthly Notices of the Royal Astronomical Society</i> 465, 2654 (2017)</span><span class="ref-links"><a href="https://arxiv.org/abs/1611.08031" target="_blank" rel="noopener">arXiv:1611.08031</a><a href="https://doi.org/10.1093/mnras/stw2893" target="_blank" rel="noopener">Revista</a></span></li>
+          <li><span class="ref-title">The Betelgeuse Project II: Asteroseismology</span><span class="ref-meta">S. Nance, J. M. Sullivan, M. Díaz y J. C. Wheeler, <i>Monthly Notices of the Royal Astronomical Society</i> 479, 251 (2018)</span><span class="ref-links"><a href="https://arxiv.org/abs/1805.10347" target="_blank" rel="noopener">arXiv:1805.10347</a><a href="https://doi.org/10.1093/mnras/sty1418" target="_blank" rel="noopener">Revista</a></span></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">Toda la investigación</a><a href="index.html">Inicio</a></p>
+    </div>
+  </footer>
+  <script>
+  (function () {
+    var fig = document.querySelector('.fig--movie');
+    if (!fig) return;
+    var buttons = fig.querySelectorAll('.switch button');
+    function show(view) {
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === view ? 'true' : 'false'); });
+      fig.querySelectorAll('[data-pane]').forEach(function (el) {
+        var on = el.getAttribute('data-pane') === view;
+        if (!on && el.tagName === 'VIDEO') el.pause();
+        el.hidden = !on;
+      });
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-view')); }); });
+  })();
+  </script>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

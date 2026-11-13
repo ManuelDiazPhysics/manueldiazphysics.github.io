@@ -1,0 +1,1737 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="331.2pt" viewBox="0 0 518.4 331.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 331.2 
+L 518.4 331.2 
+L 518.4 0 
+L 0 0 
+L 0 331.2 
+z
+" style="fill: none; opacity: 0"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 89.34 256.18 
+L 486.36 256.18 
+L 486.36 17.28 
+L 89.34 17.28 
+L 89.34 256.18 
+z
+" style="fill: none"/>
+   </g>
+   <g id="axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="md1b76dfa93" d="M 0 0 
+L 0 4 
+" style="stroke: #9fb7bc; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#md1b76dfa93" x="89.34" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- $\mathdefault{10^{-6}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(74.06 280.8) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-80" d="M 512 3597 
+L 1504 3891 
+L 1504 0 
+L 2048 0 
+L 2048 4544 
+L 512 4160 
+L 512 3597 
+z
+" transform="scale(0.015625)"/>
+        <path id="Jost-Regular-7f" d="M 800 2240 
+Q 800 2630 877 2960 
+Q 954 3290 1101 3530 
+Q 1248 3770 1456 3901 
+Q 1664 4032 1920 4032 
+Q 2182 4032 2387 3901 
+Q 2592 3770 2739 3530 
+Q 2886 3290 2963 2960 
+Q 3040 2630 3040 2240 
+Q 3040 1850 2963 1520 
+Q 2886 1190 2739 950 
+Q 2592 710 2387 579 
+Q 2182 448 1920 448 
+Q 1664 448 1456 579 
+Q 1248 710 1101 950 
+Q 954 1190 877 1520 
+Q 800 1850 800 2240 
+z
+M 256 2240 
+Q 256 1568 467 1049 
+Q 678 531 1052 233 
+Q 1427 -64 1920 -64 
+Q 2413 -64 2787 233 
+Q 3162 531 3373 1049 
+Q 3584 1568 3584 2240 
+Q 3584 2912 3373 3430 
+Q 3162 3949 2787 4246 
+Q 2413 4544 1920 4544 
+Q 1427 4544 1052 4246 
+Q 678 3949 467 3430 
+Q 256 2912 256 2240 
+z
+" transform="scale(0.015625)"/>
+        <path id="Jost-Regular-c7" d="M 448 1280 
+L 3328 1280 
+L 3328 1760 
+L 448 1760 
+L 448 1280 
+z
+" transform="scale(0.015625)"/>
+        <path id="Jost-Regular-85" d="M 838 1472 
+Q 838 1779 969 2019 
+Q 1101 2259 1328 2393 
+Q 1555 2528 1843 2528 
+Q 2131 2528 2358 2393 
+Q 2586 2259 2717 2019 
+Q 2848 1779 2848 1472 
+Q 2848 1165 2717 931 
+Q 2586 698 2358 563 
+Q 2131 429 1843 429 
+Q 1555 429 1328 563 
+Q 1101 698 969 931 
+Q 838 1165 838 1472 
+z
+M 2112 4480 
+L 602 2400 
+Q 474 2221 397 1984 
+Q 320 1747 320 1472 
+Q 320 1011 521 665 
+Q 723 320 1068 128 
+Q 1414 -64 1843 -64 
+Q 2278 -64 2620 128 
+Q 2963 320 3164 665 
+Q 3366 1011 3366 1472 
+Q 3366 1779 3264 2044 
+Q 3162 2310 2979 2508 
+Q 2797 2707 2557 2816 
+Q 2317 2925 2042 2925 
+Q 1824 2925 1654 2873 
+Q 1485 2822 1357 2662 
+L 1395 2630 
+L 2797 4480 
+L 2112 4480 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80" transform="translate(0 0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0.7)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 42) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-85" transform="translate(147.87485 42) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#md1b76dfa93" x="155.51" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- $\mathdefault{10^{-3}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(140.39 280.8) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-82" d="M 1619 2208 
+Q 2054 2208 2380 2361 
+Q 2707 2515 2892 2777 
+Q 3078 3040 3078 3354 
+Q 3078 3674 2928 3942 
+Q 2778 4211 2499 4377 
+Q 2221 4544 1837 4544 
+Q 1472 4544 1187 4393 
+Q 902 4243 739 3980 
+Q 576 3718 576 3366 
+L 1094 3366 
+Q 1094 3661 1312 3856 
+Q 1530 4051 1843 4051 
+Q 2067 4051 2217 3961 
+Q 2368 3872 2445 3709 
+Q 2522 3546 2522 3334 
+Q 2522 3174 2461 3033 
+Q 2400 2893 2285 2787 
+Q 2170 2682 2003 2621 
+Q 1837 2560 1619 2560 
+L 1619 2208 
+z
+M 1811 -64 
+Q 2214 -64 2528 89 
+Q 2842 243 3024 524 
+Q 3206 806 3206 1184 
+Q 3206 1517 3081 1753 
+Q 2957 1990 2736 2140 
+Q 2515 2291 2230 2361 
+Q 1946 2432 1619 2432 
+L 1619 2080 
+Q 1837 2080 2022 2029 
+Q 2208 1978 2349 1872 
+Q 2490 1766 2570 1609 
+Q 2650 1453 2650 1248 
+Q 2650 1005 2547 825 
+Q 2445 646 2256 547 
+Q 2067 448 1811 448 
+Q 1555 448 1356 544 
+Q 1158 640 1046 806 
+Q 934 973 934 1184 
+L 384 1184 
+Q 384 922 486 694 
+Q 589 467 774 297 
+Q 960 128 1222 32 
+Q 1485 -64 1811 -64 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-82" transform="translate(147.87485 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#md1b76dfa93" x="221.68" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- $\mathdefault{10^{0}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(209.6 280.8) scale(0.16 -0.16)">
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(106.574893 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#md1b76dfa93" x="287.85" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- $\mathdefault{10^{3}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(276.01 280.8) scale(0.16 -0.16)">
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-82" transform="translate(106.574893 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#md1b76dfa93" x="354.02" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- $\mathdefault{10^{6}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(342.02 280.8) scale(0.16 -0.16)">
+       <use xlink:href="#Jost-Regular-80" transform="translate(0 0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0.7)"/>
+       <use xlink:href="#Jost-Regular-85" transform="translate(106.574893 42) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#md1b76dfa93" x="420.19" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- $\mathdefault{10^{9}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(408.19 280.8) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-88" d="M 2848 3008 
+Q 2848 2701 2717 2464 
+Q 2586 2227 2358 2089 
+Q 2131 1952 1843 1952 
+Q 1555 1952 1328 2089 
+Q 1101 2227 969 2464 
+Q 838 2701 838 3008 
+Q 838 3315 969 3548 
+Q 1101 3782 1328 3916 
+Q 1555 4051 1843 4051 
+Q 2131 4051 2358 3916 
+Q 2586 3782 2717 3548 
+Q 2848 3315 2848 3008 
+z
+M 1574 0 
+L 3085 2080 
+Q 3213 2259 3289 2496 
+Q 3366 2733 3366 3008 
+Q 3366 3469 3164 3814 
+Q 2963 4160 2620 4352 
+Q 2278 4544 1843 4544 
+Q 1414 4544 1068 4352 
+Q 723 4160 521 3814 
+Q 320 3469 320 3008 
+Q 320 2701 422 2435 
+Q 525 2170 707 1971 
+Q 890 1773 1130 1664 
+Q 1370 1555 1645 1555 
+Q 1862 1555 2032 1606 
+Q 2202 1658 2330 1818 
+L 2291 1850 
+L 890 0 
+L 1574 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-88" transform="translate(106.574893 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#md1b76dfa93" x="486.36" y="256.18" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- $\mathdefault{10^{12}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(471.88 280.8) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-81" d="M 128 0 
+L 3290 0 
+L 3290 512 
+L 1248 512 
+L 2675 1965 
+Q 2938 2234 3104 2573 
+Q 3270 2912 3270 3258 
+Q 3270 3462 3187 3686 
+Q 3104 3910 2931 4105 
+Q 2758 4301 2489 4425 
+Q 2221 4550 1850 4550 
+Q 1389 4550 1059 4348 
+Q 730 4147 557 3785 
+Q 384 3424 384 2944 
+L 928 2944 
+Q 928 3283 1037 3529 
+Q 1146 3776 1354 3907 
+Q 1562 4038 1850 4038 
+Q 2054 4038 2214 3968 
+Q 2374 3898 2486 3782 
+Q 2598 3667 2656 3526 
+Q 2714 3386 2714 3238 
+Q 2714 3059 2659 2896 
+Q 2605 2733 2499 2576 
+Q 2394 2419 2246 2259 
+L 128 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80" transform="translate(0 0.934375)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0.934375)"/>
+       <use xlink:href="#Jost-Regular-80" transform="translate(106.574893 42.234375) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-81" transform="translate(138.074861 42.234375) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_8">
+     <!-- Distance $x$ (m) -->
+     <g style="fill: #9fb7bc" transform="translate(239.29 307.92) scale(0.16 -0.16)">
+      <defs>
+       <path id="Jost-Regular-d" d="M 512 4480 
+L 512 0 
+L 1056 0 
+L 1056 4480 
+L 512 4480 
+z
+M 1856 0 
+Q 2509 0 3014 281 
+Q 3520 563 3808 1065 
+Q 4096 1568 4096 2240 
+Q 4096 2912 3808 3414 
+Q 3520 3917 3014 4198 
+Q 2509 4480 1856 4480 
+L 813 4480 
+L 813 3936 
+L 1856 3936 
+Q 2234 3936 2547 3817 
+Q 2861 3699 3085 3478 
+Q 3309 3258 3430 2944 
+Q 3552 2630 3552 2240 
+Q 3552 1850 3430 1536 
+Q 3309 1222 3085 1001 
+Q 2861 781 2547 662 
+Q 2234 544 1856 544 
+L 813 544 
+L 813 0 
+L 1856 0 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-4f" d="M 480 4160 
+Q 480 4019 585 3913 
+Q 691 3808 832 3808 
+Q 979 3808 1081 3913 
+Q 1184 4019 1184 4160 
+Q 1184 4307 1081 4409 
+Q 979 4512 832 4512 
+Q 691 4512 585 4409 
+Q 480 4307 480 4160 
+z
+M 576 2944 
+L 576 0 
+L 1088 0 
+L 1088 2944 
+L 576 2944 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-63" d="M 602 902 
+L 198 653 
+Q 282 480 445 313 
+Q 608 147 845 41 
+Q 1082 -64 1376 -64 
+Q 1830 -64 2108 192 
+Q 2387 448 2387 832 
+Q 2387 1094 2262 1260 
+Q 2138 1427 1926 1545 
+Q 1715 1664 1459 1766 
+Q 1306 1830 1165 1900 
+Q 1024 1971 934 2060 
+Q 845 2150 845 2266 
+Q 845 2413 960 2483 
+Q 1075 2554 1235 2554 
+Q 1466 2554 1648 2445 
+Q 1830 2336 1952 2170 
+L 2362 2432 
+Q 2272 2598 2112 2726 
+Q 1952 2854 1744 2931 
+Q 1536 3008 1299 3008 
+Q 1062 3008 841 2925 
+Q 621 2842 483 2669 
+Q 346 2496 346 2234 
+Q 346 1978 477 1808 
+Q 608 1638 803 1532 
+Q 998 1427 1190 1350 
+Q 1363 1286 1516 1212 
+Q 1670 1139 1769 1033 
+Q 1869 928 1869 774 
+Q 1869 602 1744 502 
+Q 1619 403 1402 403 
+Q 1222 403 1072 470 
+Q 922 538 806 653 
+Q 691 768 602 902 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-64" d="M 32 2944 
+L 32 2464 
+L 1504 2464 
+L 1504 2944 
+L 32 2944 
+z
+M 512 3968 
+L 512 0 
+L 1024 0 
+L 1024 3968 
+L 512 3968 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-3c" d="M 710 909 
+Q 710 1069 787 1184 
+Q 864 1299 1021 1363 
+Q 1178 1427 1427 1427 
+Q 1696 1427 1933 1360 
+Q 2170 1293 2394 1139 
+L 2394 1440 
+Q 2349 1498 2221 1590 
+Q 2093 1683 1878 1756 
+Q 1664 1830 1344 1830 
+Q 800 1830 496 1571 
+Q 192 1312 192 883 
+Q 192 582 333 371 
+Q 474 160 707 48 
+Q 941 -64 1210 -64 
+Q 1453 -64 1699 25 
+Q 1946 115 2115 300 
+Q 2285 486 2285 768 
+L 2182 1152 
+Q 2182 922 2070 746 
+Q 1958 570 1769 474 
+Q 1581 378 1344 378 
+Q 1158 378 1014 438 
+Q 870 499 790 620 
+Q 710 742 710 909 
+z
+M 634 2266 
+Q 704 2317 825 2387 
+Q 947 2458 1123 2509 
+Q 1299 2560 1517 2560 
+Q 1651 2560 1772 2534 
+Q 1894 2509 1987 2451 
+Q 2080 2394 2131 2294 
+Q 2182 2195 2182 2042 
+L 2182 0 
+L 2694 0 
+L 2694 2112 
+Q 2694 2400 2550 2598 
+Q 2406 2797 2147 2902 
+Q 1888 3008 1542 3008 
+Q 1133 3008 841 2886 
+Q 550 2765 384 2643 
+L 634 2266 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-58" d="M 2368 1792 
+L 2368 0 
+L 2880 0 
+L 2880 1856 
+Q 2880 2387 2608 2697 
+Q 2336 3008 1869 3008 
+Q 1581 3008 1360 2880 
+Q 1139 2752 992 2483 
+L 992 2944 
+L 480 2944 
+L 480 0 
+L 992 0 
+L 992 1792 
+Q 992 2010 1085 2176 
+Q 1178 2342 1347 2435 
+Q 1517 2528 1741 2528 
+Q 2048 2528 2208 2342 
+Q 2368 2157 2368 1792 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-44" d="M 710 1472 
+Q 710 1779 841 2019 
+Q 973 2259 1200 2393 
+Q 1427 2528 1715 2528 
+Q 1952 2528 2160 2454 
+Q 2368 2381 2521 2259 
+Q 2675 2138 2739 1990 
+L 2739 2630 
+Q 2586 2810 2301 2909 
+Q 2016 3008 1715 3008 
+Q 1286 3008 940 2809 
+Q 595 2611 393 2265 
+Q 192 1920 192 1472 
+Q 192 1030 393 681 
+Q 595 333 940 134 
+Q 1286 -64 1715 -64 
+Q 2016 -64 2301 35 
+Q 2586 134 2739 314 
+L 2739 954 
+Q 2675 813 2521 688 
+Q 2368 563 2160 489 
+Q 1952 416 1715 416 
+Q 1427 416 1200 553 
+Q 973 691 841 928 
+Q 710 1165 710 1472 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-47" d="M 1619 -64 
+Q 2093 -64 2441 125 
+Q 2790 314 3021 685 
+L 2605 947 
+Q 2445 678 2214 547 
+Q 1984 416 1683 416 
+Q 1382 416 1171 544 
+Q 960 672 851 915 
+Q 742 1158 742 1504 
+Q 749 1843 861 2076 
+Q 973 2310 1181 2435 
+Q 1389 2560 1683 2560 
+Q 1933 2560 2118 2451 
+Q 2304 2342 2409 2150 
+Q 2515 1958 2515 1696 
+Q 2515 1651 2496 1584 
+Q 2477 1517 2458 1485 
+L 2662 1779 
+L 550 1779 
+L 550 1344 
+L 3066 1344 
+Q 3066 1357 3069 1405 
+Q 3072 1453 3072 1498 
+Q 3072 1965 2905 2304 
+Q 2739 2643 2428 2825 
+Q 2118 3008 1683 3008 
+Q 1248 3008 918 2816 
+Q 589 2624 406 2278 
+Q 224 1933 224 1472 
+Q 224 1018 400 672 
+Q 576 326 893 131 
+Q 1210 -64 1619 -64 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-1" transform="scale(0.015625)"/>
+       <path id="STIXGeneral-Italic-3e8" d="M 3482 2899 
+L 2202 1510 
+L 2893 0 
+L 2291 0 
+L 1786 1120 
+L 794 0 
+L 192 0 
+L 1600 1530 
+L 986 2899 
+L 1587 2899 
+L 2022 1933 
+L 2880 2899 
+L 3482 2899 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-9d" d="M 1312 4992 
+Q 928 4275 752 3475 
+Q 576 2675 576 1856 
+Q 576 1043 752 243 
+Q 928 -557 1312 -1280 
+L 1792 -1280 
+Q 1459 -557 1305 243 
+Q 1152 1043 1152 1856 
+Q 1152 2675 1305 3475 
+Q 1459 4275 1792 4992 
+L 1312 4992 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-57" d="M 4512 1856 
+Q 4512 2221 4400 2480 
+Q 4288 2739 4077 2873 
+Q 3866 3008 3565 3008 
+Q 3270 3008 3040 2870 
+Q 2810 2733 2656 2458 
+Q 2554 2720 2333 2864 
+Q 2112 3008 1805 3008 
+Q 1530 3008 1328 2886 
+Q 1126 2765 992 2515 
+L 992 2944 
+L 480 2944 
+L 480 0 
+L 992 0 
+L 992 1792 
+Q 992 2022 1075 2188 
+Q 1158 2355 1312 2441 
+Q 1466 2528 1677 2528 
+Q 1965 2528 2102 2349 
+Q 2240 2170 2240 1792 
+L 2240 0 
+L 2752 0 
+L 2752 1792 
+Q 2752 2022 2835 2188 
+Q 2918 2355 3072 2441 
+Q 3226 2528 3437 2528 
+Q 3725 2528 3862 2349 
+Q 4000 2170 4000 1792 
+L 4000 0 
+L 4512 0 
+L 4512 1856 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-9e" d="M 672 -1280 
+Q 1056 -557 1232 243 
+Q 1408 1043 1408 1856 
+Q 1408 2675 1232 3475 
+Q 1056 4275 672 4992 
+L 192 4992 
+Q 531 4275 681 3475 
+Q 832 2675 832 1856 
+Q 832 1043 681 243 
+Q 531 -557 192 -1280 
+L 672 -1280 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#Jost-Regular-d"/>
+      <use xlink:href="#Jost-Regular-4f" transform="translate(67.999939 0)"/>
+      <use xlink:href="#Jost-Regular-63" transform="translate(93.999908 0)"/>
+      <use xlink:href="#Jost-Regular-64" transform="translate(134.299866 0)"/>
+      <use xlink:href="#Jost-Regular-3c" transform="translate(158.29985 0)"/>
+      <use xlink:href="#Jost-Regular-58" transform="translate(206.399811 0)"/>
+      <use xlink:href="#Jost-Regular-44" transform="translate(258.899765 0)"/>
+      <use xlink:href="#Jost-Regular-47" transform="translate(306.699722 0)"/>
+      <use xlink:href="#Jost-Regular-1" transform="translate(358.199677 0)"/>
+      <use xlink:href="#STIXGeneral-Italic-3e8" transform="translate(388.199646 0)"/>
+      <use xlink:href="#Jost-Regular-1" transform="translate(436.399597 0)"/>
+      <use xlink:href="#Jost-Regular-9d" transform="translate(466.399567 0)"/>
+      <use xlink:href="#Jost-Regular-57" transform="translate(497.399536 0)"/>
+      <use xlink:href="#Jost-Regular-9e" transform="translate(575.39946 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="axis_2">
+    <g id="ytick_1">
+     <g id="line2d_8">
+      <defs>
+       <path id="mb91812f606" d="M 0 0 
+L -4 0 
+" style="stroke: #9fb7bc; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="37.188333" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- $\mathdefault{10^{-30}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(44.88 45.748333) scale(0.16 -0.16)">
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-82" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(186.094812 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="70.368889" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- $\mathdefault{10^{-40}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(44.56 78.928889) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-83" d="M 128 896 
+L 3539 896 
+L 3539 1376 
+L 2624 1376 
+L 2515 1376 
+L 1024 1376 
+L 2291 3270 
+L 2291 1197 
+L 2291 1126 
+L 2291 0 
+L 2835 0 
+L 2835 4480 
+L 2611 4480 
+L 128 896 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-83" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(188.68481 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="103.549444" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- $\mathdefault{10^{-50}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(44.72 112.109444) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-84" d="M 3354 1472 
+Q 3354 1920 3181 2259 
+Q 3008 2598 2704 2790 
+Q 2400 2982 2016 2982 
+Q 1850 2982 1680 2940 
+Q 1510 2899 1350 2816 
+L 1651 4000 
+L 3341 4000 
+L 3341 4480 
+L 1229 4480 
+L 640 2093 
+Q 870 2253 1046 2339 
+Q 1222 2426 1398 2461 
+Q 1574 2496 1786 2496 
+Q 2074 2496 2301 2368 
+Q 2528 2240 2659 2009 
+Q 2790 1779 2790 1472 
+Q 2790 1165 2672 934 
+Q 2554 704 2330 576 
+Q 2106 448 1786 448 
+Q 1542 448 1318 553 
+Q 1094 659 924 828 
+Q 755 998 653 1190 
+L 192 877 
+Q 339 621 553 406 
+Q 768 192 1072 64 
+Q 1376 -64 1786 -64 
+Q 2112 -64 2393 32 
+Q 2675 128 2892 320 
+Q 3110 512 3232 800 
+Q 3354 1088 3354 1472 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-84" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(187.354814 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="136.73" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- $\mathdefault{10^{-60}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(44.56 145.29) scale(0.16 -0.16)">
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-85" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(188.194812 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="169.910556" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- $\mathdefault{10^{-70}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(45.2 178.470556) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-86" d="M 192 3968 
+L 2515 3968 
+L 614 0 
+L 1184 0 
+L 3328 4480 
+L 192 4480 
+L 192 3968 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-86" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(184.624818 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="203.091111" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <!-- $\mathdefault{10^{-80}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(44.88 211.651111) scale(0.16 -0.16)">
+       <defs>
+        <path id="Jost-Regular-87" d="M 512 3398 
+Q 512 3136 601 2928 
+Q 691 2720 854 2573 
+Q 1018 2426 1245 2349 
+Q 1472 2272 1747 2272 
+Q 2022 2272 2249 2349 
+Q 2477 2426 2640 2573 
+Q 2803 2720 2892 2928 
+Q 2982 3136 2982 3398 
+Q 2982 3718 2819 3977 
+Q 2656 4237 2377 4390 
+Q 2099 4544 1747 4544 
+Q 1395 4544 1116 4390 
+Q 838 4237 675 3977 
+Q 512 3718 512 3398 
+z
+M 1030 3334 
+Q 1030 3546 1123 3712 
+Q 1216 3878 1379 3971 
+Q 1542 4064 1747 4064 
+Q 1958 4064 2118 3971 
+Q 2278 3878 2371 3712 
+Q 2464 3546 2464 3334 
+Q 2464 3123 2365 2963 
+Q 2266 2803 2102 2713 
+Q 1939 2624 1747 2624 
+Q 1555 2624 1392 2713 
+Q 1229 2803 1129 2963 
+Q 1030 3123 1030 3334 
+z
+M 352 1216 
+Q 352 954 457 723 
+Q 563 493 752 313 
+Q 941 134 1193 35 
+Q 1446 -64 1747 -64 
+Q 2048 -64 2301 35 
+Q 2554 134 2742 313 
+Q 2931 493 3036 723 
+Q 3142 954 3142 1216 
+Q 3142 1523 3030 1763 
+Q 2918 2003 2723 2166 
+Q 2528 2330 2275 2413 
+Q 2022 2496 1747 2496 
+Q 1472 2496 1219 2413 
+Q 966 2330 771 2166 
+Q 576 2003 464 1763 
+Q 352 1523 352 1216 
+z
+M 870 1280 
+Q 870 1523 995 1718 
+Q 1120 1914 1321 2029 
+Q 1523 2144 1747 2144 
+Q 1971 2144 2172 2029 
+Q 2374 1914 2499 1718 
+Q 2624 1523 2624 1280 
+Q 2624 1005 2499 813 
+Q 2374 621 2172 518 
+Q 1971 416 1747 416 
+Q 1523 416 1321 518 
+Q 1120 621 995 813 
+Q 870 1005 870 1280 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-87" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(186.094812 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#mb91812f606" x="89.34" y="236.271667" style="fill: #9fb7bc; stroke: #9fb7bc; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <!-- $\mathdefault{10^{-90}}$ -->
+      <g style="fill: #9fb7bc" transform="translate(44.56 244.831667) scale(0.16 -0.16)">
+       <use xlink:href="#Jost-Regular-80"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(44.999954 0)"/>
+       <use xlink:href="#Jost-Regular-c7" transform="translate(106.574893 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-88" transform="translate(147.87485 41.3) scale(0.7)"/>
+       <use xlink:href="#Jost-Regular-7f" transform="translate(188.194812 41.3) scale(0.7)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_16">
+     <!-- Correction relative to $GM/x$ -->
+     <g style="fill: #9fb7bc" transform="translate(34.56 228.65) rotate(-90) scale(0.16 -0.16)">
+      <defs>
+       <path id="Jost-Regular-b" d="M 832 2240 
+Q 832 2765 1065 3158 
+Q 1299 3552 1676 3776 
+Q 2054 4000 2496 4000 
+Q 2816 4000 3081 3917 
+Q 3347 3834 3564 3683 
+Q 3782 3533 3936 3334 
+L 3936 4051 
+Q 3654 4301 3321 4422 
+Q 2989 4544 2496 4544 
+Q 2029 4544 1622 4374 
+Q 1216 4205 909 3894 
+Q 602 3584 429 3161 
+Q 256 2739 256 2240 
+Q 256 1741 429 1318 
+Q 602 896 909 585 
+Q 1216 275 1622 105 
+Q 2029 -64 2496 -64 
+Q 2989 -64 3321 57 
+Q 3654 179 3936 429 
+L 3936 1146 
+Q 3782 947 3564 796 
+Q 3347 646 3081 563 
+Q 2816 480 2496 480 
+Q 2054 480 1676 704 
+Q 1299 928 1065 1325 
+Q 832 1722 832 2240 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-5a" d="M 224 1472 
+Q 224 1030 425 681 
+Q 627 333 972 134 
+Q 1318 -64 1747 -64 
+Q 2182 -64 2524 134 
+Q 2867 333 3068 681 
+Q 3270 1030 3270 1472 
+Q 3270 1920 3068 2265 
+Q 2867 2611 2524 2809 
+Q 2182 3008 1747 3008 
+Q 1318 3008 972 2809 
+Q 627 2611 425 2265 
+Q 224 1920 224 1472 
+z
+M 742 1472 
+Q 742 1779 873 2019 
+Q 1005 2259 1232 2393 
+Q 1459 2528 1747 2528 
+Q 2035 2528 2262 2393 
+Q 2490 2259 2621 2019 
+Q 2752 1779 2752 1472 
+Q 2752 1165 2621 928 
+Q 2490 691 2262 553 
+Q 2035 416 1747 416 
+Q 1459 416 1232 553 
+Q 1005 691 873 928 
+Q 742 1165 742 1472 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-62" d="M 992 2944 
+L 480 2944 
+L 480 0 
+L 992 0 
+L 992 2944 
+z
+M 1882 2381 
+L 2163 2803 
+Q 2048 2925 1910 2966 
+Q 1773 3008 1613 3008 
+Q 1408 3008 1209 2848 
+Q 1011 2688 886 2416 
+Q 762 2144 762 1792 
+L 992 1792 
+Q 992 2003 1033 2169 
+Q 1075 2336 1184 2432 
+Q 1293 2528 1485 2528 
+Q 1613 2528 1696 2493 
+Q 1779 2458 1882 2381 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-56" d="M 480 4992 
+L 480 0 
+L 992 0 
+L 992 4992 
+L 480 4992 
+z
+" transform="scale(0.015625)"/>
+       <path id="Jost-Regular-6a" d="M 0 2944 
+L 1408 -224 
+L 2816 2944 
+L 2240 2944 
+L 1408 864 
+L 576 2944 
+L 0 2944 
+z
+" transform="scale(0.015625)"/>
+       <path id="STIXGeneral-Italic-3bd" d="M 4832 3616 
+L 4672 2957 
+L 4550 2957 
+Q 4346 3840 3341 3840 
+Q 2739 3840 2243 3517 
+Q 1747 3194 1481 2701 
+Q 1216 2208 1216 1677 
+Q 1216 1120 1549 758 
+Q 1882 397 2522 397 
+Q 3053 397 3331 512 
+Q 3610 627 3648 787 
+L 3904 1798 
+L 3334 1798 
+L 3334 2285 
+L 4582 2285 
+L 4102 378 
+Q 3814 211 3660 140 
+Q 3507 70 3158 -10 
+Q 2810 -90 2374 -90 
+Q 1549 -90 1085 342 
+Q 621 774 621 1498 
+Q 621 2054 854 2576 
+Q 1088 3098 1475 3482 
+Q 1862 3866 2387 4096 
+Q 2912 4326 3462 4326 
+Q 4518 4326 4832 3616 
+z
+" transform="scale(0.015625)"/>
+       <path id="STIXGeneral-Italic-3c3" d="M 5971 4237 
+L 4915 0 
+L 4371 0 
+L 5235 3475 
+L 2765 0 
+L 2630 0 
+L 1882 3462 
+L 1024 0 
+L 480 0 
+L 1536 4237 
+L 2323 4237 
+L 2989 1152 
+L 5184 4237 
+L 5971 4237 
+z
+" transform="scale(0.015625)"/>
+       <path id="STIXGeneral-Regular-12" d="M 1837 4326 
+L 378 -90 
+L -58 -90 
+L 1408 4326 
+L 1837 4326 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#Jost-Regular-b"/>
+      <use xlink:href="#Jost-Regular-5a" transform="translate(68.499939 0)"/>
+      <use xlink:href="#Jost-Regular-62" transform="translate(123.099884 0)"/>
+      <use xlink:href="#Jost-Regular-62" transform="translate(157.399857 0)"/>
+      <use xlink:href="#Jost-Regular-47" transform="translate(191.699829 0)"/>
+      <use xlink:href="#Jost-Regular-44" transform="translate(243.199783 0)"/>
+      <use xlink:href="#Jost-Regular-64" transform="translate(290.999741 0)"/>
+      <use xlink:href="#Jost-Regular-4f" transform="translate(314.999725 0)"/>
+      <use xlink:href="#Jost-Regular-5a" transform="translate(340.999695 0)"/>
+      <use xlink:href="#Jost-Regular-58" transform="translate(395.59964 0)"/>
+      <use xlink:href="#Jost-Regular-1" transform="translate(448.099594 0)"/>
+      <use xlink:href="#Jost-Regular-62" transform="translate(478.099564 0)"/>
+      <use xlink:href="#Jost-Regular-47" transform="translate(512.399536 0)"/>
+      <use xlink:href="#Jost-Regular-56" transform="translate(563.89949 0)"/>
+      <use xlink:href="#Jost-Regular-3c" transform="translate(586.899475 0)"/>
+      <use xlink:href="#Jost-Regular-64" transform="translate(634.999435 0)"/>
+      <use xlink:href="#Jost-Regular-4f" transform="translate(658.99942 0)"/>
+      <use xlink:href="#Jost-Regular-6a" transform="translate(684.99939 0)"/>
+      <use xlink:href="#Jost-Regular-47" transform="translate(728.999344 0)"/>
+      <use xlink:href="#Jost-Regular-1" transform="translate(780.499298 0)"/>
+      <use xlink:href="#Jost-Regular-64" transform="translate(810.499268 0)"/>
+      <use xlink:href="#Jost-Regular-5a" transform="translate(834.499252 0)"/>
+      <use xlink:href="#Jost-Regular-1" transform="translate(889.099197 0)"/>
+      <use xlink:href="#STIXGeneral-Italic-3bd" transform="translate(919.099167 0)"/>
+      <use xlink:href="#STIXGeneral-Italic-3c3" transform="translate(988.599106 0)"/>
+      <use xlink:href="#STIXGeneral-Regular-12" transform="translate(1072.899033 0)"/>
+      <use xlink:href="#STIXGeneral-Italic-3e8" transform="translate(1100.699005 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 89.34 35.880722 
+L 486.36 95.605722 
+L 486.36 95.605722 
+" clip-path="url(#p4db95ae5cd)" style="fill: none; stroke: #f2b23e; stroke-width: 2.4; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 89.34 128.326514 
+L 486.36 247.776514 
+L 486.36 247.776514 
+" clip-path="url(#p4db95ae5cd)" style="fill: none; stroke-dasharray: 14.4,9.6; stroke-dashoffset: 0; stroke: #c8673a; stroke-width: 2.4"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 221.68 256.18 
+L 221.68 17.28 
+" clip-path="url(#p4db95ae5cd)" style="fill: none; stroke-dasharray: 1.2,2.4; stroke-dashoffset: 0; stroke: #9fb7bc; stroke-opacity: 0.7; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 371.758139 256.18 
+L 371.758139 17.28 
+" clip-path="url(#p4db95ae5cd)" style="fill: none; stroke-dasharray: 1.2,2.4; stroke-dashoffset: 0; stroke: #9fb7bc; stroke-opacity: 0.7; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 468.161741 256.18 
+L 468.161741 17.28 
+" clip-path="url(#p4db95ae5cd)" style="fill: none; stroke-dasharray: 1.2,2.4; stroke-dashoffset: 0; stroke: #9fb7bc; stroke-opacity: 0.7; stroke-width: 0.8"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 89.34 256.18 
+L 89.34 17.28 
+" style="fill: none; opacity: 0.6; stroke: #9fb7bc; stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 89.34 256.18 
+L 486.36 256.18 
+" style="fill: none; opacity: 0.6; stroke: #9fb7bc; stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_17">
+    <g id="patch_5">
+     <path d="M 209.01 44.522996 
+L 234.35 44.522996 
+L 234.35 20.372996 
+L 209.01 20.372996 
+z
+" style="fill: #072a37"/>
+    </g>
+    <!-- 1 m -->
+    <g style="fill: #9fb7bc" transform="translate(210.97 37.312996) scale(0.14 -0.14)">
+     <use xlink:href="#Jost-Regular-80"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(45 0)"/>
+     <use xlink:href="#Jost-Regular-57" transform="translate(75 0)"/>
+    </g>
+   </g>
+   <g id="text_18">
+    <g id="patch_6">
+     <path d="M 334.65267 44.522996 
+L 408.863608 44.522996 
+L 408.863608 20.372996 
+L 334.65267 20.372996 
+z
+" style="fill: #072a37"/>
+    </g>
+    <!-- Earth radius -->
+    <g style="fill: #9fb7bc" transform="translate(336.61267 37.312996) scale(0.14 -0.14)">
+     <defs>
+      <path id="Jost-Regular-e" d="M 813 0 
+L 3072 0 
+L 3072 512 
+L 813 512 
+L 813 0 
+z
+M 813 3968 
+L 3072 3968 
+L 3072 4480 
+L 813 4480 
+L 813 3968 
+z
+M 813 2176 
+L 2944 2176 
+L 2944 2688 
+L 813 2688 
+L 813 2176 
+z
+M 512 4480 
+L 512 0 
+L 1056 0 
+L 1056 4480 
+L 512 4480 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-4e" d="M 992 4992 
+L 480 4992 
+L 480 0 
+L 992 0 
+L 992 4992 
+z
+M 2368 1792 
+L 2368 0 
+L 2880 0 
+L 2880 1856 
+Q 2880 2240 2755 2496 
+Q 2630 2752 2403 2880 
+Q 2176 3008 1869 3008 
+Q 1562 3008 1328 2848 
+Q 1094 2688 960 2416 
+Q 826 2144 826 1792 
+L 992 1792 
+Q 992 2003 1085 2169 
+Q 1178 2336 1347 2432 
+Q 1517 2528 1741 2528 
+Q 2054 2528 2211 2342 
+Q 2368 2157 2368 1792 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-46" d="M 2688 4992 
+L 2688 0 
+L 3200 0 
+L 3200 4992 
+L 2688 4992 
+z
+M 224 1472 
+Q 224 998 422 652 
+Q 621 307 953 121 
+Q 1286 -64 1683 -64 
+Q 2054 -64 2329 121 
+Q 2605 307 2761 652 
+Q 2918 998 2918 1472 
+Q 2918 1952 2761 2294 
+Q 2605 2637 2329 2822 
+Q 2054 3008 1683 3008 
+Q 1286 3008 953 2822 
+Q 621 2637 422 2294 
+Q 224 1952 224 1472 
+z
+M 742 1472 
+Q 742 1811 880 2048 
+Q 1018 2285 1248 2406 
+Q 1478 2528 1747 2528 
+Q 1971 2528 2188 2406 
+Q 2406 2285 2547 2048 
+Q 2688 1811 2688 1472 
+Q 2688 1133 2547 896 
+Q 2406 659 2188 537 
+Q 1971 416 1747 416 
+Q 1478 416 1248 537 
+Q 1018 659 880 896 
+Q 742 1133 742 1472 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-65" d="M 992 1152 
+L 992 2944 
+L 480 2944 
+L 480 1088 
+Q 480 563 755 249 
+Q 1030 -64 1491 -64 
+Q 1786 -64 2003 67 
+Q 2221 198 2368 461 
+L 2368 0 
+L 2880 0 
+L 2880 2944 
+L 2368 2944 
+L 2368 1152 
+Q 2368 934 2275 768 
+Q 2182 602 2012 509 
+Q 1843 416 1619 416 
+Q 1312 416 1152 608 
+Q 992 800 992 1152 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Jost-Regular-e"/>
+     <use xlink:href="#Jost-Regular-3c" transform="translate(55 0)"/>
+     <use xlink:href="#Jost-Regular-62" transform="translate(103.09375 0)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(137.390625 0)"/>
+     <use xlink:href="#Jost-Regular-4e" transform="translate(161.390625 0)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(213.890625 0)"/>
+     <use xlink:href="#Jost-Regular-62" transform="translate(243.890625 0)"/>
+     <use xlink:href="#Jost-Regular-3c" transform="translate(278.1875 0)"/>
+     <use xlink:href="#Jost-Regular-46" transform="translate(326.28125 0)"/>
+     <use xlink:href="#Jost-Regular-4f" transform="translate(383.28125 0)"/>
+     <use xlink:href="#Jost-Regular-65" transform="translate(409.28125 0)"/>
+     <use xlink:href="#Jost-Regular-63" transform="translate(461.78125 0)"/>
+    </g>
+   </g>
+   <g id="text_19">
+    <g id="patch_7">
+     <path d="M 451.950179 44.522996 
+L 484.373304 44.522996 
+L 484.373304 20.372996 
+L 451.950179 20.372996 
+z
+" style="fill: #072a37"/>
+    </g>
+    <!-- 1 AU -->
+    <g style="fill: #9fb7bc" transform="translate(453.910179 37.312996) scale(0.14 -0.14)">
+     <defs>
+      <path id="Jost-Regular-3" d="M 941 1344 
+L 3309 1344 
+L 3117 1856 
+L 1133 1856 
+L 941 1344 
+z
+M 2112 3469 
+L 2880 1664 
+L 2931 1536 
+L 3584 0 
+L 4192 0 
+L 2112 4704 
+L 32 0 
+L 640 0 
+L 1306 1574 
+L 1357 1690 
+L 2112 3469 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-2c" d="M 480 4480 
+L 480 1472 
+Q 480 1139 585 857 
+Q 691 576 892 371 
+Q 1094 166 1376 51 
+Q 1658 -64 2003 -64 
+Q 2349 -64 2630 51 
+Q 2912 166 3113 371 
+Q 3315 576 3420 857 
+Q 3526 1139 3526 1472 
+L 3526 4480 
+L 2982 4480 
+L 2982 1472 
+Q 2982 1011 2732 729 
+Q 2483 448 2003 448 
+Q 1523 448 1273 729 
+Q 1024 1011 1024 1472 
+L 1024 4480 
+L 480 4480 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Jost-Regular-80"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(45 0)"/>
+     <use xlink:href="#Jost-Regular-3" transform="translate(75 0)"/>
+     <use xlink:href="#Jost-Regular-2c" transform="translate(141 0)"/>
+    </g>
+   </g>
+   <g id="text_20">
+    <!-- moments of the state,  $\propto \ell_{\rm P}/x$ -->
+    <g style="fill: #f2b23e" transform="translate(108.71344 66.061365) rotate(-350.982824) scale(0.16 -0.16)">
+     <defs>
+      <path id="Jost-Regular-4c" d="M 256 2944 
+L 256 2464 
+L 1728 2464 
+L 1728 2944 
+L 256 2944 
+z
+M 1677 4378 
+L 1958 4800 
+Q 1914 4864 1834 4921 
+Q 1754 4979 1645 5017 
+Q 1536 5056 1395 5056 
+Q 1126 5056 937 4944 
+Q 749 4832 646 4608 
+Q 544 4384 544 4032 
+L 544 0 
+L 1056 0 
+L 1056 3968 
+Q 1056 4179 1094 4307 
+Q 1133 4435 1200 4489 
+Q 1267 4544 1363 4544 
+Q 1440 4544 1526 4515 
+Q 1613 4486 1677 4378 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-b3" d="M 947 704 
+L 384 -954 
+L 755 -1088 
+L 1459 512 
+L 947 704 
+z
+" transform="scale(0.015625)"/>
+      <path id="STIXGeneral-Regular-430" d="M 4115 538 
+L 4115 0 
+Q 3674 0 3360 224 
+Q 3046 448 2726 928 
+Q 2266 0 1389 0 
+Q 934 0 598 329 
+Q 262 659 262 1280 
+Q 262 1613 355 1881 
+Q 448 2150 585 2307 
+Q 723 2464 896 2569 
+Q 1069 2675 1213 2713 
+Q 1357 2752 1485 2752 
+Q 1869 2752 2160 2569 
+Q 2451 2387 2880 1811 
+Q 3142 2285 3408 2518 
+Q 3674 2752 4115 2752 
+L 4115 2214 
+Q 3725 2214 3443 2025 
+Q 3162 1837 3008 1568 
+L 3008 1549 
+Q 3328 1018 3581 778 
+Q 3834 538 4115 538 
+z
+M 2586 1158 
+L 2586 1178 
+Q 2221 1779 1910 2076 
+Q 1600 2374 1286 2374 
+Q 1018 2374 832 2147 
+Q 646 1920 646 1613 
+Q 646 1178 889 858 
+Q 1133 538 1536 538 
+Q 1734 538 1907 595 
+Q 2080 653 2214 765 
+Q 2349 877 2422 957 
+Q 2496 1037 2586 1158 
+z
+" transform="scale(0.015625)"/>
+      <path id="STIXGeneral-Italic-2d7" d="M 493 2490 
+L 582 2656 
+Q 813 2496 1184 2496 
+Q 1728 3296 2301 3846 
+Q 2874 4397 3245 4397 
+Q 3654 4397 3654 3968 
+Q 3654 3450 3036 2938 
+Q 2419 2426 1594 2304 
+Q 678 826 678 397 
+Q 678 122 909 122 
+Q 1120 122 1398 365 
+Q 1677 608 2182 1190 
+L 2317 1082 
+Q 1773 448 1462 189 
+Q 1152 -70 864 -70 
+Q 627 -70 467 74 
+Q 307 218 307 486 
+Q 307 1024 800 1882 
+Q 877 2022 1056 2304 
+Q 742 2317 493 2490 
+z
+M 1715 2534 
+L 1722 2528 
+Q 2470 2694 2966 3113 
+Q 3462 3533 3462 3994 
+Q 3462 4192 3238 4192 
+Q 3002 4192 2714 3891 
+Q 2342 3514 1715 2534 
+z
+" transform="scale(0.015625)"/>
+      <path id="STIXGeneral-Regular-a92" d="M 474 4237 
+L 1651 4237 
+Q 3277 4237 3277 3059 
+Q 3277 2502 2883 2163 
+Q 2490 1824 1798 1824 
+L 1030 1824 
+L 1030 0 
+L 474 0 
+L 474 4237 
+z
+M 1030 2298 
+L 1594 2298 
+Q 2189 2298 2451 2490 
+Q 2714 2682 2714 3066 
+Q 2714 3418 2442 3590 
+Q 2170 3763 1562 3763 
+L 1030 3763 
+L 1030 2298 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Jost-Regular-57"/>
+     <use xlink:href="#Jost-Regular-5a" transform="translate(77.999924 0)"/>
+     <use xlink:href="#Jost-Regular-57" transform="translate(132.599869 0)"/>
+     <use xlink:href="#Jost-Regular-47" transform="translate(210.599792 0)"/>
+     <use xlink:href="#Jost-Regular-58" transform="translate(262.099747 0)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(314.599701 0)"/>
+     <use xlink:href="#Jost-Regular-63" transform="translate(338.599686 0)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(378.899643 0)"/>
+     <use xlink:href="#Jost-Regular-5a" transform="translate(408.899612 0)"/>
+     <use xlink:href="#Jost-Regular-4c" transform="translate(463.499557 0)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(492.099533 0)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(522.099503 0)"/>
+     <use xlink:href="#Jost-Regular-4e" transform="translate(546.099487 0)"/>
+     <use xlink:href="#Jost-Regular-47" transform="translate(598.599442 0)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(650.099396 0)"/>
+     <use xlink:href="#Jost-Regular-63" transform="translate(680.099365 0)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(720.399323 0)"/>
+     <use xlink:href="#Jost-Regular-3c" transform="translate(744.399307 0)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(792.499268 0)"/>
+     <use xlink:href="#Jost-Regular-47" transform="translate(816.499252 0)"/>
+     <use xlink:href="#Jost-Regular-b3" transform="translate(867.999207 0)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(898.799179 0)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(928.799149 0)"/>
+     <use xlink:href="#STIXGeneral-Regular-430" transform="translate(978.799118 0)"/>
+     <use xlink:href="#STIXGeneral-Italic-2d7" transform="translate(1067.299057 0)"/>
+     <use xlink:href="#STIXGeneral-Regular-a92" transform="translate(1125.199005 -15) scale(0.7)"/>
+     <use xlink:href="#STIXGeneral-Regular-12" transform="translate(1164.198973 0)"/>
+     <use xlink:href="#STIXGeneral-Italic-3e8" transform="translate(1191.998946 0)"/>
+    </g>
+   </g>
+   <g id="text_21">
+    <!-- perturbative quantum gravity,  $\propto \ell_{\rm P}^{2}/x^{2}$ -->
+    <g style="fill: #c8673a" transform="translate(106.21765 164.552696) rotate(-342.39142) scale(0.16 -0.16)">
+     <defs>
+      <path id="Jost-Regular-60" d="M 960 -1408 
+L 960 2944 
+L 448 2944 
+L 448 -1408 
+L 960 -1408 
+z
+M 3424 1472 
+Q 3424 1952 3225 2294 
+Q 3027 2637 2697 2822 
+Q 2368 3008 1965 3008 
+Q 1600 3008 1321 2822 
+Q 1043 2637 886 2294 
+Q 730 1952 730 1472 
+Q 730 998 886 652 
+Q 1043 307 1321 121 
+Q 1600 -64 1965 -64 
+Q 2368 -64 2697 121 
+Q 3027 307 3225 652 
+Q 3424 998 3424 1472 
+z
+M 2906 1472 
+Q 2906 1133 2768 896 
+Q 2630 659 2403 537 
+Q 2176 416 1901 416 
+Q 1677 416 1459 537 
+Q 1242 659 1101 896 
+Q 960 1133 960 1472 
+Q 960 1811 1101 2048 
+Q 1242 2285 1459 2406 
+Q 1677 2528 1901 2528 
+Q 2176 2528 2403 2406 
+Q 2630 2285 2768 2048 
+Q 2906 1811 2906 1472 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-43" d="M 960 4992 
+L 448 4992 
+L 448 0 
+L 960 0 
+L 960 4992 
+z
+M 3424 1472 
+Q 3424 1952 3225 2294 
+Q 3027 2637 2697 2822 
+Q 2368 3008 1965 3008 
+Q 1600 3008 1321 2822 
+Q 1043 2637 886 2294 
+Q 730 1952 730 1472 
+Q 730 998 886 652 
+Q 1043 307 1321 121 
+Q 1600 -64 1965 -64 
+Q 2368 -64 2697 121 
+Q 3027 307 3225 652 
+Q 3424 998 3424 1472 
+z
+M 2906 1472 
+Q 2906 1133 2768 896 
+Q 2630 659 2403 537 
+Q 2176 416 1901 416 
+Q 1677 416 1459 537 
+Q 1242 659 1101 896 
+Q 960 1133 960 1472 
+Q 960 1811 1101 2048 
+Q 1242 2285 1459 2406 
+Q 1677 2528 1901 2528 
+Q 2176 2528 2403 2406 
+Q 2630 2285 2768 2048 
+Q 2906 1811 2906 1472 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-61" d="M 2688 -1408 
+L 3200 -1408 
+L 3200 2944 
+L 2688 2944 
+L 2688 -1408 
+z
+M 224 1472 
+Q 224 998 422 652 
+Q 621 307 953 121 
+Q 1286 -64 1683 -64 
+Q 2054 -64 2329 121 
+Q 2605 307 2761 652 
+Q 2918 998 2918 1472 
+Q 2918 1952 2761 2294 
+Q 2605 2637 2329 2822 
+Q 2054 3008 1683 3008 
+Q 1286 3008 953 2822 
+Q 621 2637 422 2294 
+Q 224 1952 224 1472 
+z
+M 742 1472 
+Q 742 1811 880 2048 
+Q 1018 2285 1248 2406 
+Q 1478 2528 1747 2528 
+Q 1971 2528 2188 2406 
+Q 2406 2285 2547 2048 
+Q 2688 1811 2688 1472 
+Q 2688 1133 2547 896 
+Q 2406 659 2188 537 
+Q 1971 416 1747 416 
+Q 1478 416 1248 537 
+Q 1018 659 880 896 
+Q 742 1133 742 1472 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-4d" d="M 282 -192 
+Q 282 -570 467 -861 
+Q 653 -1152 982 -1312 
+Q 1312 -1472 1741 -1472 
+Q 2112 -1472 2445 -1299 
+Q 2778 -1126 2989 -784 
+Q 3200 -442 3200 64 
+L 3200 2944 
+L 2688 2944 
+L 2688 64 
+Q 2688 -307 2544 -540 
+Q 2400 -774 2182 -883 
+Q 1965 -992 1741 -992 
+Q 1453 -992 1241 -880 
+Q 1030 -768 915 -585 
+Q 800 -403 800 -192 
+L 282 -192 
+z
+M 224 1472 
+Q 224 998 422 652 
+Q 621 307 953 121 
+Q 1286 -64 1683 -64 
+Q 2054 -64 2329 121 
+Q 2605 307 2761 652 
+Q 2918 998 2918 1472 
+Q 2918 1952 2761 2294 
+Q 2605 2637 2329 2822 
+Q 2054 3008 1683 3008 
+Q 1286 3008 953 2822 
+Q 621 2637 422 2294 
+Q 224 1952 224 1472 
+z
+M 742 1472 
+Q 742 1811 880 2048 
+Q 1018 2285 1248 2406 
+Q 1478 2528 1747 2528 
+Q 1914 2528 2080 2457 
+Q 2246 2387 2384 2252 
+Q 2522 2118 2605 1923 
+Q 2688 1728 2688 1472 
+Q 2688 1133 2547 896 
+Q 2406 659 2188 537 
+Q 1971 416 1747 416 
+Q 1478 416 1248 537 
+Q 1018 659 880 896 
+Q 742 1133 742 1472 
+z
+" transform="scale(0.015625)"/>
+      <path id="Jost-Regular-6d" d="M 2816 2944 
+L 2240 2944 
+L 1331 666 
+L 1542 640 
+L 608 2944 
+L 0 2944 
+L 1126 416 
+L 320 -1408 
+L 896 -1408 
+L 2816 2944 
+z
+" transform="scale(0.015625)"/>
+      <path id="STIXGeneral-Regular-cc1" d="M 3002 454 
+L 2816 0 
+L 224 0 
+L 224 134 
+L 1344 1504 
+L 1344 1498 
+L 1702 1933 
+Q 1952 2234 2054 2365 
+Q 2157 2496 2253 2685 
+Q 2349 2874 2349 3040 
+Q 2349 3437 2134 3654 
+Q 1920 3872 1549 3872 
+Q 1254 3872 1008 3629 
+Q 762 3386 698 2938 
+L 237 3046 
+Q 339 3616 716 3971 
+Q 1094 4326 1594 4326 
+Q 2150 4326 2502 3980 
+Q 2854 3635 2854 3142 
+Q 2854 2784 2720 2525 
+Q 2586 2266 2157 1728 
+L 1133 454 
+L 3002 454 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Jost-Regular-60" transform="translate(0 0.384375)"/>
+     <use xlink:href="#Jost-Regular-47" transform="translate(56.999939 0.384375)"/>
+     <use xlink:href="#Jost-Regular-62" transform="translate(108.499893 0.384375)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(142.799866 0.384375)"/>
+     <use xlink:href="#Jost-Regular-65" transform="translate(166.79985 0.384375)"/>
+     <use xlink:href="#Jost-Regular-62" transform="translate(219.299805 0.384375)"/>
+     <use xlink:href="#Jost-Regular-43" transform="translate(253.599777 0.384375)"/>
+     <use xlink:href="#Jost-Regular-3c" transform="translate(310.599716 0.384375)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(358.699677 0.384375)"/>
+     <use xlink:href="#Jost-Regular-4f" transform="translate(382.699661 0.384375)"/>
+     <use xlink:href="#Jost-Regular-6a" transform="translate(408.699631 0.384375)"/>
+     <use xlink:href="#Jost-Regular-47" transform="translate(452.699585 0.384375)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(504.199539 0.384375)"/>
+     <use xlink:href="#Jost-Regular-61" transform="translate(534.199509 0.384375)"/>
+     <use xlink:href="#Jost-Regular-65" transform="translate(591.199448 0.384375)"/>
+     <use xlink:href="#Jost-Regular-3c" transform="translate(643.699402 0.384375)"/>
+     <use xlink:href="#Jost-Regular-58" transform="translate(691.799362 0.384375)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(744.299316 0.384375)"/>
+     <use xlink:href="#Jost-Regular-65" transform="translate(768.299301 0.384375)"/>
+     <use xlink:href="#Jost-Regular-57" transform="translate(820.799255 0.384375)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(898.799179 0.384375)"/>
+     <use xlink:href="#Jost-Regular-4d" transform="translate(928.799149 0.384375)"/>
+     <use xlink:href="#Jost-Regular-62" transform="translate(985.799088 0.384375)"/>
+     <use xlink:href="#Jost-Regular-3c" transform="translate(1020.09906 0.384375)"/>
+     <use xlink:href="#Jost-Regular-6a" transform="translate(1068.19902 0.384375)"/>
+     <use xlink:href="#Jost-Regular-4f" transform="translate(1112.198975 0.384375)"/>
+     <use xlink:href="#Jost-Regular-64" transform="translate(1138.198944 0.384375)"/>
+     <use xlink:href="#Jost-Regular-6d" transform="translate(1162.198929 0.384375)"/>
+     <use xlink:href="#Jost-Regular-b3" transform="translate(1206.198883 0.384375)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(1236.998856 0.384375)"/>
+     <use xlink:href="#Jost-Regular-1" transform="translate(1266.998825 0.384375)"/>
+     <use xlink:href="#STIXGeneral-Regular-430" transform="translate(1316.998795 0.384375)"/>
+     <use xlink:href="#STIXGeneral-Italic-2d7" transform="translate(1405.498734 0.384375)"/>
+     <use xlink:href="#STIXGeneral-Regular-cc1" transform="translate(1482.803994 41.684375) scale(0.7)"/>
+     <use xlink:href="#STIXGeneral-Regular-a92" transform="translate(1463.398682 -30.515625) scale(0.7)"/>
+     <use xlink:href="#STIXGeneral-Regular-12" transform="translate(1520.053962 0.384375)"/>
+     <use xlink:href="#STIXGeneral-Italic-3e8" transform="translate(1547.853935 0.384375)"/>
+     <use xlink:href="#STIXGeneral-Regular-cc1" transform="translate(1605.628573 41.684375) scale(0.7)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4db95ae5cd">
+   <rect x="89.34" y="17.28" width="397.02" height="238.9"/>
+  </clipPath>
+ </defs>
+</svg>

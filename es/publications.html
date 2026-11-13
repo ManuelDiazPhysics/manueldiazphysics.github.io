@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../publications.html">
+  <link rel="alternate" hreflang="es-MX" href="publications.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicaciones | Manuel Díaz</title>
+  <meta name="description" content="Manuel Díaz estudia la naturaleza del espaciotiempo a través de los agujeros negros y la cosmología. Candidato al doctorado en física en la University of Massachusetts Amherst.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+
+    /* Hero */
+    .hero { position: relative; isolation: isolate; background: var(--night); }
+    .hero__art { position: relative; height: clamp(26rem, calc(100vh - 11rem), 62rem); height: clamp(26rem, calc(100svh - 11rem), 62rem); overflow: hidden; }
+    .hero__art picture, .hero__art img { display: block; width: 100%; height: 100%; }
+    .hero__art img { object-fit: cover; object-position: 58% 15%; }
+    .hero__art::after {
+      content: ""; position: absolute; inset: auto 0 0 0; height: 38%;
+      background: linear-gradient(to bottom, rgba(7, 42, 55, 0) 0%, rgba(7, 42, 55, 0.55) 55%, var(--night) 100%);
+      pointer-events: none;
+    }
+    .ripples { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .ripples circle { fill: none; stroke: var(--lamplight); stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; animation: ripple 9s cubic-bezier(.2, .6, .35, 1) infinite; }
+    .ripples circle:nth-child(2) { animation-delay: 3s; }
+    .ripples circle:nth-child(3) { animation-delay: 6s; }
+    /* The binary turns clockwise, the sense in which its spiral arms trail */
+    .binary {
+      position: absolute; left: 0; top: 0; width: 0; height: 0; border-radius: 50%; pointer-events: none;
+      background-repeat: no-repeat; will-change: transform;
+      -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+      mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+      animation: orbit 40s linear infinite;
+    }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 0; }
+      12% { opacity: 0.3; }
+      100% { transform: scale(7.5); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .ripples, .binary { display: none; } }
+
+    .topbar {
+      position: absolute; inset: 0 0 auto 0; z-index: 2;
+      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+
+    .hero__text {
+      position: absolute; z-index: 2; left: var(--edge); top: clamp(5rem, 11vh, 7.5rem);
+      max-width: 46rem;
+    }
+    .hero h1 {
+      font: 500 clamp(3.4rem, 6.2vw, 6rem)/0.95 var(--display); white-space: nowrap;
+      letter-spacing: -0.012em; color: var(--starlight);
+      text-shadow: 0 2px 24px rgba(0, 32, 45, 0.55);
+    }
+    .hero__lede { margin-top: 1.1rem; max-width: 30rem; font: 400 italic clamp(1.35rem, 2.1vw, 1.75rem)/1.3 var(--display); color: var(--starlight); text-shadow: 0 1px 14px rgba(0, 32, 45, 0.7); }
+    .intro-band { position: relative; z-index: 2; margin-top: -1rem; padding-bottom: clamp(1.75rem, 3vw, 2.75rem); }
+    .intro-band + main > .section:first-child { padding-top: clamp(2rem, 4vw, 3.25rem); }
+    .intro-band .wrap { display: grid; grid-template-columns: minmax(0, 40rem) auto; gap: 1.5rem 3rem; align-items: end; justify-content: space-between; }
+    .hero__meta { font-size: 1.05rem; line-height: 1.65; color: var(--mist); }
+    .hero__meta strong { font-weight: 500; color: var(--starlight); }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.4rem; align-items: center; }
+    .button {
+      display: inline-block; padding: 0.62rem 1.15rem 0.66rem; border-radius: 999px;
+      background: var(--lamplight); color: var(--night-deep); font-weight: 500; text-decoration: none; line-height: 1.2;
+    }
+    .button:hover { background: var(--starlight); color: var(--night-deep); }
+
+    /* Page sections */
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+    .section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+    .section + .section { border-top: 1px solid var(--rule); }
+    h2 { font: 500 clamp(2.4rem, 4.6vw, 3.4rem)/1.05 var(--display); letter-spacing: -0.01em; }
+    h3 { font: 600 clamp(1.45rem, 2.2vw, 1.7rem)/1.2 var(--display); }
+    .section__intro { margin-top: 1.4rem; max-width: var(--measure); color: var(--starlight); font-size: 1.12rem; }
+
+    .themes { margin-top: clamp(2.5rem, 5vw, 3.75rem); }
+    .theme {
+      display: grid; grid-template-columns: minmax(13rem, 18rem) minmax(0, var(--measure)); gap: 0.9rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.1rem; border-top: 1px solid var(--rule);
+    }
+    .theme h3 { color: var(--starlight); }
+    .theme__who { margin-top: 0.55rem; font-size: 0.9rem; color: var(--mist); line-height: 1.5; }
+    .theme__body p + p { margin-top: 0.9rem; }
+    .theme__next { color: var(--mist); }
+    .theme__figure { margin-top: 1.6rem; max-width: 30rem; }
+    .theme__figure .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; border-radius: 1.3rem; }
+    .theme__figure img { display: block; width: 100%; height: auto; }
+    .theme__figure img[hidden] { display: none; }
+    .theme__figure figcaption { margin-top: 0.7rem; font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .theme__papers { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; font-size: 0.93rem; }
+    .theme__body .theme__more { margin-top: 1rem; font-size: 0.95rem; }
+
+    /* Bounce benchmark */
+    .bench { background: var(--night-deep); }
+    .bench__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-top: 2rem; }
+    .bench__text p + p { margin-top: 0.9rem; }
+    .bench__note { margin-top: 1.4rem; font-size: 0.88rem; color: var(--mist); }
+    .bench__circuits { margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); max-width: var(--measure); }
+    .bench__circuits p + p { margin-top: 0.9rem; }
+    .controls { margin-top: 1.6rem; display: grid; gap: 1.1rem; }
+    .control-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; color: var(--mist); }
+    .control-label output { font: 600 1.6rem/1 var(--display); color: var(--starlight); }
+    input[type="range"] { width: 100%; accent-color: var(--brick); }
+    .switch { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .readout { margin-top: 0.4rem; font-size: 1rem; line-height: 1.6; min-height: 3.2em; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { width: 100%; height: auto; display: block; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .register { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.08); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-register::before { border-top: 2.2px dashed var(--brick); }
+
+    /* Publications */
+    .pubs { margin-top: 2.2rem; }
+    .pub { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.2rem 1.5rem; padding-block: 1.35rem; border-top: 1px solid var(--rule); }
+    .pub__year { font: 500 1.25rem/1.4 var(--display); color: var(--lamplight); }
+    .pub h3 { font-size: clamp(1.3rem, 2vw, 1.55rem); font-weight: 500; }
+    .pub__authors, .pub__venue { font-size: 0.95rem; color: var(--mist); }
+    .pub__authors .me { color: var(--starlight); }
+    .pub__links { margin-top: 0.35rem; display: flex; gap: 1.2rem; font-size: 0.93rem; }
+
+    /* Talks, teaching and mentoring */
+    .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 5rem); margin-top: 2.2rem; }
+    .entries li { padding-block: 0.95rem; border-top: 1px solid var(--rule); }
+    .entries .when { display: block; font-size: 0.85rem; color: var(--lamplight); }
+    .entries .what { display: block; color: var(--starlight); }
+    .entries .where { display: block; font-size: 0.93rem; color: var(--mist); }
+    .talk-title { font: 500 1.28rem/1.3 var(--display); }
+
+    /* Contact */
+    .contact { background: var(--night-deep); }
+    .contact__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem clamp(2rem, 6vw, 5rem); margin-top: 1.8rem; align-items: start; }
+    .contact address { font-style: normal; color: var(--mist); }
+    .contact__links { display: grid; gap: 0.45rem; }
+    .colophon { margin-top: 3rem; font-size: 0.85rem; color: var(--mist); }
+
+    @media (max-width: 62rem) {
+      .bench__grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 48rem) {
+      .hero__art { height: auto; aspect-ratio: 3 / 2; }
+      .hero__art::after { height: 22%; }
+      .topbar { position: static; background: var(--night); padding-block: 1rem; }
+      .hero__text { position: static; max-width: none; padding: 0.6rem 1rem 0.5rem; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 4.2rem); white-space: normal; }
+      .intro-band { margin-top: 0; padding-top: 1rem; }
+      .intro-band .wrap { grid-template-columns: 1fr; }
+      .theme { grid-template-columns: 1fr; }
+      .two, .contact__grid { grid-template-columns: 1fr; }
+      .pub { grid-template-columns: 1fr; }
+    }
+
+    .nowrap { white-space: nowrap; }
+    /* Pages other than the home page */
+    .topbar--page { position: static; border-bottom: 1px solid var(--rule); }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+    .page-title { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+
+    /* Home: research list */
+    .glance { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(2rem, 5vw, 4rem); }
+    .glance li { padding-block: 1.1rem 1.2rem; border-top: 1px solid var(--rule); }
+    .glance__title { font: 600 1.45rem/1.2 var(--display); color: var(--starlight); text-decoration: none; }
+    .glance__title:hover { color: var(--lamplight); text-decoration: underline; }
+    .glance__who { display: block; margin-top: 0.3rem; font-size: 0.88rem; color: var(--mist); }
+    .glance__line { display: block; margin-top: 0.35rem; font-size: 0.98rem; color: var(--starlight); }
+
+    /* Talks and conferences */
+    .list-title { margin-top: clamp(2.2rem, 4vw, 3rem); font: 600 1.55rem/1.2 var(--display); color: var(--starlight); }
+    .list-title + .two { margin-top: 0.8rem; }
+
+    /* Figures of the research themes */
+    .theme__figure picture { display: block; }
+    .theme__band { grid-column: 1 / -1; }
+    .theme__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; margin-top: 0.4rem; }
+    .theme__pair .theme__figure { margin-top: 0; max-width: none; }
+    .theme__figure--wide { max-width: none; }
+    .enthalpy__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+    .enthalpy__row img { display: block; width: 100%; height: auto; }
+
+    /* The bounce on a quantum register, inside the quantum simulation theme */
+    .bench-band { background: var(--night-deep); border-radius: 0.6rem; padding: clamp(1.25rem, 3.5vw, 2.4rem); margin-top: 0.6rem; scroll-margin-top: 1rem; }
+    .bench__title { margin: 0; font: 600 1.55rem/1.2 var(--display); color: var(--starlight); }
+    .bench-band .bench__grid { margin-top: 1.2rem; }
+    .lattice { display: block; width: 100%; max-width: 24rem; height: auto; margin-top: 1.5rem; }
+    .lattice .coupler { stroke: rgba(159, 183, 188, 0.2); stroke-width: 2; }
+    .lattice .coupler.on { stroke: rgba(242, 178, 62, 0.55); }
+    .lattice .site { fill: var(--night-deep); stroke: rgba(159, 183, 188, 0.5); stroke-width: 1.2; }
+    .lattice .site.on { fill: var(--lamplight); stroke: var(--lamplight); }
+    .lattice .ladder { fill: none; stroke: rgba(236, 229, 211, 0.45); stroke-width: 1; }
+    .lattice .lvl { stroke: rgba(236, 229, 211, 0.22); stroke-width: 0.7; }
+    .lattice .state { fill: var(--lamplight); }
+    .lattice text { fill: var(--mist); font: 400 12px var(--text); }
+    .lattice .count { fill: var(--starlight); font: 600 15px var(--text); }
+    .lattice__caption { margin-top: 0.6rem; font-size: 0.88rem; line-height: 1.55; color: var(--mist); max-width: 24rem; }
+    .chart .ceiling { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 7 5; opacity: 0.6; }
+    .chart .ceiling-label { fill: var(--starlight); font-size: 11px; opacity: 0.8; }
+    .legend .leg-top::before { border-top: 1px dashed var(--starlight); }
+    .chart .moments2 { fill: none; stroke: var(--starlight); stroke-width: 4.6; stroke-linecap: round; stroke-dasharray: 0 11; }
+    .legend .leg-moments2::before { border-top: 4px dotted var(--starlight); }
+    @media (max-width: 48rem) {
+      .glance { grid-template-columns: 1fr; }
+      .theme__pair { grid-template-columns: 1fr; }
+    }
+
+    /* Two cutoffs, one after the other: the bounce on registers of qubits, then the order of the moments.
+       Each dial has its text and controls on the left and its charts on the right. */
+    .bench__intro { margin-top: 0.8rem; max-width: var(--measure); }
+    .bench-band .dial { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 1.2rem clamp(2rem, 4vw, 3.5rem); align-items: start; margin-top: 2.2rem; padding-top: 2rem; border-top: 1px solid var(--rule); scroll-margin-top: 1.2rem; }
+    .dial, .dial__text, .dial__figs { min-width: 0; }
+    .dial .chart text { font-size: 17px; }
+    .dial .chart .ceiling-label { font-size: 15px; }
+    .dial__title { margin: 0 0 0.8rem; font: 500 1.35rem/1.25 var(--display); color: var(--starlight); }
+    .dial__text > p + p { margin-top: 0.9rem; }
+    .dial figure { margin-top: 1.2rem; }
+    .dial__figs > figure:first-child { margin-top: 0; }
+    .dial .lattice__caption { max-width: none; }
+    .dial > .bench__note { grid-column: 1 / -1; margin-top: 0.2rem; max-width: var(--measure); }
+    .dial__time { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.9rem; align-items: center; }
+    .dial__play {
+      font: inherit; font-size: 0.92rem; color: var(--starlight); background: var(--tide); border: 1px solid var(--rule);
+      border-radius: 999px; padding: 0.32rem 0.95rem; min-width: 4.8rem; cursor: pointer;
+    }
+    .chart .density { fill: rgba(242, 178, 62, 0.26); stroke: var(--lamplight); stroke-width: 1.6; }
+    .chart .potential { fill: none; stroke: var(--mist); stroke-width: 1.2; opacity: 0.3; }
+    .chart .barrier { stroke: var(--starlight); stroke-width: 1.2; stroke-dasharray: 2 4; opacity: 0.6; }
+    .chart .now { stroke: var(--starlight); stroke-width: 1; opacity: 0.35; }
+    .chart .dot-exact { fill: var(--lamplight); }
+    .chart .dot-order { fill: var(--brick); }
+    .legend .leg-density::before { width: 1.2rem; height: 0.7rem; border: 1.6px solid var(--lamplight); background: rgba(242, 178, 62, 0.26); }
+    .legend .leg-barrier::before { border-top: 1.5px dotted var(--starlight); }
+    @media (max-width: 62rem) { .bench-band .dial { grid-template-columns: 1fr; } }
+
+    /* The bounce followed two ways: a static figure under the two cutoffs */
+    .bench-band, .twoways { min-width: 0; }
+    .twoways { margin-top: 1.6rem; }
+    /* on a phone the two panels keep their order, mean on the left, and the figure scrolls sideways */
+    .twoways__scroll { overflow-x: auto; }
+    .twoways__scroll .chart { min-width: 46rem; }
+    .twoways .chart text { font-size: 15px; }
+    .twoways__exact { fill: none; stroke: var(--lamplight); stroke-width: 7; stroke-opacity: 0.32; stroke-linecap: round; stroke-linejoin: round; }
+    .twoways__reg { fill: none; stroke: var(--brick); stroke-width: 1.8; stroke-linejoin: round; }
+    .twoways__reg--5, .twoways__dep--5 { stroke-opacity: 0.45; fill-opacity: 0.45; }
+    .twoways__reg--6, .twoways__dep--6 { stroke-opacity: 0.62; fill-opacity: 0.62; }
+    .twoways__reg--7, .twoways__dep--7 { stroke-opacity: 0.8; fill-opacity: 0.8; }
+    .twoways__dep { fill: var(--brick); stroke: var(--night-deep); stroke-width: 1.5; }
+    .chart .twoways__mom { stroke-width: 3.6; stroke-dasharray: 0 9; }
+    .chart .twoways__label { fill: var(--brick); font-size: 14px; }
+    .legend .leg-band::before { border-top: 7px solid rgba(242, 178, 62, 0.32); }
+    .legend .leg-regs::before { border-top: 1.8px solid var(--brick); }
+    .twoways__caption { margin-top: 0.6rem; font-size: 0.9rem; line-height: 1.55; color: var(--mist); max-width: var(--measure); }
+    .bench__closing { margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); max-width: var(--measure); }
+
+    /* Manuscripts in preparation, under the published papers */
+    .list-title + .pubs { margin-top: 0.8rem; }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar topbar--page">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+        <a href="research.html">Investigación</a>
+        <a href="publications.html" aria-current="page">Publicaciones</a>
+        <a href="talks.html">Pláticas y conferencias</a>
+        <a href="teaching.html">Enseñanza y mentoría</a>
+        <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../publications.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="section" id="publications" aria-labelledby="pubs-h">
+      <div class="wrap">
+        <h1 class="page-title" id="pubs-h">Publicaciones</h1>
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub__year">2026</span>
+            <div>
+              <h3>Perturbative emergent modified gravity on cosmological backgrounds: Kinematics</h3>
+              <p class="pub__authors">M. Bojowald, <span class="me">M. Díaz</span> y E. I. Duque</p>
+              <p class="pub__venue"><i>Physical Review D</i> 113, 084061</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/2507.14358" target="_blank" rel="noopener">arXiv:2507.14358</a><a href="https://doi.org/10.1103/jwr9-48vn" target="_blank" rel="noopener">Revista</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2026</span>
+            <div>
+              <h3>Singularities in loop quantum cosmology</h3>
+              <p class="pub__authors">M. Bojowald, <span class="me">M. Díaz</span> y E. I. Duque</p>
+              <p class="pub__venue"><i>Physical Review D</i> 113, 084060</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/2507.08116" target="_blank" rel="noopener">arXiv:2507.08116</a><a href="https://doi.org/10.1103/7g3z-2pgf" target="_blank" rel="noopener">Revista</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2025</span>
+            <div>
+              <h3>Spacetime superpositions as fluctuating geometries</h3>
+              <p class="pub__authors">K. Berglund, M. Bojowald, A. Colter y <span class="me">M. Díaz</span></p>
+              <p class="pub__venue"><i>Physical Review D</i> 111, 044021</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/2405.20193" target="_blank" rel="noopener">arXiv:2405.20193</a><a href="https://doi.org/10.1103/PhysRevD.111.044021" target="_blank" rel="noopener">Revista</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2024</span>
+            <div>
+              <h3>Quasiclassical solutions for static quantum black holes</h3>
+              <p class="pub__authors">K. Berglund, M. Bojowald, <span class="me">M. Díaz</span> y G. Sims</p>
+              <p class="pub__venue"><i>Physical Review D</i> 109, 024006</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/2012.07649" target="_blank" rel="noopener">arXiv:2012.07649</a><a href="https://doi.org/10.1103/PhysRevD.109.024006" target="_blank" rel="noopener">Revista</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2018</span>
+            <div>
+              <h3>The Betelgeuse Project II: Asteroseismology</h3>
+              <p class="pub__authors">S. Nance, J. M. Sullivan, <span class="me">M. Díaz</span> y J. C. Wheeler</p>
+              <p class="pub__venue"><i>Monthly Notices of the Royal Astronomical Society</i> 479, 251–261</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/1805.10347" target="_blank" rel="noopener">arXiv:1805.10347</a><a href="https://doi.org/10.1093/mnras/sty1418" target="_blank" rel="noopener">Revista</a></p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2017</span>
+            <div>
+              <h3>The Betelgeuse Project: Constraints from Rotation</h3>
+              <p class="pub__authors">J. C. Wheeler, S. Nance, <span class="me">M. Díaz</span>, S. G. Smith, J. Hickey, L. Zhou, M. Koutoulaki, J. M. Sullivan y J. M. Fowler</p>
+              <p class="pub__venue"><i>Monthly Notices of the Royal Astronomical Society</i> 465, 2654–2661</p>
+              <p class="pub__links"><a href="https://arxiv.org/abs/1611.08031" target="_blank" rel="noopener">arXiv:1611.08031</a><a href="https://doi.org/10.1093/mnras/stw2893" target="_blank" rel="noopener">Revista</a></p>
+            </div>
+          </li>
+        </ol>
+        <p class="section__intro" style="font-size:0.98rem;color:var(--mist)">Todos los artículos también están en mi <a href="https://arxiv.org/a/dlaz_m_1" target="_blank" rel="noopener">página de autor en arXiv</a>.</p>
+        <h2 class="list-title" id="preparation-h">Manuscritos en preparación</h2>
+        <ol class="pubs">
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Black Hole Enthalpy and Membrane Ergospheres with a Varying Einstein Coupling</h3>
+              <p class="pub__authors"><span class="me">M. Díaz</span> y D. Kastor</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Membrane Ergospheres and Mining Energy from Born–Infeld Black Holes</h3>
+              <p class="pub__authors"><span class="me">M. Díaz</span>, D. Herrera, D. Kastor y B. Schmidt</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Effects of Black Holes on Inflation</h3>
+              <p class="pub__authors">S. Corbà, <span class="me">M. Díaz</span> y J. Traschen</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Perturbative emergent modified gravity on cosmological backgrounds: Tensor-Vector-Scalar modes</h3>
+              <p class="pub__authors">M. Bojowald, <span class="me">M. Díaz</span> y E. I. Duque</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Strictly non-singular perturbative quantum cosmology</h3>
+              <p class="pub__authors">M. Bojowald, <span class="me">M. Díaz</span> y E. I. Duque</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Scalar power spectrum in bouncing cosmologies</h3>
+              <p class="pub__authors">M. Bojowald, <span class="me">M. Díaz</span>, E. I. Duque y S. Murk</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year"></span>
+            <div>
+              <h3>Emergent modified gravity: Dynamical dark energy without additional degrees of freedom</h3>
+              <p class="pub__authors">M. Bojowald, <span class="me">M. Díaz</span>, E. I. Duque y Ö. Güleryüz</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Contacto</h2>
+      <div class="contact__grid">
+        <address>
+          <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a><br>
+          426 Lederle Graduate Research Tower<br>
+          University of Massachusetts Amherst<br>
+          Amherst, MA 01003
+        </address>
+        <div class="contact__links">
+          <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">Currículum (PDF en inglés)</a>
+          <a href="https://arxiv.org/a/dlaz_m_1" target="_blank" rel="noopener">página de autor en arXiv</a>
+          <a href="https://orcid.org/0009-0006-2513-1076" target="_blank" rel="noopener">ORCID 0009-0006-2513-1076</a>
+          <a href="https://www.umass.edu/physics/about/directory/manuel-diaz" target="_blank" rel="noopener">Directorio de física de UMass Amherst</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

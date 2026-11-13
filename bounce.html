@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="bounce.html">
+  <link rel="alternate" hreflang="es-MX" href="es/bounce.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Before the bounce | Manuel Díaz</title>
+  <meta name="description" content="The bounce of loop quantum cosmology and the singularity that a consistent spacetime geometry puts before it.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+    /* Moments example */
+    .lab { margin-block: 2.1rem; padding: 1.6rem clamp(1rem, 3vw, 1.8rem) 1.4rem; background: var(--night-deep); border-radius: 0.6rem; }
+    .lab__controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; }
+    .control-label { display: block; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--mist); }
+    .readout { margin-top: 1.1rem; min-height: 3.3em; font-size: 1rem; line-height: 1.6; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { display: block; width: 100%; height: auto; margin-top: 0.6rem; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .moments { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .classical { fill: none; stroke: var(--mist); stroke-width: 1.4; stroke-dasharray: 1.5 3; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.09); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-moments::before { border-top: 2.2px dashed var(--brick); }
+    .legend .leg-classical::before { border-top: 1.6px dotted var(--mist); }
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Pages">
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks and conferences</a>
+      <a href="teaching.html">Teaching and mentoring</a>
+      <a href="Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="es/bounce.html" hreflang="es-MX" lang="es-MX">Español</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Before the bounce</h1>
+      <p class="lede">Loop quantum cosmology replaces the big bang with a bounce. Derived consistently, its spacetime geometry puts a singularity of a different kind before it.</p>
+      <p class="who">With Martin Bojowald and Erick Duque. <i>Physical Review D</i> 113, 084060 (2026).</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="On this page">
+        <ol>
+          <li><a href="#geometry">Which geometry?</a></li>
+          <li><a href="#rip">A bounce at an eighth of the Planck density</a></li>
+          <li><a href="#after">After the bounce</a></li>
+          <li><a href="#regular">A model without the rip</a></li>
+          <li><a href="#papers">Papers</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="geometry">Which geometry?</h2>
+        <p>In loop quantum cosmology, quantum geometry modifies the expansion of a homogeneous universe at high density. Followed back in time, the volume of space does not shrink to zero: it reaches a minimum and grows again, so a bounce takes the place of the big bang. This picture comes from the equations for the phase space variables. It is natural to ask whether it survives once one asks which spacetime geometry these variables describe.</p>
+        <p>In general relativity, the constraints answer this question themselves. The bracket of two Hamiltonian constraints has the inverse spatial metric as its structure function, so the algebra of the constraints knows which metric is the physical one. When quantum effects modify the Hamiltonian constraint, the structure function changes with it, and in emergent modified gravity it defines the spatial metric of an emergent spacetime. Covariance then requires a condition beyond the closure of the algebra. Martin Bojowald, Erick Duque and I extended these conditions to perturbations around cosmological backgrounds and applied them to the existing models of loop quantum cosmology. We found that these models are either not covariant or, once their emergent metric is used, keep a physical singularity, even though the scale factor never reaches zero.</p>
+
+        <h2 id="rip">A bounce at an eighth of the Planck density</h2>
+        <p>The singular case arises for the anomaly-free model of scalar perturbations with holonomy corrections of Cailleteau, Mielczarek, Barrau and Grain. Its equations are consistent as a gauge theory, but the spacetime metric used with them so far left out a factor that covariance requires. With that factor, the emergent line element implies a new effective Friedmann equation. For a universe filled with a free massless scalar, one finds that the emergent scale factor reaches a nonzero minimum when the density parameter ρ̄ equals ρ<sub>Q</sub>/8. Here ρ<sub>Q</sub> = 3/(8π<i>G</i>Δ) is the Planckian density at which the traditional bounce of loop quantum cosmology occurs, and Δ is the constant area that sets the scale of the holonomy corrections.</p>
+        <p>Going further into the past, the scale factor grows without bound, and the Ricci scalar diverges a finite proper time before the bounce. The universe therefore begins at a singularity at infinite scale factor, which resembles a ‘time-reversed big rip’.</p>
+        <figure class="fig fig--s">
+          <img src="figures/bounce_density.svg" width="341" height="222" alt="Plot of the emergent energy density against the density parameter, both in units of the Planck density. The curve rises from zero, peaks just below 0.1 near a density parameter of 0.2, and returns to zero at 0.5.">
+          <figcaption>Emergent energy density ρ̃ against the density parameter ρ̄, both in units of ρ<sub>Q</sub>. The rip is at ρ̄ = ρ<sub>Q</sub>/2, where ρ̃ vanishes because the volume is infinite, and the bounce is at ρ̄ = ρ<sub>Q</sub>/8. In between, during the collapse, ρ̃ reaches its largest value, below a tenth of ρ<sub>Q</sub>.</figcaption>
+        </figure>
+        <p>The density parameter is not the energy density that matter has in this spacetime. Dividing the energy of the scalar field by the emergent volume gives the emergent energy density</p>
+        <p class="eq">ρ̃ = ρ̄ (1 − 2ρ̄/ρ<sub>Q</sub>)<sup>3/2</sup> ,</p>
+        <p>which vanishes at the rip. In this sense the singularity is tamer than a standard big rip: the curvature diverges, but the energy density goes to zero. The largest energy density, reached during the collapse, stays below a tenth of ρ<sub>Q</sub>.</p>
+
+        <h2 id="after">After the bounce</h2>
+        <div class="fig-pair">
+          <figure class="fig">
+            <img src="figures/bounce_hubble_density.svg" width="341" height="300" alt="Plot of the rescaled emergent Hubble parameter against the density parameter from 0 to 0.2. It rises steeply from zero, peaks near 0.05, crosses zero at 0.125 and becomes negative.">
+            <figcaption>Emergent Hubble parameter ℋ̃, in units of 1/√Δ, against ρ̄/ρ<sub>Q</sub>. It vanishes at the bounce, ρ̄ = ρ<sub>Q</sub>/8, and is negative in the collapse before it.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="figures/bounce_hubble_time.svg" width="341" height="324" alt="Plot of the rescaled emergent Hubble parameter against the time coordinate from 0 to 0.5. It rises from zero to a maximum near 0.22, crosses zero near 0.36 and falls steeply.">
+            <figcaption>The same Hubble parameter against the time coordinate √Δ <i>T</i><sub>K</sub>, which runs toward the future as it decreases: the classical expanding universe is at <i>T</i><sub>K</sub> → 0, the bounce at √Δ <i>T</i><sub>K</sub> ≈ 0.36, and the rip at π/4, beyond the right edge.</figcaption>
+          </figure>
+        </div>
+        <p>After the bounce, the emergent Hubble parameter rises quickly from zero to a maximum at ρ̄ ≈ 0.046 ρ<sub>Q</sub>, <i>i.e.</i> at √Δ <i>T</i><sub>K</sub> ≈ 0.22, and then decays toward the classical expansion of a universe filled with a free massless scalar.</p>
+        <figure class="fig fig--s">
+          <img src="figures/bounce_hubble_radius.svg" width="341" height="345" alt="Plot of the rescaled comoving Hubble radius against the time coordinate from 0 to 0.35. It falls steeply from large values, reaches a minimum near 3.9 at about 0.20, and rises steeply again.">
+          <figcaption>Comoving Hubble radius after the bounce, in the rescaled form Δ<sup>1/3</sup>/(<i>ã</i> ℋ̃). Its minimum, at √Δ <i>T</i><sub>K</sub> ≈ 0.20 or ρ̄ ≈ 0.038 ρ<sub>Q</sub>, is close to the maximum of the Hubble parameter.</figcaption>
+        </figure>
+        <p>While the comoving Hubble radius shrinks, the expansion accelerates, as it does during inflation. Here this lasts only from the bounce to the minimum of the radius. Throughout this phase the energy density stays more than an order of magnitude below ρ<sub>Q</sub>, closer to the scales of inflationary models than the traditional bounce of loop quantum cosmology, and it seems reasonable to expect the continuum geometry of emergent modified gravity to be a good approximation there.</p>
+
+        <h2 id="regular">A model without the rip</h2>
+        <p>The same framework allows covariant models without these singularities, and the paper gives one. A different choice of the modification functions in the perturbed constraint leaves the background dynamics unchanged but makes the inverse background metric take its classical form. The line element is then regular, its Ricci scalar is finite everywhere, and the bounce happens where the traditional one does, at ρ<sub>Q</sub>. The price is that some coefficients in the equations for perturbations diverge near the bounce, so following perturbations through it is a challenge.</p>
+        <p>I have since found a bouncing model that is covariant and strictly free of singularities without new degrees of freedom, so that perturbations can be followed through the bounce. A paper is in preparation. I am also working on the scalar power spectrum in bouncing cosmologies.</p>
+
+        <h2 id="papers">Papers</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Singularities in loop quantum cosmology</span><span class="ref-meta">M. Bojowald, M. Díaz and E. I. Duque, <i>Physical Review D</i> 113, 084060 (2026)</span><span class="ref-links"><a href="https://arxiv.org/abs/2507.08116" target="_blank" rel="noopener">arXiv:2507.08116</a><a href="https://doi.org/10.1103/7g3z-2pgf" target="_blank" rel="noopener">Journal</a></span></li>
+          <li><span class="ref-title">Perturbative emergent modified gravity on cosmological backgrounds: Kinematics</span><span class="ref-meta">M. Bojowald, M. Díaz and E. I. Duque, <i>Physical Review D</i> 113, 084061 (2026)</span><span class="ref-links"><a href="https://arxiv.org/abs/2507.14358" target="_blank" rel="noopener">arXiv:2507.14358</a><a href="https://doi.org/10.1103/jwr9-48vn" target="_blank" rel="noopener">Journal</a></span></li>
+          <li><span class="ref-title">Anomaly-free scalar perturbations with holonomy corrections in loop quantum cosmology</span><span class="ref-meta">T. Cailleteau, J. Mielczarek, A. Barrau and J. Grain, <i>Classical and Quantum Gravity</i> 29, 095010 (2012)</span><span class="ref-links"><a href="https://arxiv.org/abs/1111.3535" target="_blank" rel="noopener">arXiv:1111.3535</a></span></li>
+        </ol>
+        <p class="note">Figures adapted from M. Bojowald, M. Díaz and E. I. Duque, <i>Physical Review D</i> 113, 084060 (2026).</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">All research</a><a href="index.html">Home</a></p>
+    </div>
+  </footer>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

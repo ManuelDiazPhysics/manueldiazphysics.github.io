@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../superposition.html">
+  <link rel="alternate" hreflang="es-MX" href="superposicion.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Superposiciones de espaciotiempos | Manuel Díaz</title>
+  <meta name="description" content="Dónde puede estar el horizonte de un agujero negro cuando su masa está en superposición: un horizonte para cada masa, la distribución de radios del horizonte y cómo se dibuja en un solo diagrama de Penrose.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+
+    /* Horizon radii on the mean mass diagram */
+    .page-body > .article { min-width: 0; }
+    .nowrap { white-space: nowrap; }
+    .overlay { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr); gap: 1rem 1.6rem; align-items: center; }
+    .overlay picture, .overlay img { display: block; width: 100%; height: auto; }
+    .radii { display: flex; flex-wrap: wrap; gap: 0.45rem 1.6rem; margin-top: 1.1rem; font-size: 0.9rem; line-height: 1.5; color: var(--mist); }
+    .radii > span { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .radii svg { flex: none; width: 1.9rem; height: 0.5rem; }
+    @media (max-width: 40rem) {
+      .overlay { grid-template-columns: 1fr; }
+      .overlay__density { max-width: 17rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+      <a href="research.html" aria-current="page">Investigación</a>
+      <a href="publications.html">Publicaciones</a>
+      <a href="talks.html">Pláticas y conferencias</a>
+      <a href="teaching.html">Enseñanza y mentoría</a>
+      <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../superposition.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Superposiciones de espaciotiempos</h1>
+      <p class="lede">Dónde puede estar el horizonte de un agujero negro cuando su masa está en superposición, y cómo se representa en un solo diagrama de Penrose.</p>
+      <p class="who">A partir de mi trabajo con Martin Bojowald y colaboradores.</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="En esta página">
+        <ol>
+          <li><a href="#question">La pregunta</a></li>
+          <li><a href="#horizon">Un horizonte para cada masa</a></li>
+          <li><a href="#distribution">La distribución de radios del horizonte</a></li>
+          <li><a href="#diagram">Un diagrama para todas las ramas</a></li>
+          <li><a href="#reading">Cómo leer la figura</a></li>
+          <li><a href="#papers">Artículos</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="question">La pregunta</h2>
+        <p>En los artículos que escribí con Martin Bojowald y colaboradores sobre agujeros negros cuánticos y sobre superposiciones de espaciotiempos, el estado cuántico de la geometría se describe con métodos canónicos efectivos, mediante los valores esperados de las variables canónicas junto con momentos como las fluctuaciones de una componente de la métrica. Las ecuaciones efectivas se resolvieron de forma aproximada: la aproximación cuasiclásica usada para los agujeros negros cuánticos estáticos deja de ser válida antes de llegar al horizonte, y el elemento de línea obtenido para las superposiciones de espaciotiempos es válido lejos del agujero negro. Por esta razón, ninguno de estos resultados indica dónde se encuentra el horizonte de una superposición. Además, un número finito de momentos no determina la función de onda. Para responder la pregunta, especifiqué el estado por completo y conservé solo la masa del agujero negro, de modo que el estado es una función de onda de la masa de Schwarzschild y cada rama es una geometría de Schwarzschild clásica.</p>
+
+        <h2 id="horizon">Un horizonte para cada masa</h2>
+        <p>En unidades con <span class="nowrap"><i>G</i> = <i>c</i> = 1</span>, sea <i>m</i> la masa de una geometría de Schwarzschild. Para localizar su horizonte sin recurrir a una coordenada temporal particular, uso el radio areal <i>r</i>, definido por el área 4π<i>r</i>² de una esfera de simetría, junto con la norma de su gradiente,</p>
+        <p class="eq"><i>F</i>(<i>r</i>; <i>m</i>) = <i>g</i><sup><i>ab</i></sup> ∂<sub><i>a</i></sub><i>r</i> ∂<sub><i>b</i></sub><i>r</i> = 1 − 2<i>m</i>/<i>r</i> .</p>
+        <p>En coordenadas de Eddington-Finkelstein entrantes, con el tiempo avanzado <i>v</i>, la parte radial del elemento de línea toma la forma <span class="nowrap">−<i>F</i> d<i>v</i>² + 2 d<i>v</i> d<i>r</i></span>, que es regular en el cero de <i>F</i>. En <i>r</i> = 2<i>m</i>, la dirección nula radial saliente es tangente a la esfera de <i>r</i> constante, por lo que este cero es el horizonte de eventos futuro. Así, cada valor de la masa tiene exactamente un radio del horizonte, <i>r</i><sub>H</sub> = 2<i>m</i>. En una superposición de masas, el radio del horizonte se convierte en el operador 2<i>m̂</i>, que actúa multiplicando la función de onda por el doble de la masa.</p>
+
+        <h2 id="distribution">La distribución de radios del horizonte</h2>
+        <p>Para una función de onda ψ(<i>m</i>) con densidad de probabilidad <i>P</i>(<i>m</i>) = |ψ(<i>m</i>)|², el valor esperado de cualquier función <i>Q</i> de la masa está dado por</p>
+        <p class="eq">⟨<i>Q</i>⟩ = ∫ <i>P</i>(<i>m</i>) <i>Q</i>(<i>m</i>) d<i>m</i> .</p>
+        <p>Al cambiar de variables en esta integral se obtiene la densidad del radio del horizonte <i>R</i> = 2<i>m</i>, que es</p>
+        <p class="eq"><i>P</i><sub>H</sub>(<i>R</i>) = ½ <i>P</i>(<i>R</i>/2) .</p>
+        <p>En consecuencia, si la masa tiene media <i>m</i><sub>0</sub> y desviación estándar σ<sub><i>m</i></sub>, el radio del horizonte tiene media 2<i>m</i><sub>0</sub> y desviación estándar 2σ<sub><i>m</i></sub>, para cualquier distribución de la masa. La figura de abajo usa un paquete gaussiano centrado en <i>m</i><sub>0</sub> y truncado a cuatro veces su ancho <i>a</i>, con</p>
+        <p class="eq"><i>P</i>(<i>m</i>) ∝ exp[−(<i>m</i> − <i>m</i><sub>0</sub>)²/2<i>a</i>²]</p>
+        <p>para |<i>m</i> − <i>m</i><sub>0</sub>| ≤ 4<i>a</i> y cero en otro caso, donde 4<i>a</i> &lt; <i>m</i><sub>0</sub>. Debido al truncamiento, todas las masas son positivas y las ramas comparten un exterior estático, <i>r</i> &gt; 2(<i>m</i><sub>0</sub> + 4<i>a</i>), mientras que σ<sub><i>m</i></sub> es un poco menor que <i>a</i>.</p>
+
+        <h2 id="diagram">Un diagrama para todas las ramas</h2>
+        <p>Los diagramas de Penrose de todas las ramas tienen la misma forma cuando cada uno se dibuja en unidades de su propia masa, así que, para comparar directamente los radios del horizonte, los dibujo como curvas de nivel en el diagrama de una sola geometría de referencia, la de Schwarzschild con la masa media. Para esta geometría de referencia escribo <i>x</i> = <i>r</i>/2<i>m</i><sub>0</sub> y uso sus coordenadas de Kruskal <i>U</i> y <i>V</i> junto con las coordenadas compactas ξ y τ, dadas por</p>
+        <p class="eq"><i>UV</i> = (1 − <i>x</i>) e<sup><i>x</i></sup> ,</p>
+        <p class="eq">ξ = arctan <i>V</i> − arctan <i>U</i> ,</p>
+        <p class="eq">τ = arctan <i>V</i> + arctan <i>U</i> ,</p>
+        <p>con ξ en la dirección horizontal y τ en la vertical del diagrama. Los horizontes de referencia, en <span class="nowrap"><i>x</i> = 1</span>, son las diagonales donde <span class="nowrap"><i>U</i> = 0</span> o <span class="nowrap"><i>V</i> = 0</span>, y la singularidad, en <span class="nowrap"><i>x</i> = 0</span>, está en <span class="nowrap">τ = ±π/2</span>.</p>
+        <figure class="fig">
+          <div class="overlay">
+            <picture>
+              <source srcset="../figures/superposition_overlay.webp" type="image/webp">
+              <img src="../figures/superposition_overlay.png" width="1600" height="954" alt="Diagrama de Penrose del espaciotiempo de Schwarzschild con la masa media y sus dos horizontes en líneas discontinuas. Un brillo dorado, más intenso a lo largo de los horizontes, marca los radios posibles del horizonte. Las curvas azules punteadas dentro de los horizontes y las naranjas de trazo y punto fuera de ellos marcan los radios una desviación estándar por debajo y por encima de la media.">
+            </picture>
+            <img class="overlay__density" src="../figures/superposition_density_es.svg" width="198" height="176" alt="Densidad relativa del radio del horizonte en función de R/(2m0): una gaussiana con máximo en 1 y truncada cerca de 0.8 y 1.2, con líneas verticales en 0.95 (azul punteada), 1 (discontinua) y 1.05 (naranja de trazo y punto).">
+          </div>
+          <p class="radii"><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="1.5" y1="3" x2="29" y2="3" stroke="#7cc6e4" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.8"/></svg><span>Masa menor, <i>R</i> = 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub></span></span><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="0" y1="3" x2="30" y2="3" stroke="#ece5d3" stroke-width="2" stroke-dasharray="6 3.5"/></svg><span>Masa media, <i>R</i> = 2<i>m</i><sub>0</sub></span></span><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="0" y1="3" x2="30" y2="3" stroke="#e2804f" stroke-width="2" stroke-dasharray="6 2.4 1.4 2.4"/></svg><span>Masa mayor, <i>R</i> = 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub></span></span></p>
+          <figcaption>Tres radios posibles del horizonte dibujados en el diagrama de Penrose de la masa media. Las diagonales discontinuas son los horizontes de la masa media, en el radio 2<i>m</i><sub>0</sub>, y las curvas punteadas dentro de ellas y las de trazo y punto fuera de ellas están en los radios areales 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub> y 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub>, que son los radios del horizonte de las ramas con masas <i>m</i><sub>0</sub> − σ<sub><i>m</i></sub> y <i>m</i><sub>0</sub> + σ<sub><i>m</i></sub>. El segundo panel muestra la densidad del radio del horizonte <i>R</i>, escalada para que su máximo sea uno, con los mismos tres radios marcados con las mismas líneas. El tono dorado en una esfera de radio <i>r</i> sigue esta densidad en <i>R</i> = <i>r</i>. El ancho σ<sub><i>m</i></sub>/<i>m</i><sub>0</sub> = 0.05 está exagerado para que la dispersión sea visible.</figcaption>
+        </figure>
+        <p>Las curvas punteadas y de trazo y punto son solo curvas de radio areal constante en la geometría de referencia. El horizonte de cada rama es una superficie nula en la geometría de esa rama, pero una esfera de radio 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub> está fuera del horizonte de la masa media, donde traza una curva de tipo tiempo en el diagrama de referencia, y una esfera de radio 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub> está dentro de él, donde traza una curva de tipo espacio. Por eso leo el tono dorado como el intervalo de radios donde puede estar el horizonte, y no como un solo horizonte con un grosor finito. Las probabilidades se obtienen integrando la densidad sobre un intervalo de <i>R</i>.</p>
+
+        <h2 id="reading">Cómo leer la figura</h2>
+        <p>La distribución se puede leer de la siguiente manera. Si el radio areal de una esfera está entre dos de los radios posibles del horizonte, la esfera está fuera del horizonte en la rama con la masa menor, pero dentro del horizonte en la rama con la masa mayor. La probabilidad del segundo caso es la probabilidad de que la masa sea mayor que la mitad del radio de la esfera, <i>P</i>(<i>m</i> &gt; <i>r</i>/2). Las esferas de ramas distintas se comparan por su área, y por eso no necesito ni una coordenada temporal común a las ramas ni una métrica promediada en esta comparación.</p>
+        <p>Debo añadir que el radio del horizonte es función solo de la masa, y por lo tanto su distribución está determinada únicamente por |ψ(<i>m</i>)|². Si la función de onda tuviera una fase que depende de la masa, la figura sería la misma, y también obtendría la misma figura para una mezcla clásica de geometrías de Schwarzschild con esta distribución de la masa. Por lo tanto, la figura no muestra la coherencia de la superposición. Además, las ramas son estáticas, así que la dispersión es un intervalo de valores posibles de la masa, que no cambia con el tiempo.</p>
+
+        <h2 id="papers">Artículos</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Quasiclassical solutions for static quantum black holes</span><span class="ref-meta">K. Berglund, M. Bojowald, M. Díaz y G. Sims, <i>Physical Review D</i> 109, 024006 (2024)</span><span class="ref-links"><a href="https://arxiv.org/abs/2012.07649" target="_blank" rel="noopener">arXiv:2012.07649</a><a href="https://doi.org/10.1103/PhysRevD.109.024006" target="_blank" rel="noopener">Revista</a></span></li>
+          <li><span class="ref-title">Spacetime superpositions as fluctuating geometries</span><span class="ref-meta">K. Berglund, M. Bojowald, A. Colter y M. Díaz, <i>Physical Review D</i> 111, 044021 (2025)</span><span class="ref-links"><a href="https://arxiv.org/abs/2405.20193" target="_blank" rel="noopener">arXiv:2405.20193</a><a href="https://doi.org/10.1103/PhysRevD.111.044021" target="_blank" rel="noopener">Revista</a></span></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">Toda la investigación</a><a href="index.html">Inicio</a></p>
+    </div>
+  </footer>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

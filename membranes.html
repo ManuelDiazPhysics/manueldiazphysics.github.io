@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="membranes.html">
+  <link rel="alternate" hreflang="es-MX" href="es/membranes.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Membrane ergospheres | Manuel Díaz</title>
+  <meta name="description" content="Charged membranes that change the couplings of gravity, and the membrane ergospheres in which they can carry negative energy outside a black hole.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+    /* Moments example */
+    .lab { margin-block: 2.1rem; padding: 1.6rem clamp(1rem, 3vw, 1.8rem) 1.4rem; background: var(--night-deep); border-radius: 0.6rem; }
+    .lab__controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; }
+    .control-label { display: block; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--mist); }
+    .readout { margin-top: 1.1rem; min-height: 3.3em; font-size: 1rem; line-height: 1.6; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { display: block; width: 100%; height: auto; margin-top: 0.6rem; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .moments { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .classical { fill: none; stroke: var(--mist); stroke-width: 1.4; stroke-dasharray: 1.5 3; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.09); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-moments::before { border-top: 2.2px dashed var(--brick); }
+    .legend .leg-classical::before { border-top: 1.6px dotted var(--mist); }
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Pages">
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks and conferences</a>
+      <a href="teaching.html">Teaching and mentoring</a>
+      <a href="Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="es/membranes.html" hreflang="es-MX" lang="es-MX">Español</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Membrane ergospheres</h1>
+      <p class="lede">Charged membranes that change the couplings of gravity can carry negative energy outside a black hole.</p>
+      <p class="who">With David Kastor. Paper in preparation.</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="On this page">
+        <ol>
+          <li><a href="#penrose">Energy from a black hole</a></li>
+          <li><a href="#enthalpy">Mass as enthalpy</a></li>
+          <li><a href="#membranes">Membranes that change the couplings</a></li>
+          <li><a href="#sds">Two ergospheres in de Sitter space</a></li>
+          <li><a href="#trajectories">Where the membranes go</a></li>
+          <li><a href="#papers">Papers</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="penrose">Energy from a black hole</h2>
+        <p>In the Penrose process, an object falls into the ergosphere of a rotating black hole and splits in two. One piece follows an orbit of negative energy into the black hole, and the other escapes with more energy than the object brought in. The black hole loses mass and angular momentum, and the area theorem limits how much mass can be taken out. A charged black hole allows a similar process for charged particles, which lowers its charge along with its mass.</p>
+
+        <h2 id="enthalpy">Mass as enthalpy</h2>
+        <p>With a cosmological constant Λ, the mass of a black hole acts as an enthalpy, as Kastor, Ray and Traschen showed. Allowing Λ to vary adds a pressure-volume term to the first law,</p>
+        <p class="eq">δ<i>M</i> = <i>T</i> δ<i>S</i> + <i>V</i> δ<i>P</i> ,<span class="gap"></span><i>P</i> = −Λ/8π<i>G</i> ,</p>
+        <p>where <i>V</i> is the thermodynamic volume of the black hole. Since the area theorem requires δ<i>S</i> ≥ 0, lowering the mass of a black hole at positive temperature requires lowering the pressure, <i>i.e.</i> raising Λ. It is natural to ask what physical process could change Λ near a black hole.</p>
+
+        <h2 id="membranes">Membranes that change the couplings</h2>
+        <p>If Λ comes from a 4-form field strength, membranes charged under it change Λ across them, as Brown and Teitelboim showed. In our work, which extends a construction of David Kastor for membranes that change Λ alone, the membranes also change Newton's constant <i>G</i>. In Lovelock gravity, the generalization of general relativity to higher dimensions whose field equations stay second order, they also change the gravitational couplings of the higher curvature terms. A ‘membrane ergosphere’ is a region outside a black hole in which such a membrane can have negative energy.</p>
+        <p>The question is then whether absorbing a membrane can lower the mass of the black hole in Planck units, <i>M</i>√<i>G</i>, while respecting the area theorem. Since the membrane also changes the couplings of gravity, the first law needs a work term conjugate to each coupling that changes, of the kind that Kastor, Ray and Traschen found for the couplings of Lovelock gravity.</p>
+        <p>The answer depends on how the two sides of the membrane are glued together. When <i>G</i> changes across the membrane, so does the local Planck length, ℓ<sub>P</sub> = √<i>G</i>, the only physical length scale available. Gluing in the standard way, with the induced metric continuous across the membrane, makes absorption appear to violate the second law. Instead, the induced metric on each side is normalized by its local Planck length before continuity is imposed, which amounts to gluing in Planck units: observers on the two sides disagree on the length of a curve on the membrane, but agree on how many Planck lengths it spans. With this gluing, absorption changes the mass of the black hole not only by the energy of the membrane but also by a term proportional to the change in <i>G</i>, and this term removes the apparent violation.</p>
+
+        <h2 id="sds">Two ergospheres in de Sitter space</h2>
+        <p>A black hole in de Sitter space has two horizons, the black hole horizon and, farther out, the de Sitter horizon. For these membranes one finds two ergospheres between them, one next to each horizon. Each is bounded by the radius at which a membrane at rest has zero energy, and since motion only raises the energy at a given radius, the two regions contain every radius at which a spherical membrane can have negative energy.</p>
+        <p>As the mass grows, the black hole horizon moves out and the de Sitter horizon moves in, and the two ergospheres widen toward each other. Above a mass set by the membrane's tension and charges, they merge, and a membrane can have negative energy anywhere between the horizons.</p>
+
+        <h2 id="trajectories">Where the membranes go</h2>
+        <p>The Penrose diagrams follow these membranes. When the ergospheres are separate, a membrane with negative energy near the black hole emerges from the white hole horizon, turns, and falls into the black hole, while one near the de Sitter horizon enters across the past de Sitter horizon, turns, and leaves across the future one. Once the ergospheres merge, a membrane can also cross the whole region without turning, from the white hole horizon out to the future de Sitter horizon.</p>
+        <figure class="fig fig--m fig--switch">
+          <div class="switch" role="group" aria-label="Choose the diagram">
+            <button type="button" data-view="0" aria-pressed="true">Ergospheres</button>
+            <button type="button" data-view="1" aria-pressed="false">Separate, turning</button>
+            <button type="button" data-view="2" aria-pressed="false">Merged, turning</button>
+            <button type="button" data-view="3" aria-pressed="false">Merged, no turning</button>
+          </div>
+          <img data-pane="0" src="figures/penrose_ergospheres.svg" width="221" height="135" alt="Penrose diagram of a black hole in de Sitter space with two shaded membrane ergospheres, one next to the black hole horizon and one next to the de Sitter horizon.">
+          <img data-pane="1" src="figures/penrose_trajectories.svg" width="219" height="131" alt="The Penrose diagram with separate ergospheres and two membranes of negative energy that each turn once." hidden>
+          <img data-pane="2" src="figures/penrose_merged_turning.svg" width="219" height="131" alt="The Penrose diagram with merged ergospheres and two membranes of negative energy that each turn once." hidden>
+          <img data-pane="3" src="figures/penrose_merged_passing.svg" width="219" height="131" alt="The Penrose diagram with merged ergospheres and two membranes of negative energy that cross without turning, one from the white hole to infinity." hidden>
+          <figcaption>
+            <span data-pane="0">Penrose diagram of a black hole in de Sitter space. Dashed lines are the black hole and de Sitter horizons. A spherical membrane can have negative energy in the two shaded membrane ergospheres: between the black hole horizon and the blue curve, and between the red curve and the de Sitter horizon.</span>
+            <span data-pane="1" hidden>Separate ergospheres. One membrane with negative energy emerges from the white hole horizon, turns, and falls into the black hole; another enters across the past de Sitter horizon, turns, and leaves across the future one. Arrows point to the future, and circles mark the turning points.</span>
+            <span data-pane="2" hidden>For a heavier black hole the two ergospheres merge into one shaded region, and a membrane can have negative energy anywhere between the horizons. Each membrane here turns once: one emerges from the white hole horizon and falls into the black hole, and the other enters across the past de Sitter horizon and leaves across the future one.</span>
+            <span data-pane="3" hidden>Merged ergospheres, with an energy closer to zero: the membranes cross without turning. One expands from the white hole horizon and leaves across the future de Sitter horizon toward infinity; its time reverse enters across the past de Sitter horizon and falls into the black hole.</span>
+          </figcaption>
+        </figure>
+        <p>The same questions extend to Born-Infeld black holes.</p>
+
+        <h2 id="papers">Papers</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Enthalpy and the mechanics of AdS black holes</span><span class="ref-meta">D. Kastor, S. Ray and J. Traschen, <i>Classical and Quantum Gravity</i> 26, 195011 (2009)</span><span class="ref-links"><a href="https://arxiv.org/abs/0904.2765" target="_blank" rel="noopener">arXiv:0904.2765</a></span></li>
+          <li><span class="ref-title">Smarr formula and an extended first law for Lovelock gravity</span><span class="ref-meta">D. Kastor, S. Ray and J. Traschen, <i>Classical and Quantum Gravity</i> 27, 235014 (2010)</span><span class="ref-links"><a href="https://arxiv.org/abs/1005.5053" target="_blank" rel="noopener">arXiv:1005.5053</a></span></li>
+          <li><span class="ref-title">Neutralization of the cosmological constant by membrane creation</span><span class="ref-meta">J. D. Brown and C. Teitelboim, <i>Nuclear Physics B</i> 297, 787 (1988)</span></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">All research</a><a href="index.html">Home</a></p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var fig = document.querySelector('.fig--switch');
+      if (!fig) return;
+      var buttons = fig.querySelectorAll('.switch button');
+      function show(view) {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === view ? 'true' : 'false'); });
+        fig.querySelectorAll('[data-pane]').forEach(function (el) { el.hidden = el.getAttribute('data-pane') !== view; });
+      }
+      buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-view')); }); });
+    })();
+  </script>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

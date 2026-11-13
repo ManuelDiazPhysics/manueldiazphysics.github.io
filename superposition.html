@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="superposition.html">
+  <link rel="alternate" hreflang="es-MX" href="es/superposicion.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spacetime superpositions | Manuel Díaz</title>
+  <meta name="description" content="Where the horizon of a black hole may lie when its mass is in a superposition: one horizon for each mass, the distribution of horizon radii, and how it is drawn on one Penrose diagram.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+
+    /* Horizon radii on the mean mass diagram */
+    .page-body > .article { min-width: 0; }
+    .nowrap { white-space: nowrap; }
+    .overlay { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr); gap: 1rem 1.6rem; align-items: center; }
+    .overlay picture, .overlay img { display: block; width: 100%; height: auto; }
+    .radii { display: flex; flex-wrap: wrap; gap: 0.45rem 1.6rem; margin-top: 1.1rem; font-size: 0.9rem; line-height: 1.5; color: var(--mist); }
+    .radii > span { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .radii svg { flex: none; width: 1.9rem; height: 0.5rem; }
+    @media (max-width: 40rem) {
+      .overlay { grid-template-columns: 1fr; }
+      .overlay__density { max-width: 17rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Pages">
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="talks.html">Talks and conferences</a>
+      <a href="teaching.html">Teaching and mentoring</a>
+      <a href="Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="es/superposicion.html" hreflang="es-MX" lang="es-MX">Español</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Spacetime superpositions</h1>
+      <p class="lede">Where the horizon of a black hole may lie when its mass is in a superposition, and how this is drawn on one Penrose diagram.</p>
+      <p class="who">Building on my work with Martin Bojowald and collaborators.</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="On this page">
+        <ol>
+          <li><a href="#question">The question</a></li>
+          <li><a href="#horizon">One horizon for each mass</a></li>
+          <li><a href="#distribution">The distribution of horizon radii</a></li>
+          <li><a href="#diagram">One diagram for all branches</a></li>
+          <li><a href="#reading">Reading the picture</a></li>
+          <li><a href="#papers">Papers</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="question">The question</h2>
+        <p>In the papers that I wrote with Martin Bojowald and collaborators on quantum black holes and on spacetime superpositions, the quantum state of the geometry is described with canonical effective methods, using the expectation values of the canonical variables together with moments such as the fluctuations of a metric component. The effective equations were solved approximately: the quasiclassical approximation used for static quantum black holes breaks down before the horizon is reached, and the line element obtained for spacetime superpositions holds far away from the black hole. For this reason, neither of these results tells where the horizon of a superposition is located. Furthermore, a finite number of moments does not fix the wave function. In order to answer the question, I specified the state completely and kept only the mass of the black hole, so that the state is a wave function of the Schwarzschild mass and each branch is a classical Schwarzschild geometry.</p>
+
+        <h2 id="horizon">One horizon for each mass</h2>
+        <p>In units with <span class="nowrap"><i>G</i> = <i>c</i> = 1</span>, let <i>m</i> be the mass of a Schwarzschild geometry. In order to locate its horizon without making use of a particular time coordinate, I use the areal radius <i>r</i>, which is defined by the area 4π<i>r</i>² of a sphere of symmetry, together with the norm of its gradient,</p>
+        <p class="eq"><i>F</i>(<i>r</i>; <i>m</i>) = <i>g</i><sup><i>ab</i></sup> ∂<sub><i>a</i></sub><i>r</i> ∂<sub><i>b</i></sub><i>r</i> = 1 − 2<i>m</i>/<i>r</i> .</p>
+        <p>In ingoing Eddington-Finkelstein coordinates, with the advanced time <i>v</i>, the radial part of the line element takes the form <span class="nowrap">−<i>F</i> d<i>v</i>² + 2 d<i>v</i> d<i>r</i></span>, which remains regular at the zero of <i>F</i>. At <i>r</i> = 2<i>m</i>, the outgoing radial null direction is tangent to the sphere of constant <i>r</i>, and therefore this zero is the future event horizon. Each value of the mass thus has exactly one horizon radius, <i>r</i><sub>H</sub> = 2<i>m</i>. In a superposition of masses, the horizon radius becomes the operator 2<i>m̂</i>, which acts by multiplying the wave function by twice the mass.</p>
+
+        <h2 id="distribution">The distribution of horizon radii</h2>
+        <p>For a wave function ψ(<i>m</i>) whose probability density is <i>P</i>(<i>m</i>) = |ψ(<i>m</i>)|², the expectation value of any function <i>Q</i> of the mass is given by</p>
+        <p class="eq">⟨<i>Q</i>⟩ = ∫ <i>P</i>(<i>m</i>) <i>Q</i>(<i>m</i>) d<i>m</i> .</p>
+        <p>Changing variables in this integral gives the density of the horizon radius <i>R</i> = 2<i>m</i>, which is</p>
+        <p class="eq"><i>P</i><sub>H</sub>(<i>R</i>) = ½ <i>P</i>(<i>R</i>/2) .</p>
+        <p>Consequently, if the mass has the mean <i>m</i><sub>0</sub> and the standard deviation σ<sub><i>m</i></sub>, the horizon radius has the mean 2<i>m</i><sub>0</sub> and the standard deviation 2σ<sub><i>m</i></sub>, for any distribution of the mass. The figure below uses a Gaussian packet, centered at <i>m</i><sub>0</sub> and cut off at four times its width <i>a</i>, with</p>
+        <p class="eq"><i>P</i>(<i>m</i>) ∝ exp[−(<i>m</i> − <i>m</i><sub>0</sub>)²/2<i>a</i>²]</p>
+        <p>for |<i>m</i> − <i>m</i><sub>0</sub>| ≤ 4<i>a</i> and zero otherwise, where 4<i>a</i> &lt; <i>m</i><sub>0</sub>. Due to the cutoff, all masses are positive and the branches share a static exterior, <i>r</i> &gt; 2(<i>m</i><sub>0</sub> + 4<i>a</i>), while σ<sub><i>m</i></sub> is slightly smaller than <i>a</i>.</p>
+
+        <h2 id="diagram">One diagram for all branches</h2>
+        <p>The Penrose diagrams of all branches have the same shape when each is drawn in units of its own mass, so in order to compare the horizon radii directly, I draw them as contours on the diagram of one reference geometry, Schwarzschild at the mean mass. For this reference geometry I write <i>x</i> = <i>r</i>/2<i>m</i><sub>0</sub> and use its Kruskal coordinates <i>U</i> and <i>V</i> together with the compact coordinates ξ and τ, which are given by</p>
+        <p class="eq"><i>UV</i> = (1 − <i>x</i>) e<sup><i>x</i></sup> ,</p>
+        <p class="eq">ξ = arctan <i>V</i> − arctan <i>U</i> ,</p>
+        <p class="eq">τ = arctan <i>V</i> + arctan <i>U</i> ,</p>
+        <p>with ξ running horizontally and τ vertically in the diagram. The reference horizons at <span class="nowrap"><i>x</i> = 1</span> are the diagonals where <span class="nowrap"><i>U</i> = 0</span> or <span class="nowrap"><i>V</i> = 0</span>, and the singularity at <span class="nowrap"><i>x</i> = 0</span> is at <span class="nowrap">τ = ±π/2</span>.</p>
+        <figure class="fig">
+          <div class="overlay">
+            <picture>
+              <source srcset="figures/superposition_overlay.webp" type="image/webp">
+              <img src="figures/superposition_overlay.png" width="1600" height="954" alt="Penrose diagram of Schwarzschild spacetime at the mean mass, with its two horizons dashed. A gold glow, brightest along the horizons, marks the possible horizon radii. Dotted blue curves inside the horizons and dash dotted orange curves outside them mark the radii one standard deviation below and above the mean.">
+            </picture>
+            <img class="overlay__density" src="figures/superposition_density.svg" width="198" height="176" alt="Relative density of the horizon radius against R/(2m0): a Gaussian peaked at 1 and cut off near 0.8 and 1.2, with vertical lines at 0.95 (dotted blue), 1 (dashed) and 1.05 (dash dotted orange).">
+          </div>
+          <p class="radii"><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="1.5" y1="3" x2="29" y2="3" stroke="#7cc6e4" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.8"/></svg><span>Smaller mass, <i>R</i> = 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub></span></span><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="0" y1="3" x2="30" y2="3" stroke="#ece5d3" stroke-width="2" stroke-dasharray="6 3.5"/></svg><span>Mean mass, <i>R</i> = 2<i>m</i><sub>0</sub></span></span><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="0" y1="3" x2="30" y2="3" stroke="#e2804f" stroke-width="2" stroke-dasharray="6 2.4 1.4 2.4"/></svg><span>Larger mass, <i>R</i> = 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub></span></span></p>
+          <figcaption>Three possible horizon radii are drawn on the Penrose diagram of the mean mass. The dashed diagonals are the horizons of the mean mass, at the radius 2<i>m</i><sub>0</sub>, and the dotted curves inside them and the dash dotted curves outside them are at the areal radii 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub> and 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub>, which are the horizon radii of the branches with the masses <i>m</i><sub>0</sub> − σ<sub><i>m</i></sub> and <i>m</i><sub>0</sub> + σ<sub><i>m</i></sub>. The second panel shows the density of the horizon radius <i>R</i>, scaled to have a peak value of one, with the same three radii marked by the same lines. The gold tint at a sphere of radius <i>r</i> follows this density at <i>R</i> = <i>r</i>. The width σ<sub><i>m</i></sub>/<i>m</i><sub>0</sub> = 0.05 is exaggerated in order to make the spread visible.</figcaption>
+        </figure>
+        <p>The dotted and dash dotted curves are only curves of constant areal radius in the reference geometry. The horizon of each branch is a null surface in that branch's own geometry, but a sphere with the radius 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub> lies outside the horizon of the mean mass, where it traces a timelike curve on the reference diagram, and a sphere with the radius 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub> lies inside it, where it traces a spacelike curve. I therefore read the tint as the range of radii where the horizon may be, and not as a single horizon with a finite thickness. Probabilities follow from integrating the density over an interval of <i>R</i>.</p>
+
+        <h2 id="reading">Reading the picture</h2>
+        <p>The distribution can be read in the following way. If the areal radius of a sphere lies between two of the possible horizon radii, the sphere is outside the horizon in the branch with the smaller mass but inside the horizon in the branch with the larger mass. The probability for the second case is the probability that the mass exceeds half of the radius of the sphere, <i>P</i>(<i>m</i> &gt; <i>r</i>/2). Spheres in different branches are compared through their area, which is why I need neither a common time coordinate for the branches nor an averaged metric in this comparison.</p>
+        <p>I should add that the horizon radius is a function of the mass alone, and therefore its distribution is determined by |ψ(<i>m</i>)|² only. If the wave function had a phase that depends on the mass, the figure would be the same, and I would also get the same figure for a classical mixture of Schwarzschild geometries with this distribution of the mass. The figure therefore does not show the coherence of the superposition. The branches are static as well, so the spread is a range of possible values of the mass, which does not change in time.</p>
+
+        <h2 id="papers">Papers</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Quasiclassical solutions for static quantum black holes</span><span class="ref-meta">K. Berglund, M. Bojowald, M. Díaz and G. Sims, <i>Physical Review D</i> 109, 024006 (2024)</span><span class="ref-links"><a href="https://arxiv.org/abs/2012.07649" target="_blank" rel="noopener">arXiv:2012.07649</a><a href="https://doi.org/10.1103/PhysRevD.109.024006" target="_blank" rel="noopener">Journal</a></span></li>
+          <li><span class="ref-title">Spacetime superpositions as fluctuating geometries</span><span class="ref-meta">K. Berglund, M. Bojowald, A. Colter and M. Díaz, <i>Physical Review D</i> 111, 044021 (2025)</span><span class="ref-links"><a href="https://arxiv.org/abs/2405.20193" target="_blank" rel="noopener">arXiv:2405.20193</a><a href="https://doi.org/10.1103/PhysRevD.111.044021" target="_blank" rel="noopener">Journal</a></span></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">All research</a><a href="index.html">Home</a></p>
+    </div>
+  </footer>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

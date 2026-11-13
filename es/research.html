@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../research.html">
+  <link rel="alternate" hreflang="es-MX" href="research.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investigación | Manuel Díaz</title>
+  <meta name="description" content="Manuel Díaz estudia la naturaleza del espaciotiempo mediante los agujeros negros y la cosmología. Es candidato a doctor en física en la University of Massachusetts Amherst.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+
+    /* Hero */
+    .hero { position: relative; isolation: isolate; background: var(--night); }
+    .hero__art { position: relative; height: clamp(26rem, calc(100vh - 11rem), 62rem); height: clamp(26rem, calc(100svh - 11rem), 62rem); overflow: hidden; }
+    .hero__art picture, .hero__art img { display: block; width: 100%; height: 100%; }
+    .hero__art img { object-fit: cover; object-position: 58% 15%; }
+    .hero__art::after {
+      content: ""; position: absolute; inset: auto 0 0 0; height: 38%;
+      background: linear-gradient(to bottom, rgba(7, 42, 55, 0) 0%, rgba(7, 42, 55, 0.55) 55%, var(--night) 100%);
+      pointer-events: none;
+    }
+    .ripples { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .ripples circle { fill: none; stroke: var(--lamplight); stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; animation: ripple 9s cubic-bezier(.2, .6, .35, 1) infinite; }
+    .ripples circle:nth-child(2) { animation-delay: 3s; }
+    .ripples circle:nth-child(3) { animation-delay: 6s; }
+    /* The binary turns clockwise, the sense in which its spiral arms trail */
+    .binary {
+      position: absolute; left: 0; top: 0; width: 0; height: 0; border-radius: 50%; pointer-events: none;
+      background-repeat: no-repeat; will-change: transform;
+      -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+      mask-image: radial-gradient(closest-side, #000 62%, transparent 100%);
+      animation: orbit 40s linear infinite;
+    }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes ripple {
+      0% { transform: scale(1); opacity: 0; }
+      12% { opacity: 0.3; }
+      100% { transform: scale(7.5); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { .ripples, .binary { display: none; } }
+
+    .topbar {
+      position: absolute; inset: 0 0 auto 0; z-index: 2;
+      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+
+    .hero__text {
+      position: absolute; z-index: 2; left: var(--edge); top: clamp(5rem, 11vh, 7.5rem);
+      max-width: 46rem;
+    }
+    .hero h1 {
+      font: 500 clamp(3.4rem, 6.2vw, 6rem)/0.95 var(--display); white-space: nowrap;
+      letter-spacing: -0.012em; color: var(--starlight);
+      text-shadow: 0 2px 24px rgba(0, 32, 45, 0.55);
+    }
+    .hero__lede { margin-top: 1.1rem; max-width: 30rem; font: 400 italic clamp(1.35rem, 2.1vw, 1.75rem)/1.3 var(--display); color: var(--starlight); text-shadow: 0 1px 14px rgba(0, 32, 45, 0.7); }
+    .intro-band { position: relative; z-index: 2; margin-top: -1rem; padding-bottom: clamp(1.75rem, 3vw, 2.75rem); }
+    .intro-band + main > .section:first-child { padding-top: clamp(2rem, 4vw, 3.25rem); }
+    .intro-band .wrap { display: grid; grid-template-columns: minmax(0, 40rem) auto; gap: 1.5rem 3rem; align-items: end; justify-content: space-between; }
+    .hero__meta { font-size: 1.05rem; line-height: 1.65; color: var(--mist); }
+    .hero__meta strong { font-weight: 500; color: var(--starlight); }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.4rem; align-items: center; }
+    .button {
+      display: inline-block; padding: 0.62rem 1.15rem 0.66rem; border-radius: 999px;
+      background: var(--lamplight); color: var(--night-deep); font-weight: 500; text-decoration: none; line-height: 1.2;
+    }
+    .button:hover { background: var(--starlight); color: var(--night-deep); }
+
+    /* Page sections */
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+    .section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+    .section + .section { border-top: 1px solid var(--rule); }
+    h2 { font: 500 clamp(2.4rem, 4.6vw, 3.4rem)/1.05 var(--display); letter-spacing: -0.01em; }
+    h3 { font: 600 clamp(1.45rem, 2.2vw, 1.7rem)/1.2 var(--display); }
+    .section__intro { margin-top: 1.4rem; max-width: var(--measure); color: var(--starlight); font-size: 1.12rem; }
+
+    .themes { margin-top: clamp(2.5rem, 5vw, 3.75rem); }
+    .theme {
+      display: grid; grid-template-columns: minmax(13rem, 18rem) minmax(0, var(--measure)); gap: 0.9rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.1rem; border-top: 1px solid var(--rule);
+    }
+    .theme h3 { color: var(--starlight); }
+    .theme__who { margin-top: 0.55rem; font-size: 0.9rem; color: var(--mist); line-height: 1.5; }
+    .theme__body p + p { margin-top: 0.9rem; }
+    .theme__next { color: var(--mist); }
+    .theme__figure { margin-top: 1.6rem; max-width: 30rem; }
+    .theme__figure .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; border-radius: 1.3rem; }
+    .theme__figure img { display: block; width: 100%; height: auto; }
+    .beside__rest > .theme__figure { margin: 0 0 1.8rem; }
+    .theme__figure img[hidden] { display: none; }
+    .theme__figure figcaption { margin-top: 0.7rem; font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .theme__papers { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; font-size: 0.93rem; }
+    .theme__body .theme__more { margin-top: 1rem; font-size: 0.95rem; }
+    .theme__body .theme__more + .theme__more { margin-top: 0.35rem; }
+
+    /* Bounce benchmark */
+    .bench { background: var(--night-deep); }
+    .bench__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; margin-top: 2rem; }
+    .bench__text p + p { margin-top: 0.9rem; }
+    .bench__note { margin-top: 1.4rem; font-size: 0.88rem; color: var(--mist); }
+    .bench__circuits { margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); max-width: var(--measure); }
+    .bench__circuits p + p { margin-top: 0.9rem; }
+    .controls { margin-top: 1.6rem; display: grid; gap: 1.1rem; }
+    .control-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.95rem; color: var(--mist); }
+    .control-label output { font: 600 1.6rem/1 var(--display); color: var(--starlight); }
+    input[type="range"] { width: 100%; accent-color: var(--brick); }
+    .switch { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .readout { margin-top: 0.4rem; font-size: 1rem; line-height: 1.6; min-height: 3.2em; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { width: 100%; height: auto; display: block; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .register { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart path.faint { opacity: 0.25; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.08); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-register::before { border-top: 2.2px dashed var(--brick); }
+
+    /* Publications */
+    .pubs { margin-top: 2.2rem; }
+    .pub { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.2rem 1.5rem; padding-block: 1.35rem; border-top: 1px solid var(--rule); }
+    .pub__year { font: 500 1.25rem/1.4 var(--display); color: var(--lamplight); }
+    .pub h3 { font-size: clamp(1.3rem, 2vw, 1.55rem); font-weight: 500; }
+    .pub__authors, .pub__venue { font-size: 0.95rem; color: var(--mist); }
+    .pub__authors .me { color: var(--starlight); }
+    .pub__links { margin-top: 0.35rem; display: flex; gap: 1.2rem; font-size: 0.93rem; }
+
+    /* Talks, teaching and mentoring */
+    .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 5rem); margin-top: 2.2rem; }
+    .entries li { padding-block: 0.95rem; border-top: 1px solid var(--rule); }
+    .entries .when { display: block; font-size: 0.85rem; color: var(--lamplight); }
+    .entries .what { display: block; color: var(--starlight); }
+    .entries .where { display: block; font-size: 0.93rem; color: var(--mist); }
+    .talk-title { font: 500 1.28rem/1.3 var(--display); }
+
+    /* Contact */
+    .contact { background: var(--night-deep); }
+    .contact__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem clamp(2rem, 6vw, 5rem); margin-top: 1.8rem; align-items: start; }
+    .contact address { font-style: normal; color: var(--mist); }
+    .contact__links { display: grid; gap: 0.45rem; }
+    .colophon { margin-top: 3rem; font-size: 0.85rem; color: var(--mist); }
+
+    @media (max-width: 62rem) {
+      .bench__grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 48rem) {
+      .hero__art { height: auto; aspect-ratio: 3 / 2; }
+      .hero__art::after { height: 22%; }
+      .topbar { position: static; background: var(--night); padding-block: 1rem; }
+      .hero__text { position: static; max-width: none; padding: 0.6rem 1rem 0.5rem; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 4.2rem); white-space: normal; }
+      .intro-band { margin-top: 0; padding-top: 1rem; }
+      .intro-band .wrap { grid-template-columns: 1fr; }
+      .theme { grid-template-columns: 1fr; }
+      .two, .contact__grid { grid-template-columns: 1fr; }
+      .pub { grid-template-columns: 1fr; }
+    }
+
+    .nowrap { white-space: nowrap; }
+    /* Pages other than the home page */
+    .topbar--page { position: static; border-bottom: 1px solid var(--rule); }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+    .page-title { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+
+    /* Home: research list */
+    .glance { margin-top: 2.2rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(2rem, 5vw, 4rem); }
+    .glance li { padding-block: 1.1rem 1.2rem; border-top: 1px solid var(--rule); }
+    .glance__title { font: 600 1.45rem/1.2 var(--display); color: var(--starlight); text-decoration: none; }
+    .glance__title:hover { color: var(--lamplight); text-decoration: underline; }
+    .glance__who { display: block; margin-top: 0.3rem; font-size: 0.88rem; color: var(--mist); }
+    .glance__line { display: block; margin-top: 0.35rem; font-size: 0.98rem; color: var(--starlight); }
+
+    /* Talks and conferences */
+    .list-title { margin-top: clamp(2.2rem, 4vw, 3rem); font: 600 1.55rem/1.2 var(--display); color: var(--starlight); }
+    .list-title + .two { margin-top: 0.8rem; }
+
+    /* Figures of the research themes */
+    .theme__figure picture { display: block; }
+    .theme__band { grid-column: 1 / -1; }
+    .theme__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; margin-top: 0.4rem; }
+    .theme__pair .theme__figure { margin-top: 0; max-width: none; }
+    .theme__figure--wide { max-width: none; }
+    .math { font-family: "STIX Two Math", "Cambria Math", "Times New Roman", Times, "DejaVu Serif", serif; font-style: normal; }
+    .theme__figure .stack__panel { margin-top: 1.1rem; }
+    .radii { display: flex; flex-wrap: wrap; gap: 0.3rem 1.3rem; margin-top: 0.9rem; font-size: 0.86rem; line-height: 1.45; color: var(--mist); }
+    .radii > span { display: inline-flex; align-items: center; gap: 0.5rem; }
+    .radii svg { flex: none; width: 1.7rem; height: 0.5rem; }
+    .enthalpy__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+    .enthalpy__row img { display: block; width: 100%; height: auto; }
+
+    /* The bounce on a quantum register, inside the quantum simulation theme */
+    .bench-band { background: var(--night-deep); border-radius: 0.6rem; padding: clamp(1.25rem, 3.5vw, 2.4rem); margin-top: 0.6rem; scroll-margin-top: 1rem; }
+    .bench__title { margin: 0; font: 600 1.55rem/1.2 var(--display); color: var(--starlight); }
+    .bench-band .bench__grid { margin-top: 1.2rem; }
+    .lattice { display: block; width: 100%; max-width: 24rem; height: auto; margin-top: 1.5rem; }
+    .lattice .coupler { stroke: rgba(159, 183, 188, 0.2); stroke-width: 2; }
+    .lattice .coupler.on { stroke: rgba(242, 178, 62, 0.55); }
+    .lattice .site { fill: var(--night-deep); stroke: rgba(159, 183, 188, 0.5); stroke-width: 1.2; }
+    .lattice .site.on { fill: var(--lamplight); stroke: var(--lamplight); }
+    .lattice .ladder { fill: none; stroke: rgba(236, 229, 211, 0.45); stroke-width: 1; }
+    .lattice .lvl { stroke: rgba(236, 229, 211, 0.22); stroke-width: 0.7; }
+    .lattice .state { fill: var(--lamplight); }
+    .lattice text { fill: var(--mist); font: 400 12px var(--text); }
+    .lattice .count { fill: var(--starlight); font: 600 15px var(--text); }
+    .lattice__caption { margin-top: 0.6rem; font-size: 0.88rem; line-height: 1.55; color: var(--mist); max-width: 24rem; }
+    .chart .ceiling { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 7 5; opacity: 0.6; }
+    .chart .ceiling-label { fill: var(--starlight); font-size: 11px; opacity: 0.8; }
+    .legend .leg-top::before { border-top: 1px dashed var(--starlight); }
+    .chart .moments2 { fill: none; stroke: var(--starlight); stroke-width: 4.6; stroke-linecap: round; stroke-dasharray: 0 11; }
+    .legend .leg-moments2::before { border-top: 4px dotted var(--starlight); }
+    @media (max-width: 48rem) {
+      .glance { grid-template-columns: 1fr; }
+      .theme__pair { grid-template-columns: 1fr; }
+    }
+
+    /* Two cutoffs, one after the other: the bounce on registers of qubits, then the order of the moments.
+       Each dial has its text and controls on the left and its charts on the right. */
+    .bench__intro { margin-top: 0.8rem; max-width: var(--measure); }
+    .bench-band .dial { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 1.2rem clamp(2rem, 4vw, 3.5rem); align-items: start; margin-top: 2.2rem; padding-top: 2rem; border-top: 1px solid var(--rule); scroll-margin-top: 1.2rem; }
+    .dial, .dial__text, .dial__figs { min-width: 0; }
+    .dial .chart text { font-size: 17px; }
+    .dial .chart .ceiling-label { font-size: 15px; }
+    .dial__title { margin: 0 0 0.8rem; font: 500 1.35rem/1.25 var(--display); color: var(--starlight); }
+    .dial__text > p + p { margin-top: 0.9rem; }
+    .dial figure { margin-top: 1.2rem; }
+    .dial__figs > figure:first-child { margin-top: 0; }
+    .dial .lattice__caption { max-width: none; }
+    .dial > .bench__note { grid-column: 1 / -1; margin-top: 0.2rem; max-width: var(--measure); }
+    .dial__time { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.9rem; align-items: center; }
+    .dial__play {
+      font: inherit; font-size: 0.92rem; color: var(--starlight); background: var(--tide); border: 1px solid var(--rule);
+      border-radius: 999px; padding: 0.32rem 0.95rem; min-width: 4.8rem; cursor: pointer;
+    }
+    .chart .density { fill: rgba(242, 178, 62, 0.26); stroke: var(--lamplight); stroke-width: 1.6; }
+    .chart .potential { fill: none; stroke: var(--mist); stroke-width: 1.2; opacity: 0.3; }
+    .chart .barrier { stroke: var(--starlight); stroke-width: 1.2; stroke-dasharray: 2 4; opacity: 0.6; }
+    .chart .now { stroke: var(--starlight); stroke-width: 1; opacity: 0.35; }
+    .chart .dot-exact { fill: var(--lamplight); }
+    .chart .dot-order { fill: var(--brick); }
+    .legend .leg-density::before { width: 1.2rem; height: 0.7rem; border: 1.6px solid var(--lamplight); background: rgba(242, 178, 62, 0.26); }
+    .legend .leg-barrier::before { border-top: 1.5px dotted var(--starlight); }
+    @media (max-width: 62rem) { .bench-band .dial { grid-template-columns: 1fr; } }
+
+    /* The bounce followed two ways: a static figure under the two cutoffs */
+    .bench-band, .twoways { min-width: 0; }
+    .twoways { margin-top: 1.6rem; }
+    /* on a phone the two panels keep their order, mean on the left, and the figure scrolls sideways */
+    .twoways__scroll { overflow-x: auto; }
+    .twoways__scroll .chart { min-width: 46rem; }
+    .twoways .chart text { font-size: 15px; }
+    .twoways__exact { fill: none; stroke: var(--lamplight); stroke-width: 7; stroke-opacity: 0.32; stroke-linecap: round; stroke-linejoin: round; }
+    .twoways__reg { fill: none; stroke: var(--brick); stroke-width: 1.8; stroke-linejoin: round; }
+    .twoways__reg--5, .twoways__dep--5 { stroke-opacity: 0.45; fill-opacity: 0.45; }
+    .twoways__reg--6, .twoways__dep--6 { stroke-opacity: 0.62; fill-opacity: 0.62; }
+    .twoways__reg--7, .twoways__dep--7 { stroke-opacity: 0.8; fill-opacity: 0.8; }
+    .twoways__dep { fill: var(--brick); stroke: var(--night-deep); stroke-width: 1.5; }
+    .chart .twoways__mom { stroke-width: 3.6; stroke-dasharray: 0 9; }
+    .chart .twoways__label { fill: var(--brick); font-size: 14px; }
+    .legend .leg-band::before { border-top: 7px solid rgba(242, 178, 62, 0.32); }
+    .legend .leg-regs::before { border-top: 1.8px solid var(--brick); }
+    .twoways__caption { margin-top: 0.6rem; font-size: 0.9rem; line-height: 1.55; color: var(--mist); max-width: var(--measure); }
+    .bench__closing { margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); max-width: var(--measure); }
+
+    /* Black holes, cosmology and inflation: the title above, and each figure beside the paragraph that
+       describes it, with the rest of the text under that paragraph. On narrow screens the figure follows
+       that paragraph. The cosmology plots stay together as a pair, so their column is wider. */
+    .theme.theme--beside { grid-template-columns: minmax(0, 1fr); row-gap: 1.5rem; }
+    .beside { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 0.9rem clamp(2rem, 4.4vw, 3.25rem); align-items: start; }
+    .beside > .beside__lead { grid-column: 1; grid-row: 1; }
+    .beside > .beside__fig { grid-column: 2; grid-row: 1 / 3; margin-top: 0; max-width: none; }
+    .beside > .beside__rest { grid-column: 1; grid-row: 2; }
+    .beside--pair { grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr); }
+    .beside--pair > .theme__pair { gap: 1.5rem; margin-top: 0; }
+    .theme__figure video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #04202b; }
+    @media (max-width: 62rem) {
+      .beside, .beside--pair { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 1.4rem; }
+      .beside > .beside__lead, .beside > .beside__fig, .beside > .beside__rest { grid-column: 1; grid-row: auto; max-width: var(--measure); }
+      .beside--pair > .beside__fig { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar topbar--page">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+        <a href="research.html" aria-current="page">Investigación</a>
+        <a href="publications.html">Publicaciones</a>
+        <a href="talks.html">Pláticas y conferencias</a>
+        <a href="teaching.html">Enseñanza y mentoría</a>
+        <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../research.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="section" id="research" aria-labelledby="research-h">
+      <div class="wrap">
+        <h1 class="page-title" id="research-h">Investigación</h1>
+
+        <div class="themes">
+          <article class="theme" id="membranes">
+            <div>
+              <h3>Termodinámica de agujeros negros con membranas</h3>
+              <p class="theme__who">Con David Kastor</p>
+            </div>
+            <div class="theme__body">
+              <p>Cuando la constante cosmológica puede variar, la masa de un agujero negro corresponde a su entalpía. Las membranas que cambian los acoplamientos gravitacionales al pasar de un lado a otro convierten esta variación en un proceso físico.</p>
+              <p class="theme__next">Estudio si las membranas cargadas que modifican la constante de Newton y los acoplamientos gravitacionales de los términos de curvatura superior en la gravedad de Lovelock pueden portar energía negativa fuera de un agujero negro, en ergósferas de membrana, y si el agujero negro puede absorber esa energía de acuerdo con su termodinámica. La gravedad de Lovelock generaliza la relatividad general a dimensiones superiores y conserva ecuaciones de campo de segundo orden. Una pregunta similar se plantea para los agujeros negros de Born-Infeld.</p>
+              <p class="theme__more"><a href="membranes.html" target="_blank" rel="noopener">Ergósferas de membrana</a></p>
+            </div>
+            <div class="theme__band theme__pair">
+              <figure class="theme__figure">
+                <div class="enthalpy__row">
+                  <img src="../figures/enthalpy_form.svg" width="240" height="240" alt="Un cuadrado lleno de puntos representa la constante cosmológica como un medio de presión P. Un círculo discontinuo delimita el volumen V que ocupará un agujero negro.">
+                  <img src="../figures/enthalpy_mass.svg" width="240" height="240" alt="El mismo medio con un agujero negro de volumen V. Los puntos terminan en su borde.">
+                  <img src="../figures/enthalpy_membrane.svg" width="240" height="240" alt="Un agujero negro rodeado por una membrana esférica. Los puntos son más densos entre ambos, a presión P1, y menos densos afuera, a presión P2. Una flecha indica la caída de la membrana.">
+                </div>
+                <figcaption>Entalpía de un agujero negro. Izquierda: formar un agujero negro de volumen <i>V</i> en un universo con constante cosmológica requiere su energía <i>U</i>, junto con el trabajo <i>PV</i> contra la presión <span class="nowrap"><i>P</i> = −Λ/8π<i>G</i></span>. Centro: por lo tanto, la masa es la entalpía, <span class="nowrap"><i>M</i> = <i>U</i> + <i>PV</i></span> (Kastor, Ray y Traschen, 2009). Derecha: una membrana a través de la cual cambia Λ, con presión <i>P</i><sub>1</sub> en el interior y <i>P</i><sub>2</sub> en el exterior, cambia la presión alrededor del agujero negro cuando cae en él. La primera ley queda como <span class="nowrap">δ<i>M</i> = <i>T</i>&#8201;δ<i>S</i> + <i>V</i>&#8201;δ<i>P</i></span>.</figcaption>
+              </figure>
+              <figure class="theme__figure">
+                <div class="switch" role="group" aria-label="Elegir el diagrama">
+                  <button type="button" data-view="0" aria-pressed="true">Ergósferas</button>
+                  <button type="button" data-view="1" aria-pressed="false">Separadas, con retorno</button>
+                  <button type="button" data-view="2" aria-pressed="false">Unidas, con retorno</button>
+                  <button type="button" data-view="3" aria-pressed="false">Unidas, sin retorno</button>
+                </div>
+                <img data-pane="0" src="../figures/penrose_ergospheres.svg" width="221" height="135" alt="Diagrama de Penrose de un agujero negro en el espacio de de Sitter con dos ergósferas de membrana sombreadas, una junto al horizonte del agujero negro y la otra junto al horizonte de de Sitter.">
+                <img data-pane="1" src="../figures/penrose_trajectories.svg" width="219" height="131" alt="Diagrama de Penrose con ergósferas separadas y dos membranas de energía negativa que cambian de sentido una vez cada una." hidden>
+                <img data-pane="2" src="../figures/penrose_merged_turning.svg" width="219" height="131" alt="Diagrama de Penrose con ergósferas unidas y dos membranas de energía negativa que cambian de sentido una vez cada una." hidden>
+                <img data-pane="3" src="../figures/penrose_merged_passing.svg" width="219" height="131" alt="Diagrama de Penrose con ergósferas unidas y dos membranas de energía negativa que se cruzan sin cambiar de sentido. Una va del agujero blanco al infinito." hidden>
+                <figcaption>
+                  <span data-pane="0">El diagrama de Penrose de un agujero negro en el espacio de de Sitter, de mi trabajo con David Kastor, muestra los horizontes del agujero negro y de de Sitter con líneas discontinuas. Una membrana esférica puede tener energía negativa en dos ergósferas de membrana distintas: entre el horizonte del agujero negro y la curva azul, y entre la curva roja y el horizonte de de Sitter.</span>
+                  <span data-pane="1" hidden>Con las ergósferas separadas, una membrana con energía negativa sale del horizonte del agujero blanco, invierte su movimiento y cae al agujero negro. La otra cruza el horizonte pasado de de Sitter, invierte su movimiento y sale por el horizonte futuro. Las flechas indican la dirección del tiempo y los círculos marcan los puntos de retorno.</span>
+                  <span data-pane="2" hidden>Para un agujero negro de mayor masa, las dos ergósferas se unen en una sola región sombreada y una membrana puede tener energía negativa en cualquier punto entre los horizontes. Cada membrana tiene un punto de retorno. Una sale del horizonte del agujero blanco y cae al agujero negro. La otra cruza el horizonte pasado de de Sitter y sale por el futuro.</span>
+                  <span data-pane="3" hidden>Cuando las ergósferas se unen y la energía de las membranas se acerca a cero, las membranas se cruzan entre los horizontes sin invertir su movimiento. Una se expande desde el horizonte del agujero blanco, cruza el horizonte futuro de de Sitter y llega al infinito. Su inversa temporal cruza el horizonte pasado y cae directamente al agujero negro.</span>
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="theme theme--beside" id="black-holes">
+            <div>
+              <h3>Agujeros negros cuánticos como geometrías fluctuantes</h3>
+              <p class="theme__who">Con Martin Bojowald</p>
+            </div>
+            <div class="theme__body beside">
+              <p class="beside__lead">En los métodos canónicos efectivos, un estado cuántico se describe mediante los valores esperados de los operadores canónicos y sus fluctuaciones y correlaciones. Con Bojowald, utilicé estos métodos para mostrar que las correcciones cuánticas semiclásicas pueden conservar el álgebra de constricciones de la gravedad con simetría esférica. Esto permitió estudiar agujeros negros cuánticos estáticos. Para estados semiclásicos genéricos, estos agujeros negros y sus superposiciones son geometrías fluctuantes. Sus correcciones cuánticas al potencial de Newton son de primer orden en la longitud de Planck, mayores que las de segundo orden de la gravedad cuántica perturbativa.</p>
+              <figure class="theme__figure theme__figure--wide beside__fig">
+                <picture>
+                  <source srcset="../figures/superposition_penrose.webp" type="image/webp">
+                  <img src="../figures/superposition_penrose.png" width="1600" height="954" alt="Diagrama de Penrose del espaciotiempo de Schwarzschild con la masa media, con sus dos horizontes en líneas discontinuas y una banda dorada, más intensa a lo largo de los horizontes, que marca los radios donde puede estar el horizonte.">
+                </picture>
+                <img class="stack__panel" src="../figures/superposition_ef_density_es.svg" width="360" height="328" alt="Arriba, el radio contra el tiempo en coordenadas de Eddington-Finkelstein entrantes: tres líneas verticales de horizonte en 0.95, 1 y 1.05 veces 2m0 dentro de una banda dorada, cruzadas por un rayo de luz que cae a 45 grados. Abajo, en el mismo eje de radio, la densidad de probabilidad del radio del horizonte, una campana con máximo en 1 y las mismas tres líneas.">
+                <p class="radii"><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="1.5" y1="3" x2="29" y2="3" stroke="#7cc6e4" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3.8"/></svg><span>Masa menor, <i>R</i> = 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub></span></span><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="0" y1="3" x2="30" y2="3" stroke="#ece5d3" stroke-width="2" stroke-dasharray="6 3.5"/></svg><span>Masa media, <i>R</i> = 2<i>m</i><sub>0</sub></span></span><span><svg viewBox="0 0 30 6" aria-hidden="true"><line x1="0" y1="3" x2="30" y2="3" stroke="#e2804f" stroke-width="2" stroke-dasharray="6 2.4 1.4 2.4"/></svg><span>Masa mayor, <i>R</i> = 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub></span></span></p>
+                <figcaption>Se representa un agujero negro cuya masa está en una superposición, en unidades con <span class="nowrap"><i>G</i> = <i>c</i> = 1</span>, mediante tres paneles. El panel superior es el diagrama de Penrose de la masa media, en el que las diagonales discontinuas representan sus horizontes en el radio 2<i>m</i><sub>0</sub> y el sombreado dorado representa los radios en los que puede estar el horizonte. El panel central muestra el radio contra el tiempo en coordenadas de Eddington-Finkelstein entrantes, en las que el horizonte de cada rama es una línea vertical en su propio radio; las líneas representan el radio medio y los radios 2<i>m</i><sub>0</sub> − 2σ<sub><i>m</i></sub> y 2<i>m</i><sub>0</sub> + 2σ<sub><i>m</i></sub>, que son los radios del horizonte de las ramas con masas <i>m</i><sub>0</sub> − σ<sub><i>m</i></sub> y <i>m</i><sub>0</sub> + σ<sub><i>m</i></sub>. La luz que cae cruza toda la banda. El panel inferior representa la densidad de probabilidad del radio del horizonte <i>R</i>, dibujada como una gaussiana a modo de ilustración y escalada para que su máximo sea uno, con las mismas tres líneas. El sombreado dorado en una esfera de radio <i>r</i> sigue esta densidad en <i>R</i> = <i>r</i>. El ancho <span class="nowrap">σ<sub><i>m</i></sub>/<i>m</i><sub>0</sub> = 0.05</span> está exagerado para que la dispersión sea visible.</figcaption>
+              </figure>
+              <div class="beside__rest">
+                <figure class="theme__figure">
+                  <img src="../figures/newton_correction.svg" width="518" height="331" alt="Gráfica log-log, en función de la distancia desde un micrómetro hasta más de 1 UA, del tamaño de la corrección cuántica principal al potencial de Newton relativa a GM/x. Una línea dorada continua, que decrece como el inverso de la distancia, queda entre unos treinta y cincuenta órdenes de magnitud por encima de una línea discontinua que decrece como el inverso del cuadrado de la distancia.">
+                  <figcaption>Se grafica, en función de la distancia, la corrección cuántica principal al potencial de Newton relativa a <i>GM</i>/<i>x</i>. La línea continua representa la corrección obtenida de los momentos del estado, con las ecuaciones (42) y (45) de nuestro artículo sobre superposiciones de espaciotiempos, con <i>bU</i><sub>0</sub> = ℓ<sub>P</sub><sup>4</sup>, el orden de magnitud que permiten las dos cotas del texto, y el valor de <i>C</i> que hace mínima la corrección dentro de la cota <i>C</i><sup>4</sup> &lt; 64<i>bU</i><sub>0</sub>. Decrece como ℓ<sub>P</sub>/<i>x</i>. La línea discontinua muestra la corrección (41/10<span class="math">π</span>)ℓ<sub>P</sub><sup>2</sup>/<i>x</i><sup>2</sup> obtenida en gravedad cuántica perturbativa (<a href="https://arxiv.org/abs/hep-th/0211072" target="_blank" rel="noopener">Bjerrum-Bohr, Donoghue y Holstein, 2003</a>), que decrece como ℓ<sub>P</sub><sup>2</sup>/<i>x</i><sup>2</sup>. Aun en su valor mínimo, la corrección de los momentos es mayor que la perturbativa en todas las distancias mostradas. Como es proporcional a (<i>bU</i><sub>0</sub>)<sup>1/4</sup>, esto se mantiene a menos que <i>bU</i><sub>0</sub> sea más de cien órdenes de magnitud menor que ℓ<sub>P</sub><sup>4</sup>. Ninguna de las dos depende de la masa, y ambas valen para distancias mucho mayores que el radio de Schwarzschild.</figcaption>
+                </figure>
+                <p>En la aproximación asintótica de este modelo, lejos del agujero negro, mostré que exigir la covariancia del elemento de línea corregido de un agujero negro cuántico estático impone una cota superior a las fluctuaciones de una componente de la métrica. El principio de incertidumbre por sí solo no impone esa cota. Junto con el principio de incertidumbre, la cota también limita por abajo las fluctuaciones del momento conjugado a esa componente, que es la curvatura extrínseca de las secciones espaciales. Para hacer predicciones hay que fijar el producto de incertidumbres del estado. En esta aproximación, la cota superior implica que la varianza del área de una esfera lejos del agujero negro es a lo sumo del orden de su área en unidades de Planck. Zurek y sus colaboradores han obtenido una cota inferior del mismo orden para un diamante causal (<a href="https://arxiv.org/abs/2504.12282" target="_blank" rel="noopener">Ciambelli, He y Zurek, 2025</a>). Juntas, las dos cotas restringen qué estados cuánticos están permitidos y fijan un tamaño mínimo para la corrección cuántica al potencial de Newton, que se muestra en la figura de arriba. Un agujero negro que es estático en promedio es entonces una superposición de geometrías en colapso y en expansión. El efecto es despreciable para agujeros negros mucho mayores que la longitud de Planck, pero podría ser relevante para los agujeros negros primordiales.</p>
+                <p>Las fluctuaciones y correlaciones que utilizo aquí son los momentos de segundo orden del estado. <a href="moments.html#moment-dial" target="_blank" rel="noopener">La página sobre momentos</a> muestra qué información conserva y cuál omite una descripción por momentos.</p>
+                <p class="theme__next">Quiero determinar cómo se comportan estas fluctuaciones en el horizonte al incluir perturbaciones sin simetría esférica y correlaciones entre puntos. También quiero saber si las oscilaciones cuánticas de superposiciones perturbadas emiten ondas gravitacionales.</p>
+                <p class="theme__papers"><a href="https://arxiv.org/abs/2012.07649" target="_blank" rel="noopener">Quasiclassical solutions for static quantum black holes</a><a href="https://arxiv.org/abs/2405.20193" target="_blank" rel="noopener">Spacetime superpositions as fluctuating geometries</a></p>
+                <p class="theme__more"><a href="moments.html" target="_blank" rel="noopener">Momentos cuánticos</a></p>
+                <p class="theme__more"><a href="superposicion.html" target="_blank" rel="noopener">Superposiciones de espaciotiempos</a></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="theme" id="simulation">
+            <div>
+              <h3>Simulación cuántica de sistemas con constricciones</h3>
+            </div>
+            <div class="theme__body">
+              <p>En una simulación cuántica se estiman valores esperados, fluctuaciones y correlaciones mediante una serie de mediciones. Los <a href="moments.html" target="_blank" rel="noopener">métodos canónicos efectivos</a> también calculan esas cantidades. Quiero usar estos métodos para predecir los resultados de simulaciones de sistemas con constricciones, diagnosticar errores que las violan e identificar cuándo resultan insuficientes los truncamientos sencillos. El <a href="#benchmark">rebote en el registro cuántico</a> es un primer caso de prueba con solución exacta.</p>
+            </div>
+            <div class="theme__band bench-band" id="benchmark" aria-labelledby="benchmark-h">
+          <h4 class="bench__title" id="benchmark-h">Dos truncamientos</h4>
+          <p class="bench__intro">En el cálculo con qubits conservo los 2<sup><i>n</i></sup> estados propios de menor volumen (donde <i>n</i> es el número de qubits). En las ecuaciones de momentos conservo todos los momentos hasta el orden <i>N</i>. Para el rebote que admite una solución exacta puedo variar <i>n</i> y <i>N</i> de forma independiente y comparar ambos cálculos con la evolución exacta. Cuando incorporo una interacción, tengo que comprobar la convergencia en <i>n</i> antes de usar los resultados con qubits para evaluar la expansión en momentos. ¿Qué valor de <i>N</i> necesito para seguir el rebote con una precisión dada?</p>
+          <figure class="twoways">
+            <div class="twoways__scroll">
+              <svg class="chart" viewBox="0 0 1040 400" role="img" aria-labelledby="twowaysTitle">
+                <title id="twowaysTitle">Volumen medio y varianza del volumen durante el rebote, con la solución exacta, registros de 5, 6, 7 y 8 qubits y las ecuaciones de momentos de segundo orden</title>
+                <line class="grid" x1="78.0" x2="436.0" y1="291.7" y2="291.7"/>
+                <text x="68.0" y="296.7" text-anchor="end">10</text>
+                <line class="grid" x1="78.0" x2="436.0" y1="137.8" y2="137.8"/>
+                <text x="68.0" y="142.8" text-anchor="end">100</text>
+                <line class="axis" x1="97.9" x2="97.9" y1="338.0" y2="343.0"/>
+                <text x="97.9" y="361.0" text-anchor="middle">−4</text>
+                <line class="axis" x1="137.7" x2="137.7" y1="338.0" y2="343.0"/>
+                <text x="137.7" y="361.0" text-anchor="middle">−3</text>
+                <line class="axis" x1="177.4" x2="177.4" y1="338.0" y2="343.0"/>
+                <text x="177.4" y="361.0" text-anchor="middle">−2</text>
+                <line class="axis" x1="217.2" x2="217.2" y1="338.0" y2="343.0"/>
+                <text x="217.2" y="361.0" text-anchor="middle">−1</text>
+                <line class="axis" x1="257.0" x2="257.0" y1="338.0" y2="343.0"/>
+                <text x="257.0" y="361.0" text-anchor="middle">0</text>
+                <line class="axis" x1="296.8" x2="296.8" y1="338.0" y2="343.0"/>
+                <text x="296.8" y="361.0" text-anchor="middle">1</text>
+                <line class="axis" x1="336.6" x2="336.6" y1="338.0" y2="343.0"/>
+                <text x="336.6" y="361.0" text-anchor="middle">2</text>
+                <line class="axis" x1="376.3" x2="376.3" y1="338.0" y2="343.0"/>
+                <text x="376.3" y="361.0" text-anchor="middle">3</text>
+                <line class="axis" x1="416.1" x2="416.1" y1="338.0" y2="343.0"/>
+                <text x="416.1" y="361.0" text-anchor="middle">4</text>
+                <line class="axis" x1="78.0" x2="436.0" y1="338.0" y2="338.0"/>
+                <line class="axis" x1="78.0" x2="78.0" y1="18.0" y2="338.0"/>
+                <text x="257.0" y="390.0" text-anchor="middle">Tiempo relacional φ</text>
+                <text x="20.0" y="178.0" text-anchor="middle" transform="rotate(-90 20.0 178.0)">Volumen medio</text>
+                <path class="twoways__exact" d="M78.0 48.1 L80.0 51.4 L82.0 54.8 L84.0 58.1 L86.0 61.4 L87.9 64.8 L89.9 68.1 L91.9 71.5 L93.9 74.8 L95.9 78.1 L97.9 81.5 L99.9 84.8 L101.9 88.2 L103.9 91.5 L105.8 94.8 L107.8 98.2 L109.8 101.5 L111.8 104.8 L113.8 108.2 L115.8 111.5 L117.8 114.9 L119.8 118.2 L121.8 121.5 L123.7 124.9 L125.7 128.2 L127.7 131.5 L129.7 134.9 L131.7 138.2 L133.7 141.5 L135.7 144.8 L137.7 148.2 L139.7 151.5 L141.6 154.8 L143.6 158.1 L145.6 161.5 L147.6 164.8 L149.6 168.1 L151.6 171.4 L153.6 174.7 L155.6 178.0 L157.6 181.3 L159.5 184.6 L161.5 187.9 L163.5 191.2 L165.5 194.5 L167.5 197.7 L169.5 201.0 L171.5 204.3 L173.5 207.5 L175.5 210.7 L177.4 214.0 L179.4 217.2 L181.4 220.4 L183.4 223.6 L185.4 226.7 L187.4 229.9 L189.4 233.0 L191.4 236.2 L193.4 239.2 L195.3 242.3 L197.3 245.4 L199.3 248.4 L201.3 251.3 L203.3 254.3 L205.3 257.2 L207.3 260.0 L209.3 262.8 L211.3 265.6 L213.2 268.3 L215.2 271.0 L217.2 273.5 L219.2 276.0 L221.2 278.5 L223.2 280.8 L225.2 283.1 L227.2 285.3 L229.2 287.3 L231.1 289.3 L233.1 291.2 L235.1 292.9 L237.1 294.5 L239.1 296.0 L241.1 297.3 L243.1 298.5 L245.1 299.6 L247.1 300.5 L249.0 301.2 L251.0 301.8 L253.0 302.2 L255.0 302.4 L257.0 302.5 L259.0 302.4 L261.0 302.2 L263.0 301.8 L265.0 301.2 L266.9 300.5 L268.9 299.6 L270.9 298.5 L272.9 297.3 L274.9 296.0 L276.9 294.5 L278.9 292.9 L280.9 291.2 L282.9 289.3 L284.8 287.3 L286.8 285.3 L288.8 283.1 L290.8 280.8 L292.8 278.5 L294.8 276.0 L296.8 273.5 L298.8 271.0 L300.8 268.3 L302.7 265.6 L304.7 262.8 L306.7 260.0 L308.7 257.2 L310.7 254.3 L312.7 251.3 L314.7 248.4 L316.7 245.4 L318.7 242.3 L320.6 239.2 L322.6 236.2 L324.6 233.0 L326.6 229.9 L328.6 226.7 L330.6 223.6 L332.6 220.4 L334.6 217.2 L336.6 214.0 L338.5 210.7 L340.5 207.5 L342.5 204.3 L344.5 201.0 L346.5 197.7 L348.5 194.5 L350.5 191.2 L352.5 187.9 L354.5 184.6 L356.4 181.3 L358.4 178.0 L360.4 174.7 L362.4 171.4 L364.4 168.1 L366.4 164.8 L368.4 161.5 L370.4 158.1 L372.4 154.8 L374.3 151.5 L376.3 148.2 L378.3 144.8 L380.3 141.5 L382.3 138.2 L384.3 134.9 L386.3 131.5 L388.3 128.2 L390.3 124.9 L392.2 121.5 L394.2 118.2 L396.2 114.9 L398.2 111.5 L400.2 108.2 L402.2 104.8 L404.2 101.5 L406.2 98.2 L408.2 94.8 L410.1 91.5 L412.1 88.2 L414.1 84.8 L416.1 81.5 L418.1 78.1 L420.1 74.8 L422.1 71.5 L424.1 68.1 L426.1 64.8 L428.0 61.4 L430.0 58.1 L432.0 54.8 L434.0 51.4 L436.0 48.1"/>
+                <path class="twoways__reg twoways__reg--5" d="M78.0 293.1 L80.0 294.1 L82.0 295.1 L84.0 295.8 L86.0 296.4 L87.9 296.9 L89.9 297.2 L91.9 297.3 L93.9 297.3 L95.9 297.0 L97.9 296.7 L99.9 296.1 L101.9 295.5 L103.9 294.6 L105.8 293.7 L107.8 292.5 L109.8 291.3 L111.8 289.9 L113.8 288.4 L115.8 286.8 L117.8 285.1 L119.8 283.2 L121.8 281.3 L123.7 279.3 L125.7 277.2 L127.7 275.1 L129.7 272.8 L131.7 270.6 L133.7 268.3 L135.7 266.0 L137.7 263.6 L139.7 261.3 L141.6 258.9 L143.6 256.6 L145.6 254.3 L147.6 252.0 L149.6 249.7 L151.6 247.6 L153.6 245.5 L155.6 243.4 L157.6 241.5 L159.5 239.8 L161.5 238.1 L163.5 236.6 L165.5 235.3 L167.5 234.1 L169.5 233.2 L171.5 232.5 L173.5 232.0 L175.5 231.7 L177.4 231.8 L179.4 232.1 L181.4 232.6 L183.4 233.5 L185.4 234.6 L187.4 236.0 L189.4 237.7 L191.4 239.6 L193.4 241.7 L195.3 244.0 L197.3 246.5 L199.3 249.1 L201.3 251.8 L203.3 254.6 L205.3 257.3 L207.3 260.1 L209.3 262.9 L211.3 265.6 L213.2 268.3 L215.2 271.0 L217.2 273.5 L219.2 276.0 L221.2 278.5 L223.2 280.8 L225.2 283.1 L227.2 285.3 L229.2 287.3 L231.1 289.3 L233.1 291.2 L235.1 292.9 L237.1 294.5 L239.1 296.0 L241.1 297.3 L243.1 298.5 L245.1 299.6 L247.1 300.5 L249.0 301.2 L251.0 301.8 L253.0 302.2 L255.0 302.4 L257.0 302.5 L259.0 302.4 L261.0 302.2 L263.0 301.8 L265.0 301.2 L266.9 300.5 L268.9 299.6 L270.9 298.5 L272.9 297.3 L274.9 296.0 L276.9 294.5 L278.9 292.9 L280.9 291.2 L282.9 289.3 L284.8 287.3 L286.8 285.3 L288.8 283.1 L290.8 280.8 L292.8 278.5 L294.8 276.0 L296.8 273.5 L298.8 271.0 L300.8 268.3 L302.7 265.6 L304.7 262.9 L306.7 260.1 L308.7 257.3 L310.7 254.6 L312.7 251.8 L314.7 249.1 L316.7 246.5 L318.7 244.0 L320.6 241.7 L322.6 239.6 L324.6 237.7 L326.6 236.0 L328.6 234.6 L330.6 233.5 L332.6 232.6 L334.6 232.1 L336.6 231.8 L338.5 231.7 L340.5 232.0 L342.5 232.5 L344.5 233.2 L346.5 234.1 L348.5 235.3 L350.5 236.6 L352.5 238.1 L354.5 239.8 L356.4 241.5 L358.4 243.4 L360.4 245.5 L362.4 247.6 L364.4 249.7 L366.4 252.0 L368.4 254.3 L370.4 256.6 L372.4 258.9 L374.3 261.3 L376.3 263.6 L378.3 266.0 L380.3 268.3 L382.3 270.6 L384.3 272.8 L386.3 275.1 L388.3 277.2 L390.3 279.3 L392.2 281.3 L394.2 283.2 L396.2 285.1 L398.2 286.8 L400.2 288.4 L402.2 289.9 L404.2 291.3 L406.2 292.5 L408.2 293.7 L410.1 294.6 L412.1 295.5 L414.1 296.1 L416.1 296.7 L418.1 297.0 L420.1 297.3 L422.1 297.3 L424.1 297.2 L426.1 296.9 L428.0 296.4 L430.0 295.8 L432.0 295.1 L434.0 294.1 L436.0 293.1"/>
+                <path class="twoways__reg twoways__reg--6" d="M78.0 266.9 L80.0 264.3 L82.0 261.7 L84.0 259.0 L86.0 256.3 L87.9 253.6 L89.9 250.8 L91.9 248.0 L93.9 245.1 L95.9 242.3 L97.9 239.4 L99.9 236.5 L101.9 233.7 L103.9 230.8 L105.8 228.0 L107.8 225.1 L109.8 222.3 L111.8 219.5 L113.8 216.8 L115.8 214.0 L117.8 211.4 L119.8 208.8 L121.8 206.3 L123.7 203.9 L125.7 201.5 L127.7 199.3 L129.7 197.2 L131.7 195.3 L133.7 193.5 L135.7 191.8 L137.7 190.4 L139.7 189.1 L141.6 188.1 L143.6 187.3 L145.6 186.8 L147.6 186.5 L149.6 186.5 L151.6 186.8 L153.6 187.4 L155.6 188.3 L157.6 189.5 L159.5 191.0 L161.5 192.8 L163.5 194.8 L165.5 197.1 L167.5 199.5 L169.5 202.2 L171.5 205.0 L173.5 208.0 L175.5 211.0 L177.4 214.1 L179.4 217.3 L181.4 220.4 L183.4 223.6 L185.4 226.8 L187.4 229.9 L189.4 233.0 L191.4 236.2 L193.4 239.2 L195.3 242.3 L197.3 245.4 L199.3 248.4 L201.3 251.3 L203.3 254.3 L205.3 257.2 L207.3 260.0 L209.3 262.8 L211.3 265.6 L213.2 268.3 L215.2 271.0 L217.2 273.5 L219.2 276.0 L221.2 278.5 L223.2 280.8 L225.2 283.1 L227.2 285.3 L229.2 287.3 L231.1 289.3 L233.1 291.2 L235.1 292.9 L237.1 294.5 L239.1 296.0 L241.1 297.3 L243.1 298.5 L245.1 299.6 L247.1 300.5 L249.0 301.2 L251.0 301.8 L253.0 302.2 L255.0 302.4 L257.0 302.5 L259.0 302.4 L261.0 302.2 L263.0 301.8 L265.0 301.2 L266.9 300.5 L268.9 299.6 L270.9 298.5 L272.9 297.3 L274.9 296.0 L276.9 294.5 L278.9 292.9 L280.9 291.2 L282.9 289.3 L284.8 287.3 L286.8 285.3 L288.8 283.1 L290.8 280.8 L292.8 278.5 L294.8 276.0 L296.8 273.5 L298.8 271.0 L300.8 268.3 L302.7 265.6 L304.7 262.8 L306.7 260.0 L308.7 257.2 L310.7 254.3 L312.7 251.3 L314.7 248.4 L316.7 245.4 L318.7 242.3 L320.6 239.2 L322.6 236.2 L324.6 233.0 L326.6 229.9 L328.6 226.8 L330.6 223.6 L332.6 220.4 L334.6 217.3 L336.6 214.1 L338.5 211.0 L340.5 208.0 L342.5 205.0 L344.5 202.2 L346.5 199.5 L348.5 197.1 L350.5 194.8 L352.5 192.8 L354.5 191.0 L356.4 189.5 L358.4 188.3 L360.4 187.4 L362.4 186.8 L364.4 186.5 L366.4 186.5 L368.4 186.8 L370.4 187.3 L372.4 188.1 L374.3 189.1 L376.3 190.4 L378.3 191.8 L380.3 193.5 L382.3 195.3 L384.3 197.2 L386.3 199.3 L388.3 201.5 L390.3 203.9 L392.2 206.3 L394.2 208.8 L396.2 211.4 L398.2 214.0 L400.2 216.8 L402.2 219.5 L404.2 222.3 L406.2 225.1 L408.2 228.0 L410.1 230.8 L412.1 233.7 L414.1 236.5 L416.1 239.4 L418.1 242.3 L420.1 245.1 L422.1 248.0 L424.1 250.8 L426.1 253.6 L428.0 256.3 L430.0 259.0 L432.0 261.7 L434.0 264.3 L436.0 266.9"/>
+                <path class="twoways__reg twoways__reg--7" d="M78.0 183.7 L80.0 180.8 L82.0 177.8 L84.0 174.9 L86.0 172.0 L87.9 169.2 L89.9 166.5 L91.9 163.8 L93.9 161.2 L95.9 158.7 L97.9 156.3 L99.9 154.0 L101.9 151.8 L103.9 149.8 L105.8 147.9 L107.8 146.2 L109.8 144.7 L111.8 143.4 L113.8 142.4 L115.8 141.5 L117.8 140.9 L119.8 140.6 L121.8 140.6 L123.7 140.8 L125.7 141.4 L127.7 142.3 L129.7 143.4 L131.7 144.9 L133.7 146.6 L135.7 148.7 L137.7 150.9 L139.7 153.4 L141.6 156.1 L143.6 159.0 L145.6 162.0 L147.6 165.1 L149.6 168.3 L151.6 171.5 L153.6 174.8 L155.6 178.0 L157.6 181.3 L159.5 184.6 L161.5 187.9 L163.5 191.2 L165.5 194.5 L167.5 197.7 L169.5 201.0 L171.5 204.3 L173.5 207.5 L175.5 210.7 L177.4 214.0 L179.4 217.2 L181.4 220.4 L183.4 223.6 L185.4 226.7 L187.4 229.9 L189.4 233.0 L191.4 236.2 L193.4 239.2 L195.3 242.3 L197.3 245.4 L199.3 248.4 L201.3 251.3 L203.3 254.3 L205.3 257.2 L207.3 260.0 L209.3 262.8 L211.3 265.6 L213.2 268.3 L215.2 271.0 L217.2 273.5 L219.2 276.0 L221.2 278.5 L223.2 280.8 L225.2 283.1 L227.2 285.3 L229.2 287.3 L231.1 289.3 L233.1 291.2 L235.1 292.9 L237.1 294.5 L239.1 296.0 L241.1 297.3 L243.1 298.5 L245.1 299.6 L247.1 300.5 L249.0 301.2 L251.0 301.8 L253.0 302.2 L255.0 302.4 L257.0 302.5 L259.0 302.4 L261.0 302.2 L263.0 301.8 L265.0 301.2 L266.9 300.5 L268.9 299.6 L270.9 298.5 L272.9 297.3 L274.9 296.0 L276.9 294.5 L278.9 292.9 L280.9 291.2 L282.9 289.3 L284.8 287.3 L286.8 285.3 L288.8 283.1 L290.8 280.8 L292.8 278.5 L294.8 276.0 L296.8 273.5 L298.8 271.0 L300.8 268.3 L302.7 265.6 L304.7 262.8 L306.7 260.0 L308.7 257.2 L310.7 254.3 L312.7 251.3 L314.7 248.4 L316.7 245.4 L318.7 242.3 L320.6 239.2 L322.6 236.2 L324.6 233.0 L326.6 229.9 L328.6 226.7 L330.6 223.6 L332.6 220.4 L334.6 217.2 L336.6 214.0 L338.5 210.7 L340.5 207.5 L342.5 204.3 L344.5 201.0 L346.5 197.7 L348.5 194.5 L350.5 191.2 L352.5 187.9 L354.5 184.6 L356.4 181.3 L358.4 178.0 L360.4 174.8 L362.4 171.5 L364.4 168.3 L366.4 165.1 L368.4 162.0 L370.4 159.0 L372.4 156.1 L374.3 153.4 L376.3 150.9 L378.3 148.7 L380.3 146.6 L382.3 144.9 L384.3 143.4 L386.3 142.3 L388.3 141.4 L390.3 140.8 L392.2 140.6 L394.2 140.6 L396.2 140.9 L398.2 141.5 L400.2 142.4 L402.2 143.4 L404.2 144.7 L406.2 146.2 L408.2 147.9 L410.1 149.8 L412.1 151.8 L414.1 154.0 L416.1 156.3 L418.1 158.7 L420.1 161.2 L422.1 163.8 L424.1 166.5 L426.1 169.2 L428.0 172.0 L430.0 174.9 L432.0 177.8 L434.0 180.8 L436.0 183.7"/>
+                <path class="twoways__reg twoways__reg--8" d="M78.0 102.1 L80.0 100.4 L82.0 98.8 L84.0 97.5 L86.0 96.4 L87.9 95.5 L89.9 94.9 L91.9 94.5 L93.9 94.4 L95.9 94.6 L97.9 95.1 L99.9 95.9 L101.9 97.1 L103.9 98.5 L105.8 100.2 L107.8 102.2 L109.8 104.4 L111.8 106.9 L113.8 109.6 L115.8 112.4 L117.8 115.4 L119.8 118.5 L121.8 121.7 L123.7 125.0 L125.7 128.3 L127.7 131.6 L129.7 134.9 L131.7 138.2 L133.7 141.5 L135.7 144.8 L137.7 148.2 L139.7 151.5 L141.6 154.8 L143.6 158.1 L145.6 161.5 L147.6 164.8 L149.6 168.1 L151.6 171.4 L153.6 174.7 L155.6 178.0 L157.6 181.3 L159.5 184.6 L161.5 187.9 L163.5 191.2 L165.5 194.5 L167.5 197.7 L169.5 201.0 L171.5 204.3 L173.5 207.5 L175.5 210.7 L177.4 214.0 L179.4 217.2 L181.4 220.4 L183.4 223.6 L185.4 226.7 L187.4 229.9 L189.4 233.0 L191.4 236.2 L193.4 239.2 L195.3 242.3 L197.3 245.4 L199.3 248.4 L201.3 251.3 L203.3 254.3 L205.3 257.2 L207.3 260.0 L209.3 262.8 L211.3 265.6 L213.2 268.3 L215.2 271.0 L217.2 273.5 L219.2 276.0 L221.2 278.5 L223.2 280.8 L225.2 283.1 L227.2 285.3 L229.2 287.3 L231.1 289.3 L233.1 291.2 L235.1 292.9 L237.1 294.5 L239.1 296.0 L241.1 297.3 L243.1 298.5 L245.1 299.6 L247.1 300.5 L249.0 301.2 L251.0 301.8 L253.0 302.2 L255.0 302.4 L257.0 302.5 L259.0 302.4 L261.0 302.2 L263.0 301.8 L265.0 301.2 L266.9 300.5 L268.9 299.6 L270.9 298.5 L272.9 297.3 L274.9 296.0 L276.9 294.5 L278.9 292.9 L280.9 291.2 L282.9 289.3 L284.8 287.3 L286.8 285.3 L288.8 283.1 L290.8 280.8 L292.8 278.5 L294.8 276.0 L296.8 273.5 L298.8 271.0 L300.8 268.3 L302.7 265.6 L304.7 262.8 L306.7 260.0 L308.7 257.2 L310.7 254.3 L312.7 251.3 L314.7 248.4 L316.7 245.4 L318.7 242.3 L320.6 239.2 L322.6 236.2 L324.6 233.0 L326.6 229.9 L328.6 226.7 L330.6 223.6 L332.6 220.4 L334.6 217.2 L336.6 214.0 L338.5 210.7 L340.5 207.5 L342.5 204.3 L344.5 201.0 L346.5 197.7 L348.5 194.5 L350.5 191.2 L352.5 187.9 L354.5 184.6 L356.4 181.3 L358.4 178.0 L360.4 174.7 L362.4 171.4 L364.4 168.1 L366.4 164.8 L368.4 161.5 L370.4 158.1 L372.4 154.8 L374.3 151.5 L376.3 148.2 L378.3 144.8 L380.3 141.5 L382.3 138.2 L384.3 134.9 L386.3 131.6 L388.3 128.3 L390.3 125.0 L392.2 121.7 L394.2 118.5 L396.2 115.4 L398.2 112.4 L400.2 109.6 L402.2 106.9 L404.2 104.4 L406.2 102.2 L408.2 100.2 L410.1 98.5 L412.1 97.1 L414.1 95.9 L416.1 95.1 L418.1 94.6 L420.1 94.4 L422.1 94.5 L424.1 94.9 L426.1 95.5 L428.0 96.4 L430.0 97.5 L432.0 98.8 L434.0 100.4 L436.0 102.1"/>
+                <path class="moments2 twoways__mom" d="M78.0 48.1 L80.0 51.4 L82.0 54.8 L84.0 58.1 L86.0 61.4 L87.9 64.8 L89.9 68.1 L91.9 71.5 L93.9 74.8 L95.9 78.1 L97.9 81.5 L99.9 84.8 L101.9 88.2 L103.9 91.5 L105.8 94.8 L107.8 98.2 L109.8 101.5 L111.8 104.8 L113.8 108.2 L115.8 111.5 L117.8 114.9 L119.8 118.2 L121.8 121.5 L123.7 124.9 L125.7 128.2 L127.7 131.5 L129.7 134.9 L131.7 138.2 L133.7 141.5 L135.7 144.8 L137.7 148.2 L139.7 151.5 L141.6 154.8 L143.6 158.1 L145.6 161.5 L147.6 164.8 L149.6 168.1 L151.6 171.4 L153.6 174.7 L155.6 178.0 L157.6 181.3 L159.5 184.6 L161.5 187.9 L163.5 191.2 L165.5 194.5 L167.5 197.7 L169.5 201.0 L171.5 204.3 L173.5 207.5 L175.5 210.7 L177.4 214.0 L179.4 217.2 L181.4 220.4 L183.4 223.6 L185.4 226.7 L187.4 229.9 L189.4 233.0 L191.4 236.2 L193.4 239.2 L195.3 242.3 L197.3 245.4 L199.3 248.4 L201.3 251.3 L203.3 254.3 L205.3 257.2 L207.3 260.0 L209.3 262.8 L211.3 265.6 L213.2 268.3 L215.2 271.0 L217.2 273.5 L219.2 276.0 L221.2 278.5 L223.2 280.8 L225.2 283.1 L227.2 285.3 L229.2 287.3 L231.1 289.3 L233.1 291.2 L235.1 292.9 L237.1 294.5 L239.1 296.0 L241.1 297.3 L243.1 298.5 L245.1 299.6 L247.1 300.5 L249.0 301.2 L251.0 301.8 L253.0 302.2 L255.0 302.4 L257.0 302.5 L259.0 302.4 L261.0 302.2 L263.0 301.8 L265.0 301.2 L266.9 300.5 L268.9 299.6 L270.9 298.5 L272.9 297.3 L274.9 296.0 L276.9 294.5 L278.9 292.9 L280.9 291.2 L282.9 289.3 L284.8 287.3 L286.8 285.3 L288.8 283.1 L290.8 280.8 L292.8 278.5 L294.8 276.0 L296.8 273.5 L298.8 271.0 L300.8 268.3 L302.7 265.6 L304.7 262.8 L306.7 260.0 L308.7 257.2 L310.7 254.3 L312.7 251.3 L314.7 248.4 L316.7 245.4 L318.7 242.3 L320.6 239.2 L322.6 236.2 L324.6 233.0 L326.6 229.9 L328.6 226.7 L330.6 223.6 L332.6 220.4 L334.6 217.2 L336.6 214.0 L338.5 210.7 L340.5 207.5 L342.5 204.3 L344.5 201.0 L346.5 197.7 L348.5 194.5 L350.5 191.2 L352.5 187.9 L354.5 184.6 L356.4 181.3 L358.4 178.0 L360.4 174.7 L362.4 171.4 L364.4 168.1 L366.4 164.8 L368.4 161.5 L370.4 158.1 L372.4 154.8 L374.3 151.5 L376.3 148.2 L378.3 144.8 L380.3 141.5 L382.3 138.2 L384.3 134.9 L386.3 131.5 L388.3 128.2 L390.3 124.9 L392.2 121.5 L394.2 118.2 L396.2 114.9 L398.2 111.5 L400.2 108.2 L402.2 104.8 L404.2 101.5 L406.2 98.2 L408.2 94.8 L410.1 91.5 L412.1 88.2 L414.1 84.8 L416.1 81.5 L418.1 78.1 L420.1 74.8 L422.1 71.5 L424.1 68.1 L426.1 64.8 L428.0 61.4 L430.0 58.1 L432.0 54.8 L434.0 51.4 L436.0 48.1"/>
+                <circle class="twoways__dep twoways__dep--5" cx="306.3" cy="260.7" r="4.5"/>
+                <circle class="twoways__dep twoways__dep--6" cx="333.9" cy="218.3" r="4.5"/>
+                <circle class="twoways__dep twoways__dep--7" cx="361.3" cy="173.2" r="4.5"/>
+                <circle class="twoways__dep twoways__dep--8" cx="388.8" cy="127.3" r="4.5"/>
+                <text class="twoways__label" x="445.0" y="298.1">5 qubits</text>
+                <text class="twoways__label" x="445.0" y="271.9">6 qubits</text>
+                <text class="twoways__label" x="445.0" y="188.7">7 qubits</text>
+                <text class="twoways__label" x="445.0" y="107.1">8 qubits</text>
+                <line class="grid" x1="598.0" x2="956.0" y1="338.0" y2="338.0"/>
+                <text x="588.0" y="343.0" text-anchor="end">1</text>
+                <line class="grid" x1="598.0" x2="956.0" y1="266.5" y2="266.5"/>
+                <text x="588.0" y="271.5" text-anchor="end">10</text>
+                <line class="grid" x1="598.0" x2="956.0" y1="195.1" y2="195.1"/>
+                <text x="588.0" y="200.1" text-anchor="end">100</text>
+                <line class="grid" x1="598.0" x2="956.0" y1="123.6" y2="123.6"/>
+                <text x="588.0" y="128.6" text-anchor="end">1,000</text>
+                <line class="grid" x1="598.0" x2="956.0" y1="52.1" y2="52.1"/>
+                <text x="588.0" y="57.1" text-anchor="end">10,000</text>
+                <line class="axis" x1="617.9" x2="617.9" y1="338.0" y2="343.0"/>
+                <text x="617.9" y="361.0" text-anchor="middle">−4</text>
+                <line class="axis" x1="657.7" x2="657.7" y1="338.0" y2="343.0"/>
+                <text x="657.7" y="361.0" text-anchor="middle">−3</text>
+                <line class="axis" x1="697.4" x2="697.4" y1="338.0" y2="343.0"/>
+                <text x="697.4" y="361.0" text-anchor="middle">−2</text>
+                <line class="axis" x1="737.2" x2="737.2" y1="338.0" y2="343.0"/>
+                <text x="737.2" y="361.0" text-anchor="middle">−1</text>
+                <line class="axis" x1="777.0" x2="777.0" y1="338.0" y2="343.0"/>
+                <text x="777.0" y="361.0" text-anchor="middle">0</text>
+                <line class="axis" x1="816.8" x2="816.8" y1="338.0" y2="343.0"/>
+                <text x="816.8" y="361.0" text-anchor="middle">1</text>
+                <line class="axis" x1="856.6" x2="856.6" y1="338.0" y2="343.0"/>
+                <text x="856.6" y="361.0" text-anchor="middle">2</text>
+                <line class="axis" x1="896.3" x2="896.3" y1="338.0" y2="343.0"/>
+                <text x="896.3" y="361.0" text-anchor="middle">3</text>
+                <line class="axis" x1="936.1" x2="936.1" y1="338.0" y2="343.0"/>
+                <text x="936.1" y="361.0" text-anchor="middle">4</text>
+                <line class="axis" x1="598.0" x2="956.0" y1="338.0" y2="338.0"/>
+                <line class="axis" x1="598.0" x2="598.0" y1="18.0" y2="338.0"/>
+                <text x="777.0" y="390.0" text-anchor="middle">Tiempo relacional φ</text>
+                <text x="540.0" y="178.0" text-anchor="middle" transform="rotate(-90 540.0 178.0)">Varianza del volumen</text>
+                <path class="twoways__exact" d="M598.0 28.9 L600.0 32.0 L602.0 35.1 L604.0 38.2 L606.0 41.3 L607.9 44.4 L609.9 47.5 L611.9 50.6 L613.9 53.7 L615.9 56.8 L617.9 59.9 L619.9 63.0 L621.9 66.1 L623.9 69.2 L625.8 72.3 L627.8 75.5 L629.8 78.6 L631.8 81.7 L633.8 84.8 L635.8 87.9 L637.8 91.0 L639.8 94.1 L641.8 97.2 L643.7 100.3 L645.7 103.4 L647.7 106.5 L649.7 109.6 L651.7 112.7 L653.7 115.9 L655.7 119.0 L657.7 122.1 L659.7 125.2 L661.6 128.3 L663.6 131.4 L665.6 134.5 L667.6 137.7 L669.6 140.8 L671.6 143.9 L673.6 147.0 L675.6 150.2 L677.6 153.3 L679.5 156.4 L681.5 159.6 L683.5 162.7 L685.5 165.8 L687.5 169.0 L689.5 172.1 L691.5 175.3 L693.5 178.4 L695.5 181.6 L697.4 184.8 L699.4 187.9 L701.4 191.1 L703.4 194.3 L705.4 197.5 L707.4 200.7 L709.4 204.0 L711.4 207.2 L713.4 210.5 L715.3 213.7 L717.3 217.0 L719.3 220.3 L721.3 223.6 L723.3 227.0 L725.3 230.3 L727.3 233.7 L729.3 237.1 L731.3 240.6 L733.2 244.1 L735.2 247.6 L737.2 251.1 L739.2 254.7 L741.2 258.4 L743.2 262.1 L745.2 265.8 L747.2 269.6 L749.2 273.4 L751.1 277.3 L753.1 281.2 L755.1 285.2 L757.1 289.1 L759.1 293.0 L761.1 296.9 L763.1 300.6 L765.1 304.2 L767.1 307.6 L769.0 310.5 L771.0 313.0 L773.0 314.9 L775.0 316.1 L777.0 316.5 L779.0 316.1 L781.0 314.9 L783.0 313.0 L785.0 310.5 L786.9 307.6 L788.9 304.2 L790.9 300.6 L792.9 296.9 L794.9 293.0 L796.9 289.1 L798.9 285.2 L800.9 281.2 L802.9 277.3 L804.8 273.4 L806.8 269.6 L808.8 265.8 L810.8 262.1 L812.8 258.4 L814.8 254.7 L816.8 251.1 L818.8 247.6 L820.8 244.1 L822.7 240.6 L824.7 237.1 L826.7 233.7 L828.7 230.3 L830.7 227.0 L832.7 223.6 L834.7 220.3 L836.7 217.0 L838.7 213.7 L840.6 210.5 L842.6 207.2 L844.6 204.0 L846.6 200.7 L848.6 197.5 L850.6 194.3 L852.6 191.1 L854.6 187.9 L856.6 184.8 L858.5 181.6 L860.5 178.4 L862.5 175.3 L864.5 172.1 L866.5 169.0 L868.5 165.8 L870.5 162.7 L872.5 159.6 L874.5 156.4 L876.4 153.3 L878.4 150.2 L880.4 147.0 L882.4 143.9 L884.4 140.8 L886.4 137.7 L888.4 134.5 L890.4 131.4 L892.4 128.3 L894.3 125.2 L896.3 122.1 L898.3 119.0 L900.3 115.9 L902.3 112.7 L904.3 109.6 L906.3 106.5 L908.3 103.4 L910.3 100.3 L912.2 97.2 L914.2 94.1 L916.2 91.0 L918.2 87.9 L920.2 84.8 L922.2 81.7 L924.2 78.6 L926.2 75.5 L928.2 72.3 L930.1 69.2 L932.1 66.1 L934.1 63.0 L936.1 59.9 L938.1 56.8 L940.1 53.7 L942.1 50.6 L944.1 47.5 L946.1 44.4 L948.0 41.3 L950.0 38.2 L952.0 35.1 L954.0 32.0 L956.0 28.9"/>
+                <path class="twoways__reg twoways__reg--5" d="M598.0 257.1 L600.0 260.5 L602.0 263.8 L604.0 267.2 L606.0 270.4 L607.9 273.3 L609.9 275.9 L611.9 277.9 L613.9 279.3 L615.9 280.1 L617.9 280.3 L619.9 279.9 L621.9 279.1 L623.9 277.8 L625.8 276.2 L627.8 274.1 L629.8 271.9 L631.8 269.3 L633.8 266.7 L635.8 263.9 L637.8 261.1 L639.8 258.3 L641.8 255.6 L643.7 252.9 L645.7 250.4 L647.7 247.9 L649.7 245.6 L651.7 243.4 L653.7 241.4 L655.7 239.5 L657.7 237.8 L659.7 236.3 L661.6 235.0 L663.6 233.8 L665.6 232.9 L667.6 232.2 L669.6 231.8 L671.6 231.5 L673.6 231.5 L675.6 231.8 L677.6 232.2 L679.5 232.8 L681.5 233.6 L683.5 234.4 L685.5 235.1 L687.5 235.8 L689.5 236.1 L691.5 236.0 L693.5 235.5 L695.5 234.5 L697.4 233.1 L699.4 231.4 L701.4 229.4 L703.4 227.5 L705.4 225.7 L707.4 224.2 L709.4 223.0 L711.4 222.4 L713.4 222.2 L715.3 222.5 L717.3 223.4 L719.3 224.8 L721.3 226.7 L723.3 228.9 L725.3 231.5 L727.3 234.4 L729.3 237.5 L731.3 240.8 L733.2 244.2 L735.2 247.6 L737.2 251.2 L739.2 254.8 L741.2 258.4 L743.2 262.1 L745.2 265.8 L747.2 269.6 L749.2 273.4 L751.1 277.3 L753.1 281.2 L755.1 285.2 L757.1 289.1 L759.1 293.0 L761.1 296.9 L763.1 300.6 L765.1 304.2 L767.1 307.6 L769.0 310.5 L771.0 313.0 L773.0 314.9 L775.0 316.1 L777.0 316.5 L779.0 316.1 L781.0 314.9 L783.0 313.0 L785.0 310.5 L786.9 307.6 L788.9 304.2 L790.9 300.6 L792.9 296.9 L794.9 293.0 L796.9 289.1 L798.9 285.2 L800.9 281.2 L802.9 277.3 L804.8 273.4 L806.8 269.6 L808.8 265.8 L810.8 262.1 L812.8 258.4 L814.8 254.8 L816.8 251.2 L818.8 247.6 L820.8 244.2 L822.7 240.8 L824.7 237.5 L826.7 234.4 L828.7 231.5 L830.7 228.9 L832.7 226.7 L834.7 224.8 L836.7 223.4 L838.7 222.5 L840.6 222.2 L842.6 222.4 L844.6 223.0 L846.6 224.2 L848.6 225.7 L850.6 227.5 L852.6 229.4 L854.6 231.4 L856.6 233.1 L858.5 234.5 L860.5 235.5 L862.5 236.0 L864.5 236.1 L866.5 235.8 L868.5 235.1 L870.5 234.4 L872.5 233.6 L874.5 232.8 L876.4 232.2 L878.4 231.8 L880.4 231.5 L882.4 231.5 L884.4 231.8 L886.4 232.2 L888.4 232.9 L890.4 233.8 L892.4 235.0 L894.3 236.3 L896.3 237.8 L898.3 239.5 L900.3 241.4 L902.3 243.4 L904.3 245.6 L906.3 247.9 L908.3 250.4 L910.3 252.9 L912.2 255.6 L914.2 258.3 L916.2 261.1 L918.2 263.9 L920.2 266.7 L922.2 269.3 L924.2 271.9 L926.2 274.1 L928.2 276.2 L930.1 277.8 L932.1 279.1 L934.1 279.9 L936.1 280.3 L938.1 280.1 L940.1 279.3 L942.1 277.9 L944.1 275.9 L946.1 273.3 L948.0 270.4 L950.0 267.2 L952.0 263.8 L954.0 260.5 L956.0 257.1"/>
+                <path class="twoways__reg twoways__reg--6" d="M598.0 225.8 L600.0 222.9 L602.0 220.1 L604.0 217.3 L606.0 214.7 L607.9 212.1 L609.9 209.6 L611.9 207.1 L613.9 204.8 L615.9 202.5 L617.9 200.4 L619.9 198.3 L621.9 196.4 L623.9 194.5 L625.8 192.8 L627.8 191.3 L629.8 189.9 L631.8 188.6 L633.8 187.5 L635.8 186.7 L637.8 186.0 L639.8 185.5 L641.8 185.2 L643.7 185.1 L645.7 185.3 L647.7 185.7 L649.7 186.3 L651.7 187.1 L653.7 188.0 L655.7 189.0 L657.7 189.9 L659.7 190.7 L661.6 191.3 L663.6 191.4 L665.6 191.0 L667.6 190.2 L669.6 188.8 L671.6 187.1 L673.6 185.1 L675.6 183.2 L677.6 181.3 L679.5 179.7 L681.5 178.5 L683.5 177.7 L685.5 177.5 L687.5 177.7 L689.5 178.5 L691.5 179.7 L693.5 181.4 L695.5 183.5 L697.4 185.9 L699.4 188.6 L701.4 191.5 L703.4 194.5 L705.4 197.6 L707.4 200.8 L709.4 204.0 L711.4 207.2 L713.4 210.5 L715.3 213.7 L717.3 217.0 L719.3 220.3 L721.3 223.6 L723.3 227.0 L725.3 230.3 L727.3 233.7 L729.3 237.1 L731.3 240.6 L733.2 244.1 L735.2 247.6 L737.2 251.1 L739.2 254.7 L741.2 258.4 L743.2 262.1 L745.2 265.8 L747.2 269.6 L749.2 273.4 L751.1 277.3 L753.1 281.2 L755.1 285.2 L757.1 289.1 L759.1 293.0 L761.1 296.9 L763.1 300.6 L765.1 304.2 L767.1 307.6 L769.0 310.5 L771.0 313.0 L773.0 314.9 L775.0 316.1 L777.0 316.5 L779.0 316.1 L781.0 314.9 L783.0 313.0 L785.0 310.5 L786.9 307.6 L788.9 304.2 L790.9 300.6 L792.9 296.9 L794.9 293.0 L796.9 289.1 L798.9 285.2 L800.9 281.2 L802.9 277.3 L804.8 273.4 L806.8 269.6 L808.8 265.8 L810.8 262.1 L812.8 258.4 L814.8 254.7 L816.8 251.1 L818.8 247.6 L820.8 244.1 L822.7 240.6 L824.7 237.1 L826.7 233.7 L828.7 230.3 L830.7 227.0 L832.7 223.6 L834.7 220.3 L836.7 217.0 L838.7 213.7 L840.6 210.5 L842.6 207.2 L844.6 204.0 L846.6 200.8 L848.6 197.6 L850.6 194.5 L852.6 191.5 L854.6 188.6 L856.6 185.9 L858.5 183.5 L860.5 181.4 L862.5 179.7 L864.5 178.5 L866.5 177.7 L868.5 177.5 L870.5 177.7 L872.5 178.5 L874.5 179.7 L876.4 181.3 L878.4 183.2 L880.4 185.1 L882.4 187.1 L884.4 188.8 L886.4 190.2 L888.4 191.0 L890.4 191.4 L892.4 191.3 L894.3 190.7 L896.3 189.9 L898.3 189.0 L900.3 188.0 L902.3 187.1 L904.3 186.3 L906.3 185.7 L908.3 185.3 L910.3 185.1 L912.2 185.2 L914.2 185.5 L916.2 186.0 L918.2 186.7 L920.2 187.5 L922.2 188.6 L924.2 189.9 L926.2 191.3 L928.2 192.8 L930.1 194.5 L932.1 196.4 L934.1 198.3 L936.1 200.4 L938.1 202.5 L940.1 204.8 L942.1 207.1 L944.1 209.6 L946.1 212.1 L948.0 214.7 L950.0 217.3 L952.0 220.1 L954.0 222.9 L956.0 225.8"/>
+                <path class="twoways__reg twoways__reg--7" d="M598.0 148.7 L600.0 147.2 L602.0 145.9 L604.0 144.7 L606.0 143.7 L607.9 142.8 L609.9 142.1 L611.9 141.7 L613.9 141.4 L615.9 141.4 L617.9 141.6 L619.9 142.0 L621.9 142.6 L623.9 143.4 L625.8 144.3 L627.8 145.4 L629.8 146.4 L631.8 147.2 L633.8 147.9 L635.8 148.1 L637.8 147.8 L639.8 147.1 L641.8 145.8 L643.7 144.1 L645.7 142.2 L647.7 140.2 L649.7 138.3 L651.7 136.7 L653.7 135.4 L655.7 134.5 L657.7 134.1 L659.7 134.3 L661.6 135.0 L663.6 136.1 L665.6 137.7 L667.6 139.7 L669.6 142.0 L671.6 144.6 L673.6 147.4 L675.6 150.4 L677.6 153.4 L679.5 156.5 L681.5 159.6 L683.5 162.7 L685.5 165.8 L687.5 169.0 L689.5 172.1 L691.5 175.3 L693.5 178.4 L695.5 181.6 L697.4 184.8 L699.4 187.9 L701.4 191.1 L703.4 194.3 L705.4 197.5 L707.4 200.7 L709.4 204.0 L711.4 207.2 L713.4 210.5 L715.3 213.7 L717.3 217.0 L719.3 220.3 L721.3 223.6 L723.3 227.0 L725.3 230.3 L727.3 233.7 L729.3 237.1 L731.3 240.6 L733.2 244.1 L735.2 247.6 L737.2 251.1 L739.2 254.7 L741.2 258.4 L743.2 262.1 L745.2 265.8 L747.2 269.6 L749.2 273.4 L751.1 277.3 L753.1 281.2 L755.1 285.2 L757.1 289.1 L759.1 293.0 L761.1 296.9 L763.1 300.6 L765.1 304.2 L767.1 307.6 L769.0 310.5 L771.0 313.0 L773.0 314.9 L775.0 316.1 L777.0 316.5 L779.0 316.1 L781.0 314.9 L783.0 313.0 L785.0 310.5 L786.9 307.6 L788.9 304.2 L790.9 300.6 L792.9 296.9 L794.9 293.0 L796.9 289.1 L798.9 285.2 L800.9 281.2 L802.9 277.3 L804.8 273.4 L806.8 269.6 L808.8 265.8 L810.8 262.1 L812.8 258.4 L814.8 254.7 L816.8 251.1 L818.8 247.6 L820.8 244.1 L822.7 240.6 L824.7 237.1 L826.7 233.7 L828.7 230.3 L830.7 227.0 L832.7 223.6 L834.7 220.3 L836.7 217.0 L838.7 213.7 L840.6 210.5 L842.6 207.2 L844.6 204.0 L846.6 200.7 L848.6 197.5 L850.6 194.3 L852.6 191.1 L854.6 187.9 L856.6 184.8 L858.5 181.6 L860.5 178.4 L862.5 175.3 L864.5 172.1 L866.5 169.0 L868.5 165.8 L870.5 162.7 L872.5 159.6 L874.5 156.5 L876.4 153.4 L878.4 150.4 L880.4 147.4 L882.4 144.6 L884.4 142.0 L886.4 139.7 L888.4 137.7 L890.4 136.1 L892.4 135.0 L894.3 134.3 L896.3 134.1 L898.3 134.5 L900.3 135.4 L902.3 136.7 L904.3 138.3 L906.3 140.2 L908.3 142.2 L910.3 144.1 L912.2 145.8 L914.2 147.1 L916.2 147.8 L918.2 148.1 L920.2 147.9 L922.2 147.2 L924.2 146.4 L926.2 145.4 L928.2 144.3 L930.1 143.4 L932.1 142.6 L934.1 142.0 L936.1 141.6 L938.1 141.4 L940.1 141.4 L942.1 141.7 L944.1 142.1 L946.1 142.8 L948.0 143.7 L950.0 144.7 L952.0 145.9 L954.0 147.2 L956.0 148.7"/>
+                <path class="twoways__reg twoways__reg--8" d="M598.0 101.1 L600.0 102.1 L602.0 103.1 L604.0 104.0 L606.0 104.7 L607.9 105.0 L609.9 104.9 L611.9 104.2 L613.9 103.0 L615.9 101.4 L617.9 99.5 L619.9 97.5 L621.9 95.6 L623.9 93.9 L625.8 92.5 L627.8 91.6 L629.8 91.1 L631.8 91.2 L633.8 91.8 L635.8 92.8 L637.8 94.4 L639.8 96.3 L641.8 98.6 L643.7 101.1 L645.7 103.9 L647.7 106.8 L649.7 109.7 L651.7 112.8 L653.7 115.9 L655.7 119.0 L657.7 122.1 L659.7 125.2 L661.6 128.3 L663.6 131.4 L665.6 134.5 L667.6 137.7 L669.6 140.8 L671.6 143.9 L673.6 147.0 L675.6 150.2 L677.6 153.3 L679.5 156.4 L681.5 159.6 L683.5 162.7 L685.5 165.8 L687.5 169.0 L689.5 172.1 L691.5 175.3 L693.5 178.4 L695.5 181.6 L697.4 184.8 L699.4 187.9 L701.4 191.1 L703.4 194.3 L705.4 197.5 L707.4 200.7 L709.4 204.0 L711.4 207.2 L713.4 210.5 L715.3 213.7 L717.3 217.0 L719.3 220.3 L721.3 223.6 L723.3 227.0 L725.3 230.3 L727.3 233.7 L729.3 237.1 L731.3 240.6 L733.2 244.1 L735.2 247.6 L737.2 251.1 L739.2 254.7 L741.2 258.4 L743.2 262.1 L745.2 265.8 L747.2 269.6 L749.2 273.4 L751.1 277.3 L753.1 281.2 L755.1 285.2 L757.1 289.1 L759.1 293.0 L761.1 296.9 L763.1 300.6 L765.1 304.2 L767.1 307.6 L769.0 310.5 L771.0 313.0 L773.0 314.9 L775.0 316.1 L777.0 316.5 L779.0 316.1 L781.0 314.9 L783.0 313.0 L785.0 310.5 L786.9 307.6 L788.9 304.2 L790.9 300.6 L792.9 296.9 L794.9 293.0 L796.9 289.1 L798.9 285.2 L800.9 281.2 L802.9 277.3 L804.8 273.4 L806.8 269.6 L808.8 265.8 L810.8 262.1 L812.8 258.4 L814.8 254.7 L816.8 251.1 L818.8 247.6 L820.8 244.1 L822.7 240.6 L824.7 237.1 L826.7 233.7 L828.7 230.3 L830.7 227.0 L832.7 223.6 L834.7 220.3 L836.7 217.0 L838.7 213.7 L840.6 210.5 L842.6 207.2 L844.6 204.0 L846.6 200.7 L848.6 197.5 L850.6 194.3 L852.6 191.1 L854.6 187.9 L856.6 184.8 L858.5 181.6 L860.5 178.4 L862.5 175.3 L864.5 172.1 L866.5 169.0 L868.5 165.8 L870.5 162.7 L872.5 159.6 L874.5 156.4 L876.4 153.3 L878.4 150.2 L880.4 147.0 L882.4 143.9 L884.4 140.8 L886.4 137.7 L888.4 134.5 L890.4 131.4 L892.4 128.3 L894.3 125.2 L896.3 122.1 L898.3 119.0 L900.3 115.9 L902.3 112.8 L904.3 109.7 L906.3 106.8 L908.3 103.9 L910.3 101.1 L912.2 98.6 L914.2 96.3 L916.2 94.4 L918.2 92.8 L920.2 91.8 L922.2 91.2 L924.2 91.1 L926.2 91.6 L928.2 92.5 L930.1 93.9 L932.1 95.6 L934.1 97.5 L936.1 99.5 L938.1 101.4 L940.1 103.0 L942.1 104.2 L944.1 104.9 L946.1 105.0 L948.0 104.7 L950.0 104.0 L952.0 103.1 L954.0 102.1 L956.0 101.1"/>
+                <path class="moments2 twoways__mom" d="M598.0 28.9 L600.0 32.0 L602.0 35.1 L604.0 38.2 L606.0 41.3 L607.9 44.4 L609.9 47.5 L611.9 50.6 L613.9 53.7 L615.9 56.8 L617.9 59.9 L619.9 63.0 L621.9 66.1 L623.9 69.2 L625.8 72.3 L627.8 75.5 L629.8 78.6 L631.8 81.7 L633.8 84.8 L635.8 87.9 L637.8 91.0 L639.8 94.1 L641.8 97.2 L643.7 100.3 L645.7 103.4 L647.7 106.5 L649.7 109.6 L651.7 112.7 L653.7 115.9 L655.7 119.0 L657.7 122.1 L659.7 125.2 L661.6 128.3 L663.6 131.4 L665.6 134.5 L667.6 137.7 L669.6 140.8 L671.6 143.9 L673.6 147.0 L675.6 150.2 L677.6 153.3 L679.5 156.4 L681.5 159.6 L683.5 162.7 L685.5 165.8 L687.5 169.0 L689.5 172.1 L691.5 175.3 L693.5 178.4 L695.5 181.6 L697.4 184.8 L699.4 187.9 L701.4 191.1 L703.4 194.3 L705.4 197.5 L707.4 200.7 L709.4 204.0 L711.4 207.2 L713.4 210.5 L715.3 213.7 L717.3 217.0 L719.3 220.3 L721.3 223.6 L723.3 227.0 L725.3 230.3 L727.3 233.7 L729.3 237.1 L731.3 240.6 L733.2 244.1 L735.2 247.6 L737.2 251.1 L739.2 254.7 L741.2 258.4 L743.2 262.1 L745.2 265.8 L747.2 269.6 L749.2 273.4 L751.1 277.3 L753.1 281.2 L755.1 285.2 L757.1 289.1 L759.1 293.0 L761.1 296.9 L763.1 300.6 L765.1 304.2 L767.1 307.6 L769.0 310.5 L771.0 313.0 L773.0 314.9 L775.0 316.1 L777.0 316.5 L779.0 316.1 L781.0 314.9 L783.0 313.0 L785.0 310.5 L786.9 307.6 L788.9 304.2 L790.9 300.6 L792.9 296.9 L794.9 293.0 L796.9 289.1 L798.9 285.2 L800.9 281.2 L802.9 277.3 L804.8 273.4 L806.8 269.6 L808.8 265.8 L810.8 262.1 L812.8 258.4 L814.8 254.7 L816.8 251.1 L818.8 247.6 L820.8 244.1 L822.7 240.6 L824.7 237.1 L826.7 233.7 L828.7 230.3 L830.7 227.0 L832.7 223.6 L834.7 220.3 L836.7 217.0 L838.7 213.7 L840.6 210.5 L842.6 207.2 L844.6 204.0 L846.6 200.7 L848.6 197.5 L850.6 194.3 L852.6 191.1 L854.6 187.9 L856.6 184.8 L858.5 181.6 L860.5 178.4 L862.5 175.3 L864.5 172.1 L866.5 169.0 L868.5 165.8 L870.5 162.7 L872.5 159.6 L874.5 156.4 L876.4 153.3 L878.4 150.2 L880.4 147.0 L882.4 143.9 L884.4 140.8 L886.4 137.7 L888.4 134.5 L890.4 131.4 L892.4 128.3 L894.3 125.2 L896.3 122.1 L898.3 119.0 L900.3 115.9 L902.3 112.7 L904.3 109.6 L906.3 106.5 L908.3 103.4 L910.3 100.3 L912.2 97.2 L914.2 94.1 L916.2 91.0 L918.2 87.9 L920.2 84.8 L922.2 81.7 L924.2 78.6 L926.2 75.5 L928.2 72.3 L930.1 69.2 L932.1 66.1 L934.1 63.0 L936.1 59.9 L938.1 56.8 L940.1 53.7 L942.1 50.6 L944.1 47.5 L946.1 44.4 L948.0 41.3 L950.0 38.2 L952.0 35.1 L954.0 32.0 L956.0 28.9"/>
+                <text class="twoways__label" x="965.0" y="262.1">5 qubits</text>
+                <text class="twoways__label" x="965.0" y="230.8">6 qubits</text>
+                <text class="twoways__label" x="965.0" y="153.7">7 qubits</text>
+                <text class="twoways__label" x="965.0" y="106.1">8 qubits</text>
+              </svg>
+            </div>
+            <div class="legend"><span class="leg-band">Exacta</span><span class="leg-regs">Registros de 5 a 8 qubits, con los puntos donde se aparta la media</span><span class="leg-moments2">Ecuaciones de momentos de segundo orden</span></div>
+            <figcaption class="twoways__caption">Dos métodos para calcular un rebote con solución exacta. Con registros de 5, 6, 7 y 8 qubits, el volumen medio (izquierda) y su varianza (derecha) siguen las curvas exactas hasta que los registros se saturan. En el caso del volumen medio, esto ocurre en <i>φ</i> = 1.24, 1.93, 2.62 y 3.31, respectivamente. Las ecuaciones de momentos de segundo orden, con dos valores esperados y tres momentos, también reproducen la solución exacta.</figcaption>
+          </figure>
+            <section class="dial" aria-labelledby="register-h">
+              <div class="dial__text">
+                <h5 class="dial__title" id="register-h">Un rebote en un registro cuántico</h5>
+                <p>En un modelo con solución exacta de un universo lleno de un campo escalar libre sin masa, el volumen alcanza un mínimo y vuelve a crecer. Las ecuaciones cierran de manera exacta. Al usar el campo escalar <i>φ</i> como reloj, el volumen medio es <i>V</i><sub>b</sub>&#8201;cosh&#8201;<i>φ</i> y sus fluctuaciones también obedecen ecuaciones exactas.</p>
+                <p>Una computadora cuántica con <i>n</i> qubits puede representar los 2<sup><i>n</i></sup> niveles de volumen más bajos y reproduce el rebote exacto durante un intervalo finito. Cada qubit adicional extiende ese intervalo en alrededor de ln&#8201;2 unidades de tiempo relacional.</p>
+                <p>La curva punteada satisface las ecuaciones de momentos de segundo orden. En este modelo, el volumen medio y la media de su tasa de cambio respecto de <i>φ</i>, junto con sus dos varianzas y su covarianza, satisfacen ecuaciones lineales cerradas. Por eso la curva coincide con la solución exacta.</p>
+                <div class="controls">
+                  <div>
+                    <label class="control-label" for="qubits"><span>Qubits en el registro</span><output id="qubitsOut" for="qubits">8</output></label>
+                    <input type="range" id="qubits" min="4" max="10" step="1" value="8">
+                  </div>
+                  <div class="switch" role="group" aria-label="Magnitud mostrada">
+                    <button type="button" id="showMean" aria-pressed="true">Volumen medio</button>
+                    <button type="button" id="showVar" aria-pressed="false">Varianza del volumen</button>
+                  </div>
+                  <p class="readout" id="readout" aria-live="polite"></p>
+                </div>
+              </div>
+              <div class="dial__figs">
+                <figure>
+                  <svg class="chart" id="chart" viewBox="0 0 640 420" role="img" aria-labelledby="chartTitle">
+                    <title id="chartTitle">Volumen medio durante el rebote, con la solución exacta, las ecuaciones de momentos de segundo orden y un registro de 8 qubits</title>
+                  </svg>
+                  <figcaption class="legend"><span class="leg-exact">Exacta</span><span class="leg-moments2">Ecuaciones de momentos de segundo orden</span><span class="leg-register">Registro de <i>n</i> qubits</span><span class="leg-top">Nivel máximo del registro</span></figcaption>
+                </figure>
+                <svg class="lattice" id="lattice" viewBox="0 0 380 210" role="img" aria-labelledby="latticeTitle">
+                  <title id="latticeTitle">Red de diez sitios para qubits, ocho en uso, y los 256 niveles de volumen que contienen</title>
+                </svg>
+                <p class="lattice__caption">El registro se representa como una red de qubits junto a sus niveles de volumen, ordenados del más bajo al más alto. Las barras doradas representan el estado en el rebote. Cada qubit adicional duplica el número de niveles. El estado puede crecer más antes de alcanzar el nivel máximo (la línea discontinua de la gráfica), y el registro reproduce el rebote exacto durante más tiempo.</p>
+              </div>
+              <p class="bench__note">Simulación clásica del modelo de M. Bojowald, Phys. Rev. D 75, 081301 (2007). El estado gaussiano tiene <i>V</i><sub>b</sub> = 8.5 unidades de volumen en el rebote. El registro se aparta del resultado exacto cuando la diferencia supera una parte en mil.</p>
+            </section>
+              <div class="bench__circuits">
+                <p>Utilicé Qiskit para simular un circuito cuántico que representa un universo que se contrae, alcanza un volumen mínimo y vuelve a expandirse. La solución exacta me permitió determinar durante cuánto tiempo el circuito reproducía el volumen medio.</p>
+                <p>Con un paso temporal grande, los circuitos de 6 y 8 qubits perdieron precisión casi en el mismo punto. Con pasos más pequeños, el circuito de 8 qubits reprodujo la solución exacta durante más tiempo, pero requirió muchas más compuertas. Quiero determinar si un circuito que aproveche la estructura del modelo puede alcanzar la misma precisión con menos compuertas al aumentar el número de qubits.</p>
+              </div>
+            <section class="dial" id="moment-dial" aria-labelledby="moment-dial-h">
+              <div class="dial__text">
+                <h5 class="dial__title" id="moment-dial-h">Momentos de un estado que atraviesa una barrera por efecto túnel</h5>
+                <p>Mis artículos con Martin Bojowald y colaboradores sobre agujeros negros cuánticos y superposiciones de espaciotiempos describen el estado cuántico mediante sus momentos de orden bajo, y estas aproximaciones no llegan al horizonte. Esto plantea la pregunta de cuántos momentos se necesitan para describir un estado. El registro de arriba aborda esta pregunta en términos de qubits; aquí se aborda en términos de momentos, con una partícula que escapa de un pozo por efecto túnel, cuya evolución exacta se puede calcular y cuyo estado deja pronto de ser gaussiano.</p>
+                <p>Una partícula parte del reposo en un pozo detrás de una barrera, en el estado fundamental gaussiano de la aproximación armónica al pozo. El producto de sus dispersiones es el mínimo que permite el principio de incertidumbre, Δ<i>q</i>&#8201;Δ<i>p</i> = ħ/2. Se resuelve exactamente la ecuación de Schrödinger y el estado atraviesa la barrera por efecto túnel.</p>
+                <div class="controls">
+                  <div>
+                    <label class="control-label" for="momentOrder"><span>Orden de los momentos</span><output id="momentOrderOut" for="momentOrder">2</output></label>
+                    <input type="range" id="momentOrder" min="2" max="8" step="2" value="2">
+                  </div>
+                  <div>
+                    <label class="control-label" for="momentTime"><span>Tiempo</span><output id="momentTimeOut" for="momentTime">2</output></label>
+                    <div class="dial__time">
+                      <button type="button" class="dial__play" id="momentPlay" aria-pressed="false">Reproducir</button>
+                      <input type="range" id="momentTime" min="0" max="32" step="1" value="8">
+                    </div>
+                  </div>
+                  <p class="readout" id="momentReadout" aria-live="polite"></p>
+                </div>
+                <p>El estado exacto se aproxima de manera estática en cada instante con sus momentos de posición hasta el orden <i>N</i>, a partir de los cuales se dibuja la curva de entropía máxima. En ciertos instantes, el estado exacto requiere un número distinto de momentos para aproximarse mejor. Al principio el estado es gaussiano y el segundo orden es exacto. Cuando el estado se divide a ambos lados de la barrera, el segundo orden no puede representar la parte que la atravesó, mientras que el cuarto orden sí puede. Al final, incluso al octavo orden se le escapa parte de la forma.</p>
+                <p>En la gráfica inferior está la probabilidad de encontrar la partícula más allá de la cima de la barrera. Se acerca mucho más a la exacta que la forma del estado, en parte por la manera en que se dibujan las curvas (entropía máxima). Los momentos por sí solos solo pueden acotarla: con los primeros cuatro momentos en <i>t</i> = 4 puede valer cualquier cosa entre 0.15 y 0.68 para distribuciones en el intervalo de <i>q</i> que se muestra, y el valor exacto es 0.38 mientras que el de entropía máxima es 0.36.</p>
+              </div>
+              <div class="dial__figs">
+                <figure class="dial__figure">
+                  <svg class="chart" id="momentState" viewBox="0 0 640 330" role="img" aria-labelledby="momentStateTitle"><title id="momentStateTitle">Densidad de probabilidad del estado exacto y de la distribución reconstruida a partir de sus momentos de posición</title></svg>
+                  <figcaption class="legend"><span class="leg-density">Estado exacto</span><span class="leg-register" id="momentLegState">Orden 2</span><span class="leg-barrier">Cima de la barrera</span></figcaption>
+                </figure>
+                <figure class="dial__figure">
+                  <svg class="chart" id="momentBeyond" viewBox="0 0 640 260" role="img" aria-labelledby="momentBeyondTitle"><title id="momentBeyondTitle">Probabilidad de encontrar la partícula más allá de la cima de la barrera en función del tiempo, exacta y obtenida a partir de los momentos</title></svg>
+                  <figcaption class="legend"><span class="leg-exact">Exacta</span><span class="leg-register" id="momentLegBeyond">Orden 2</span></figcaption>
+                </figure>
+                <p class="lattice__caption dial__caption">Arriba: la región sombreada representa la densidad de probabilidad del estado exacto en el tiempo <i>t</i>, y la línea discontinua, la distribución reconstruida a partir de los momentos de posición hasta el orden elegido. La línea punteada indica la cima de la barrera y la curva tenue representa el potencial. Abajo: la probabilidad de encontrar la partícula más allá de la cima de la barrera en función del tiempo, para la solución exacta y para el orden elegido. Los puntos indican el tiempo actual; al reproducir, las curvas se trazan hasta ese punto.</p>
+              </div>
+              <p class="bench__note">Para el orden <i>N</i>, la curva representa la distribución de entropía máxima entre todas las que comparten los momentos ⟨<i>q</i>⟩, ⟨<i>q</i><sup>2</sup>⟩, …, ⟨<i>q</i><sup><i>N</i></sup>⟩ del estado exacto, sin suposiciones adicionales. Solo se consideran momentos de posición; los métodos canónicos efectivos usan momentos de posición y de momento lineal, relacionados por el principio de incertidumbre. El estado no evoluciona según las ecuaciones de momentos. El estado exacto se describe con un conjunto truncado de momentos. El potencial es <span class="nowrap"><i>V</i>(<i>q</i>) = (27/4)&#8201;<i>V</i><sub>top</sub>&#8201;γ&#8201;<i>q</i>²(<i>q</i> − 1)(<i>q</i> − 1/γ)</span>, con <i>V</i><sub>top</sub> = 1, γ = 1/2, ħ = 1/4 y masa unitaria. La cima de la barrera está en <i>q</i> ≈ 0.61, donde <i>V</i> ≈ 0.68. <i>V</i><sub>top</sub> coincide con la altura de la barrera solo en el límite γ → 0.</p>
+            </section>
+            </div>
+          </article>
+
+          <article class="theme theme--beside" id="inflation">
+            <div>
+              <h3>Agujeros negros e inflación</h3>
+              <p class="theme__who">Con Jennie Traschen y Sofia Corbà</p>
+            </div>
+            <div class="theme__body beside">
+              <p class="beside__lead">Estudio cómo un agujero negro presente desde una época anterior a la inflación puede cambiar cuánto dura la inflación para un potencial dado. En la descripción usual, el inflatón es constante en las secciones de tiempo cosmológico constante y el número de <i>e</i>-folds mide cuánto crece una región entre dos de estas secciones. En presencia de un agujero negro, el inflatón deja de ser constante en ellas. Gregory, Kastor y Traschen encontraron soluciones de rodamiento lento en las que el inflatón depende únicamente de una coordenada temporal que varía con el radio, <i>T</i> (<a href="https://arxiv.org/abs/1707.06586" target="_blank" rel="noopener">2017</a>, <a href="https://arxiv.org/abs/1804.03462" target="_blank" rel="noopener">2018</a>). En el artículo en preparación con Sofia Corbà y Jennie Traschen, uso este marco para calcular el número de <i>e</i>-folds comparando los volúmenes espaciales de las regiones inflacionarias final e inicial en secciones de <i>T</i> constante. Así se recupera la expresión usual en ausencia de un agujero negro.</p>
+              <figure class="theme__figure beside__fig">
+                <div class="switch" role="group" aria-label="Elegir el agujero negro">
+                  <button type="button" data-view="0" aria-pressed="false">Sin agujero negro</button>
+                  <button type="button" data-view="1" aria-pressed="false"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.1</button>
+                  <button type="button" data-view="2" aria-pressed="true"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.4</button>
+                  <button type="button" data-view="3" aria-pressed="false"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.7</button>
+                </div>
+                <img data-pane="0" src="../figures/inflation_slices_m0.svg" width="375" height="269" alt="Sin agujero negro, las superficies T = 0, 2 y 4 son tres líneas horizontales en función del radio comóvil. El horizonte cosmológico es una curva discontinua." hidden>
+                <img data-pane="1" src="../figures/inflation_slices_01.svg" width="375" height="269" alt="Con un agujero negro pequeño, las superficies de T constante son casi planas y se curvan hacia arriba únicamente cerca de su horizonte." hidden>
+                <img data-pane="2" src="../figures/inflation_slices_04.svg" width="375" height="269" alt="Con un agujero negro cuyo horizonte tiene 0.4 veces el radio del horizonte cosmológico, las superficies de T constante suben de forma pronunciada hacia el horizonte del agujero negro.">
+                <img data-pane="3" src="../figures/inflation_slices_07.svg" width="375" height="269" alt="Con un agujero negro grande, las superficies de T constante se curvan de forma pronunciada en toda la región entre los horizontes." hidden>
+                <figcaption>Superficies de <i>T</i> constante, en las que el inflatón es constante, representadas en función del tiempo cosmológico <i>τ</i> y el radio comóvil <i>ρ</i>. Sin agujero negro, son secciones de <i>τ</i> constante. Con un agujero negro (cuyo radio del horizonte <i>r</i><sub>b</sub> se expresa como fracción del radio del horizonte cosmológico <i>r</i><sub>c</sub>), las superficies se curvan hacia arriba al acercarse al agujero negro. Cerca de él, el inflatón alcanza cada valor más tarde. Las líneas discontinuas indican el horizonte cosmológico (claro) y el del agujero negro (naranja). Del artículo en preparación con Sofia Corbà y Jennie Traschen.</figcaption>
+              </figure>
+              <div class="beside__rest">
+                <p class="theme__next">El siguiente paso es terminar de incorporar la retroacción del inflatón sobre la métrica conforme evoluciona.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="theme theme--beside" id="cosmology">
+            <div>
+              <h3>Cosmología covariante y el rebote</h3>
+              <p class="theme__who">Con Martin Bojowald y Erick Duque</p>
+            </div>
+            <div class="theme__body beside beside--pair">
+              <p class="beside__lead">En relatividad general, el corchete de dos constricciones hamiltonianas tiene como función de estructura la inversa de la métrica espacial. Cuando una constricción modificada cambia esta función, define una métrica espacial emergente. La covariancia exige una condición adicional al cierre del álgebra de constricciones. Este es el principio de la gravedad modificada emergente. Con Bojowald y Erick Duque, extendí estas condiciones a fondos cosmológicos perturbados y encontré que los modelos conocidos de cosmología cuántica de lazos carecen de covariancia o conservan una singularidad física a pesar del rebote.</p>
+              <div class="theme__pair beside__fig">
+                <figure class="theme__figure">
+                  <img src="../figures/bounce_density.svg" width="341" height="222" alt="Gráfica de la densidad de energía emergente en función del parámetro de densidad, ambos en unidades de la densidad de Planck. La curva sube desde cero, alcanza un máximo justo por debajo de 0.1 cerca de un parámetro de densidad de 0.2 y regresa a cero en 0.5.">
+                  <figcaption>Densidad de energía emergente ρ̃ en función del parámetro de densidad ρ̄ (ambos en unidades de ρ<sub>Q</sub>) para el modelo sin anomalías con correcciones de holonomía de Cailleteau, Mielczarek, Barrau y Grain. El desgarramiento ocurre en ρ̄ = ρ<sub>Q</sub>/2 (donde ρ̃ se anula porque el volumen diverge) y el rebote ocurre en ρ̄ = ρ<sub>Q</sub>/8. Durante el colapso entre ambos puntos, ρ̃ alcanza un máximo menor que 0.1&#8201;ρ<sub>Q</sub>. Adaptación de Bojowald, Díaz y Duque (2026).</figcaption>
+                </figure>
+                <figure class="theme__figure">
+                  <img src="../figures/bounce_hubble_time.svg" width="341" height="324" alt="Gráfica del parámetro de Hubble emergente reescalado en función de la coordenada temporal, de 0 a 0.5. Sube desde cero hasta un máximo cerca de 0.22, cruza por cero cerca de 0.36 y cae con rapidez.">
+                  <figcaption>Parámetro de Hubble emergente ℋ̃ (en unidades de 1/√Δ) en función de la coordenada temporal √Δ <i>T</i><sub>K</sub> (que decrece hacia el futuro). El universo clásico en expansión corresponde al límite en que <i>T</i><sub>K</sub> tiende a cero, el rebote ocurre en √Δ <i>T</i><sub>K</sub> ≈ 0.36 y el desgarramiento en π/4 (más allá del borde derecho). Adaptación de Bojowald, Díaz y Duque (2026).</figcaption>
+                </figure>
+              </div>
+              <div class="beside__rest">
+                <p class="theme__next">Estudio cómo construir rebotes covariantes y libres de singularidades, sin introducir grados de libertad nuevos, de modo que las perturbaciones puedan evolucionar a través de ellos. El espectro primordial que deja un rebote así es una predicción del modelo. En PHENO 2026 presenté la gravedad modificada emergente como modelo de energía oscura dinámica sin grados de libertad nuevos, a partir de la evidencia de DESI en favor de una energía oscura que evoluciona.</p>
+                <p class="theme__papers"><a href="https://arxiv.org/abs/2507.14358" target="_blank" rel="noopener">Perturbative emergent modified gravity on cosmological backgrounds: Kinematics</a><a href="https://arxiv.org/abs/2507.08116" target="_blank" rel="noopener">Singularities in loop quantum cosmology</a></p>
+                <p class="theme__more"><a href="bounce.html" target="_blank" rel="noopener">Antes del rebote</a></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="theme theme--beside" id="dark-sector">
+            <div>
+              <h3>Una transición de fase en el sector oscuro</h3>
+            </div>
+            <div class="theme__body beside">
+              <p class="beside__lead">Estudié el caso de referencia BM1 de <a href="https://arxiv.org/abs/2012.09758" target="_blank" rel="noopener">Ghosh, Guo, Han y Liu</a> (un sector oscuro SU(2) acoplado al Modelo Estándar mediante el portal de Higgs). En mi cálculo a orden dominante a <i>T</i> alta, el campo oscuro <i>w</i><sub>3</sub> adquiere de manera continua un valor distinto de cero a 191.5 GeV. Después ocurre una transición de fase de primer orden: la nucleación ocurre a 163.5 GeV y la percolación a 159.1 GeV (para una velocidad de la pared de la burbuja de 0.9<i>c</i>). La temperatura de nucleación es de alrededor del 92% de la temperatura crítica (177.1 GeV), por lo que el superenfriamiento es leve. La intensidad de la transición α, definida a partir del calor latente, es de 0.115 en la nucleación y de 0.154 en la percolación. La razón β/<i>H</i> vale 717 en la nucleación y 311 en la percolación. Calculé las acciones del efecto túnel con un programa propio para varios campos, que usa el método del potencial del efecto túnel de <a href="https://arxiv.org/abs/1811.09185" target="_blank" rel="noopener">Espinosa y Konstandin</a> (2019).</p>
+              <figure class="theme__figure beside__fig">
+                <img src="../figures/dark_phase_history.svg" width="480" height="365" alt="Valores de los campos al bajar la temperatura de 220 GeV a cero. El campo oscuro w3 empieza a crecer desde cero a 191.5 GeV. A 163.5 GeV cae a cero, mientras que phi2 salta a unos 430 GeV y el campo de Higgs a unos 70 GeV. A temperatura cero, los dos alcanzan 1000 GeV y 246 GeV, respectivamente.">
+                <figcaption>Mínimo que ocupa el universo al enfriarse, según mi cálculo a orden dominante. El campo <i>w</i><sub>3</sub> toma un valor distinto de cero a 191.5 GeV y crece hasta la transición a 163.5 GeV. La gráfica salta entonces a la fase en la que <i>h</i> y φ<sub>2</sub> tienen valores distintos de cero. A temperatura cero alcanzan 246 GeV y 1 TeV, respectivamente.</figcaption>
+              </figure>
+              <div class="beside__rest">
+                <p class="theme__more"><a href="sector-oscuro.html" target="_blank" rel="noopener">Una transición de fase en el sector oscuro</a></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="theme theme--beside" id="betelgeuse">
+            <div>
+              <h3>Progenitores de supernovas</h3>
+              <p class="theme__who">Con J. Craig Wheeler</p>
+            </div>
+            <div class="theme__body beside">
+              <p class="beside__lead">El Proyecto Betelgeuse se propuso responder una pregunta: ¿cómo saber cuándo explotará Betelgeuse? Para averiguarlo, realicé simulaciones de progenitores de supernovas con el código de evolución estelar MESA. El equipo comparó los resultados con la luminosidad, la temperatura y el radio observados de la estrella. La sorpresa fue su rotación. Una estrella debería girar más despacio al expandirse hasta convertirse en una supergigante roja, como una patinadora artística que abre los brazos, debido a la conservación del momento angular. Betelgeuse parece girar mucho más rápido de lo que los modelos de evolución de una estrella aislada podían explicar. Su momento angular adicional tenía que venir de alguna parte, y Wheeler propuso que provenía de una estrella compañera que Betelgeuse engulló al expandirse. Las simulaciones solo permitían seguir la evolución de la estrella hasta el inicio del colapso del núcleo. Querer saber qué ocurre después, cuando la gravedad toma el control, me llevó a interesarme en los agujeros negros.</p>
+              <figure class="theme__figure beside__fig">
+                <video controls preload="none" playsinline width="1280" height="720" poster="../movies/betelgeuse_20M_norot_poster_collapse.webp" aria-label="Video del modelo de 20 masas solares sin rotación, desde la secuencia principal hasta el inicio del colapso del núcleo">
+                  <source src="../movies/betelgeuse_20M_norot.webm" type="video/webm">
+                  <source src="../movies/betelgeuse_20M_norot.mp4" type="video/mp4">
+                </video>
+                <figcaption>Evolución de una estrella de 20 masas solares sin rotación, desde el inicio del quemado de H en el núcleo hasta 8.7 millones de años después. El modelo usa el criterio de Schwarzschild para la convección, sin extensión convectiva más allá del límite. A la izquierda, su trayectoria en el diagrama de Hertzsprung-Russell; a la derecha, el diagrama de Kippenhahn y un corte transversal de la estrella. El video termina cuando el núcleo de hierro de 1.6 masas solares comienza a colapsar.</figcaption>
+              </figure>
+              <div class="beside__rest">
+                <p class="theme__more"><a href="betelgeuse.html" target="_blank" rel="noopener">Betelgeuse</a></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Contacto</h2>
+      <div class="contact__grid">
+        <address>
+          <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a><br>
+          426 Lederle Graduate Research Tower<br>
+          University of Massachusetts Amherst<br>
+          Amherst, MA 01003
+        </address>
+        <div class="contact__links">
+          <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">Curriculum vitae (PDF)</a>
+          <a href="https://arxiv.org/a/dlaz_m_1" target="_blank" rel="noopener">Perfil de autor en arXiv</a>
+          <a href="https://orcid.org/0009-0006-2513-1076" target="_blank" rel="noopener">ORCID 0009-0006-2513-1076</a>
+          <a href="https://www.umass.edu/physics/about/directory/manuel-diaz" target="_blank" rel="noopener">Directorio de física de UMass Amherst</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.theme__figure .switch').forEach(function (sw) {
+        var fig = sw.closest('.theme__figure'), buttons = sw.querySelectorAll('button[data-view]');
+        function show(view) {
+          buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === view ? 'true' : 'false'); });
+          fig.querySelectorAll('[data-pane]').forEach(function (el) { el.hidden = el.getAttribute('data-pane') !== view; });
+        }
+        buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-view')); }); });
+      });
+    })();
+  </script>
+  <script>
+{
+const chartText = {
+  s1: 'niveles',
+  s2: ' qubits contienen ',
+  s3: ' niveles de volumen',
+  s4: 'Una red de diez sitios para qubits, con ',
+  s5: ' en uso, y los ',
+  s6: ' niveles de volumen que contienen',
+  s7: 'Tiempo relacional φ (el rebote ocurre en φ = 0)',
+  s8: 'Volumen medio',
+  s9: 'Varianza del volumen',
+  s10: 'nivel máximo del registro',
+  s11: 'el volumen medio exacto',
+  s12: 'la varianza exacta del volumen',
+  s13: ' durante el rebote, con la solución exacta, las ecuaciones de momentos de segundo orden y un registro de ',
+  s14: '',
+  s15: '',
+  s16: ' qubits',
+  s17: 'Con <strong>',
+  s18: ' qubits</strong> (',
+  s19: ' niveles de volumen), el registro reproduce ',
+  s20: ' hasta <strong>|φ| ≈ ',
+  s21: '</strong>, a ambos lados del rebote.'
+};
+  (function () {
+    /* Bounce benchmark */
+    var DATA = {"phi_step":0.05,"phi_max":5.5,"V0":8.500000004114842,"Var0":1.9999999638403239,"K2sq0":8.434371030095472,"reg":{"4":{"V":[8.5,8.5106,8.5425,8.5958,8.6705,8.7669,8.8851,9.0252,9.1873,9.3712,9.5762,9.8015,10.045,10.305,10.577,10.858,11.141,11.423,11.696,11.954,12.192,12.403,12.582,12.726,12.832,12.897,12.922,12.907,12.854,12.767,12.65,12.506,12.34,12.159,11.965,11.764,11.559,11.355,11.152,10.955,10.763,10.578,10.401,10.232,10.07,9.9177,9.774,9.6401,9.5172,9.4064,9.3095,9.2281,9.1639,9.1185,9.093,9.0884,9.105,9.1424,9.1999,9.2758,9.3681,9.4742,9.5912,9.7161,9.8457,9.9773,10.108,10.236,10.358,10.475,10.585,10.687,10.783,10.872,10.955,11.033,11.108,11.18,11.251,11.321,11.391,11.462,11.534,11.606,11.677,11.746,11.81,11.867,11.914,11.947,11.963,11.958,11.93,11.876,11.796,11.689,11.557,11.402,11.227,11.037,10.839,10.636,10.436,10.243,10.062,9.8984,9.7538,9.6307,9.5303,9.4527,9.3975],"Var":[2.0,2.0261,2.1047,2.2364,2.4226,2.6645,2.9636,3.3204,3.7339,4.2003,4.7117,5.2547,5.8106,6.3553,6.8607,7.2982,7.641,7.8681,7.9676,7.9377,7.7879,7.5376,7.2132,6.8449,6.4629,6.094,5.7589,5.471,5.2361,5.0537,4.9188,4.8238,4.7606,4.7225,4.7047,4.7042,4.7198,4.7509,4.7961,4.8526,4.9155,4.9777,5.0302,5.0635,5.0688,5.0391,4.9713,4.8667,4.7324,4.5806,4.4289,4.2981,4.211,4.1896,4.2532,4.4155,4.6829,5.0536,5.517,6.0545,6.6409,7.2468,7.8408,8.3923,8.8736,9.2621,9.5414,9.702,9.7413,9.6629,9.4761,9.1944,8.8343,8.4146,7.9553,7.4766,6.9987,6.541,6.1215,5.7566,5.4603,5.2439,5.1156,5.08,5.1376,5.2851,5.5151,5.8167,6.1753,6.5739,6.9926,7.4099,7.8026,8.1466,8.4175,8.5923,8.6515,8.5805,8.3731,8.0324,7.5726,7.0181,6.4022,5.7637,5.1433,4.5796,4.1052,3.7443,3.5108,3.4081,3.4298],"phiV":0.508,"phiVar":0.284},"5":{"V":[8.5,8.5106,8.5425,8.5958,8.6706,8.767,8.8854,9.026,9.1891,9.3752,9.5848,9.8184,10.076,10.36,10.669,11.005,11.368,11.76,12.181,12.633,13.116,13.632,14.181,14.764,15.382,16.033,16.715,17.425,18.157,18.903,19.652,20.393,21.111,21.792,22.422,22.987,23.475,23.877,24.184,24.393,24.502,24.512,24.425,24.249,23.989,23.654,23.253,22.794,22.288,21.744,21.17,20.574,19.963,19.345,18.726,18.109,17.501,16.904,16.322,15.758,15.212,14.688,14.186,13.707,13.253,12.822,12.417,12.036,11.68,11.348,11.041,10.759,10.501,10.266,10.056,9.8694,9.706,9.5655,9.4475,9.3519,9.2785,9.2273,9.1985,9.1923,9.209,9.2487,9.3114,9.397,9.5053,9.6358,9.7884,9.9628,10.159,10.377,10.617,10.88,11.166,11.475,11.807,12.16,12.535,12.928,13.339,13.765,14.204,14.653,15.109,15.57,16.033,16.497,16.957],"Var":[2.0,2.0261,2.1047,2.2365,2.423,2.6658,2.9676,3.3313,3.7605,4.2595,4.8334,5.4878,6.2293,7.0654,8.0044,9.0558,10.23,11.539,12.994,14.611,16.403,18.383,20.557,22.925,25.468,28.145,30.886,33.589,36.122,38.338,40.087,41.243,41.72,41.492,40.598,39.14,37.27,35.174,33.042,31.051,29.347,28.028,27.145,26.702,26.659,26.95,27.484,28.168,28.904,29.606,30.202,30.635,30.867,30.873,30.648,30.195,29.528,28.669,27.644,26.481,25.209,23.859,22.458,21.032,19.606,18.198,16.825,15.5,14.233,13.036,11.918,10.889,9.9589,9.1349,8.4223,7.8225,7.3336,6.9513,6.6715,6.4929,6.4187,6.4578,6.6235,6.9314,7.396,8.0269,8.8269,9.7907,10.906,12.159,13.532,15.017,16.61,18.316,20.145,22.111,24.225,26.488,28.889,31.401,33.984,36.587,39.152,41.618,43.928,46.034,47.895,49.483,50.78,51.78,52.486],"phiV":1.239,"phiVar":1.041},"6":{"V":[8.5,8.5106,8.5425,8.5958,8.6706,8.767,8.8854,9.026,9.1891,9.3752,9.5848,9.8184,10.076,10.36,10.669,11.005,11.368,11.76,12.181,12.633,13.116,13.632,14.182,14.768,15.391,16.052,16.753,17.496,18.283,19.115,19.995,20.926,21.908,22.946,24.04,25.194,26.41,27.689,29.032,30.438,31.901,33.416,34.969,36.546,38.125,39.681,41.185,42.609,43.923,45.099,46.112,46.942,47.574,47.999,48.213,48.219,48.025,47.641,47.083,46.367,45.511,44.537,43.461,42.304,41.083,39.815,38.514,37.194,35.867,34.544,33.232,31.94,30.673,29.436,28.233,27.067,25.941,24.856,23.812,22.811,21.853,20.937,20.063,19.231,18.439,17.687,16.974,16.299,15.661,15.059,14.492,13.958,13.458,12.989,12.551,12.144,11.765,11.415,11.093,10.798,10.529,10.286,10.068,9.8754,9.7066,9.5618,9.4407,9.3428,9.2681,9.2164,9.1875],"Var":[2.0,2.0261,2.1047,2.2365,2.423,2.6658,2.9676,3.3313,3.7605,4.2595,4.8334,5.4878,6.2293,7.0654,8.0045,9.0558,10.23,11.539,12.995,14.614,16.411,18.404,20.614,23.063,25.774,28.776,32.098,35.773,39.839,44.335,49.307,54.805,60.881,67.593,74.998,83.146,92.066,101.75,112.11,122.99,134.08,144.96,155.08,163.83,170.59,174.85,176.27,174.75,170.47,163.9,155.7,146.66,137.6,129.28,122.3,117.08,113.82,112.52,112.98,114.91,117.91,121.57,125.46,129.21,132.51,135.12,136.86,137.64,137.42,136.21,134.07,131.08,127.36,123.01,118.15,112.91,107.38,101.67,95.863,90.044,84.277,78.615,73.104,67.78,62.669,57.791,53.159,48.781,44.66,40.797,37.189,33.831,30.716,27.836,25.185,22.752,20.53,18.51,16.683,15.042,13.578,12.284,11.154,10.183,9.3649,8.6976,8.1782,7.8051,7.5772,7.4944,7.5577],"phiV":1.932,"phiVar":1.739},"7":{"V":[8.5,8.5106,8.5425,8.5958,8.6706,8.767,8.8854,9.026,9.1891,9.3752,9.5848,9.8184,10.076,10.36,10.669,11.005,11.368,11.76,12.181,12.633,13.116,13.632,14.182,14.768,15.391,16.052,16.753,17.496,18.283,19.115,19.995,20.926,21.908,22.946,24.041,25.196,26.414,27.697,29.051,30.477,31.979,33.561,35.227,36.981,38.827,40.771,42.816,44.969,47.233,49.614,52.117,54.743,57.495,60.368,63.353,66.435,69.59,72.782,75.969,79.099,82.117,84.962,87.575,89.901,91.891,93.505,94.716,95.507,95.873,95.82,95.365,94.532,93.351,91.857,90.087,88.081,85.878,83.514,81.026,78.445,75.802,73.122,70.43,67.745,65.084,62.462,59.889,57.376,54.93,52.556,50.259,48.041,45.903,43.848,41.873,39.98,38.167,36.433,34.775,33.192,31.682,30.243,28.872,27.566,26.324,25.144,24.022,22.957,21.946,20.988,20.08],"Var":[2.0,2.0261,2.1047,2.2365,2.423,2.6658,2.9676,3.3313,3.7605,4.2595,4.8334,5.4878,6.2293,7.0654,8.0045,9.0558,10.23,11.539,12.995,14.614,16.411,18.404,20.614,23.063,25.774,28.776,32.098,35.773,39.839,44.335,49.308,54.806,60.885,67.605,75.034,83.246,92.324,102.36,113.45,125.71,139.25,154.23,170.78,189.07,209.29,231.63,256.31,283.56,313.6,346.63,382.75,421.86,463.63,507.26,551.49,594.54,634.15,667.84,693.19,708.18,711.6,703.23,684.03,655.98,621.89,585.01,548.65,515.8,488.8,469.2,457.65,454.01,457.46,466.67,480.02,495.78,512.3,528.08,541.87,552.75,560.06,563.43,562.76,558.13,549.77,538.05,523.4,506.27,487.14,466.47,444.69,422.2,399.34,376.43,353.71,331.4,309.68,288.67,268.49,249.19,230.85,213.47,197.07,181.64,167.17,153.64,141.01,129.25,118.32,108.19,98.8],"phiV":2.623,"phiVar":2.432},"8":{"V":[8.5,8.5106,8.5425,8.5958,8.6706,8.767,8.8854,9.026,9.1891,9.3752,9.5848,9.8184,10.076,10.36,10.669,11.005,11.368,11.76,12.181,12.633,13.116,13.632,14.182,14.768,15.391,16.052,16.753,17.496,18.283,19.115,19.995,20.926,21.908,22.946,24.041,25.196,26.414,27.697,29.051,30.477,31.979,33.561,35.227,36.981,38.827,40.771,42.816,44.969,47.234,49.617,52.124,54.762,57.537,60.455,63.524,66.753,70.148,73.719,77.474,81.423,85.575,89.941,94.53,99.353,104.42,109.73,115.29,121.09,127.11,133.31,139.65,146.05,152.43,158.67,164.67,170.3,175.44,180.0,183.87,186.97,189.26,190.71,191.31,191.07,190.03,188.25,185.77,182.69,179.06,174.97,170.5,165.72,160.7,155.5,150.19,144.81,139.41,134.03,128.7,123.45,118.31,113.28,108.39,103.65,99.052,94.615,90.338,86.223,82.27,78.476,74.839],"Var":[2.0,2.0261,2.1047,2.2365,2.423,2.6658,2.9676,3.3313,3.7605,4.2595,4.8334,5.4878,6.2293,7.0654,8.0045,9.0558,10.23,11.539,12.995,14.614,16.411,18.404,20.614,23.063,25.774,28.776,32.098,35.773,39.839,44.335,49.308,54.806,60.885,67.605,75.034,83.246,92.324,102.36,113.45,125.71,139.25,154.23,170.78,189.07,209.29,231.63,256.32,283.61,313.78,347.11,383.95,424.67,469.66,519.39,574.35,635.1,702.22,776.41,858.4,949.0,1049.1,1159.6,1281.3,1415.1,1561.2,1719.1,1887.2,2062.1,2238.3,2408.4,2563.2,2692.7,2787.4,2839.7,2845.3,2804.0,2720.5,2603.2,2463.9,2315.6,2171.6,2043.5,1940.0,1867.0,1826.3,1817.1,1835.6,1876.2,1932.4,1997.2,2064.0,2127.0,2181.4,2223.6,2251.2,2263.0,2258.6,2238.5,2203.6,2155.6,2096.0,2026.9,1950.0,1867.3,1780.3,1690.7,1599.8,1508.8,1418.8,1330.4,1244.5],"phiV":3.314,"phiVar":3.124},"9":{"V":[8.5,8.5106,8.5425,8.5958,8.6706,8.767,8.8854,9.026,9.1891,9.3752,9.5848,9.8184,10.076,10.36,10.669,11.005,11.368,11.76,12.181,12.633,13.116,13.632,14.182,14.768,15.391,16.052,16.753,17.496,18.283,19.115,19.995,20.926,21.908,22.946,24.041,25.196,26.414,27.697,29.051,30.477,31.979,33.561,35.227,36.981,38.827,40.771,42.816,44.969,47.234,49.617,52.124,54.762,57.537,60.455,63.524,66.753,70.148,73.719,77.474,81.423,85.575,89.941,94.533,99.36,104.44,109.77,115.39,121.29,127.49,134.01,140.87,148.08,155.66,163.63,172.01,180.81,190.07,199.79,210.01,220.71,231.91,243.58,255.68,268.14,280.84,293.65,306.37,318.79,330.69,341.82,351.94,360.85,368.36,374.33,378.66,381.29,382.22,381.5,379.19,375.4,370.25,363.9,356.5,348.2,339.15,329.5,319.4,308.96,298.31,287.54,276.74],"Var":[2.0,2.0261,2.1047,2.2365,2.423,2.6658,2.9676,3.3313,3.7605,4.2595,4.8334,5.4878,6.2293,7.0654,8.0045,9.0558,10.23,11.539,12.995,14.614,16.411,18.404,20.614,23.063,25.774,28.776,32.098,35.773,39.839,44.335,49.308,54.806,60.885,67.605,75.034,83.246,92.324,102.36,113.45,125.71,139.25,154.23,170.78,189.07,209.29,231.63,256.32,283.61,313.78,347.11,383.95,424.67,469.66,519.39,574.35,635.1,702.22,776.41,858.41,949.02,1049.2,1159.9,1282.2,1417.4,1566.8,1731.9,1914.4,2116.0,2338.9,2585.2,2857.5,3158.3,3490.8,3858.2,4264.0,4711.9,5205.4,5747.1,6338.0,6975.4,7651.9,8352.6,9054.7,9727.2,10332.0,10831.0,11184.0,11365.0,11358.0,11165.0,10808.0,10322.0,9756.1,9162.8,8594.1,8095.0,7699.3,7427.2,7285.0,7266.8,7356.3,7530.6,7762.8,8025.3,8292.2,8540.6,8752.3,8913.5,9015.5,9053.6,9027.0],"phiV":4.007,"phiVar":3.816},"10":{"V":[8.5,8.5106,8.5425,8.5958,8.6706,8.767,8.8854,9.026,9.1891,9.3752,9.5848,9.8184,10.076,10.36,10.669,11.005,11.368,11.76,12.181,12.633,13.116,13.632,14.182,14.768,15.391,16.052,16.753,17.496,18.283,19.115,19.995,20.926,21.908,22.946,24.041,25.196,26.414,27.697,29.051,30.477,31.979,33.561,35.227,36.981,38.827,40.771,42.816,44.969,47.234,49.617,52.124,54.762,57.537,60.455,63.524,66.753,70.148,73.719,77.474,81.423,85.575,89.941,94.533,99.36,104.44,109.77,115.39,121.29,127.49,134.01,140.87,148.08,155.66,163.63,172.01,180.81,190.08,199.81,210.05,220.81,232.12,244.01,256.52,269.66,283.48,298.01,313.28,329.34,346.22,363.96,382.61,402.2,422.76,444.31,466.84,490.31,514.63,539.62,565.08,590.68,616.05,640.77,664.36,686.34,706.26,723.69,738.27,749.74,757.9,762.66,764.04],"Var":[2.0,2.0261,2.1047,2.2365,2.423,2.6658,2.9676,3.3313,3.7605,4.2595,4.8334,5.4878,6.2293,7.0654,8.0045,9.0558,10.23,11.539,12.995,14.614,16.411,18.404,20.614,23.063,25.774,28.776,32.098,35.773,39.839,44.335,49.308,54.806,60.885,67.605,75.034,83.246,92.324,102.36,113.45,125.71,139.25,154.23,170.78,189.07,209.29,231.63,256.32,283.61,313.78,347.11,383.95,424.67,469.66,519.39,574.35,635.1,702.22,776.41,858.41,949.02,1049.2,1159.9,1282.2,1417.4,1566.8,1731.9,1914.4,2116.0,2338.9,2585.2,2857.5,3158.3,3490.8,3858.3,4264.4,4713.2,5209.3,5757.5,6363.3,7032.9,7772.9,8590.7,9494.5,10493.0,11597.0,12817.0,14166.0,15655.0,17301.0,19117.0,21116.0,23310.0,25700.0,28272.0,30994.0,33802.0,36599.0,39257.0,41623.0,43539.0,44857.0,45471.0,45331.0,44458.0,42944.0,40943.0,38651.0,36281.0,34039.0,32097.0,30584.0],"phiV":4.699,"phiVar":4.509}}};
+    var chart = document.getElementById('chart'), slider = document.getElementById('qubits'), out = document.getElementById('qubitsOut');
+    var readout = document.getElementById('readout'), bMean = document.getElementById('showMean'), bVar = document.getElementById('showVar');
+    var title = document.getElementById('chartTitle');
+    var mode = 'V';
+    var NS = 'http://www.w3.org/2000/svg';
+    var Wc = 640, Hc = 420, L = 84, R = 18, T = 18, B = 54;
+    var phiMax = DATA.phi_max, step = DATA.phi_step, npts = Math.round(phiMax / step) + 1;
+
+    function exact(q, phi) {
+      var c = Math.cosh(phi), s = Math.sinh(phi);
+      return q === 'V' ? DATA.V0 * c : DATA.Var0 * c * c + DATA.K2sq0 * s * s;
+    }
+
+    /* The second order moment equations of the model, from the bounce at phi = 0:
+       d<K0>/dphi = <K2>, d<K2>/dphi = <K0>, dVar(K0)/dphi = 2 Cov(K0,K2),
+       dCov(K0,K2)/dphi = Var(K0) + Var(K2), dVar(K2)/dphi = 2 Cov(K0,K2).
+       The state is real at the bounce, so <K2> and the covariance vanish there.
+       Solved with fourth order Runge-Kutta steps, twenty per point of the chart. */
+    var MOM = (function () {
+      function rhs(y) { return [y[1], y[0], 2 * y[3], y[2] + y[4], 2 * y[3]]; }
+      function rk4(y, h) {
+        var a = rhs(y), b = rhs(y.map(function (v, j) { return v + h / 2 * a[j]; }));
+        var c = rhs(y.map(function (v, j) { return v + h / 2 * b[j]; })), d = rhs(y.map(function (v, j) { return v + h * c[j]; }));
+        return y.map(function (v, j) { return v + h / 6 * (a[j] + 2 * b[j] + 2 * c[j] + d[j]); });
+      }
+      var out = { V: {}, Var: {} }, sub = 20;
+      [1, -1].forEach(function (dir) {
+        var y = [DATA.V0, 0, DATA.Var0, 0, DATA.K2sq0];
+        out.V[0] = y[0]; out.Var[0] = y[2];
+        for (var i = 1; i < npts; i++) {
+          for (var s = 0; s < sub; s++) y = rk4(y, dir * step / sub);
+          out.V[dir * i] = y[0]; out.Var[dir * i] = y[2];
+        }
+      });
+      return out;
+    })();
+    function el(name, attrs) { var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    function fmt(x) { return x.toFixed(2).replace(/0$/, ''); }
+
+
+    /* The register as a lattice of qubits, following the slider */
+    var lat = document.getElementById('lattice'), latTitle = document.getElementById('latticeTitle');
+    var sites = [], couplers = [], ladderG = null, countText = null;
+    var COLS = 5, X0 = 34, DX = 50, Y0 = 62, DY = 58, LX = 300, LW = 46, LT = 24, LB = 186;
+    function siteXY(i) { return [X0 + (i % COLS) * DX, Y0 + Math.floor(i / COLS) * DY]; }
+    function buildLattice() {
+      for (var i = 0; i < 10; i++) {
+        var a = siteXY(i);
+        if (i % COLS < COLS - 1) { var b = siteXY(i + 1); var l = el('line', { 'class': 'coupler', x1: a[0], y1: a[1], x2: b[0], y2: b[1] }); l._a = i; l._b = i + 1; couplers.push(l); }
+        if (i < COLS) { var c = siteXY(i + COLS); var v = el('line', { 'class': 'coupler', x1: a[0], y1: a[1], x2: c[0], y2: c[1] }); v._a = i; v._b = i + COLS; couplers.push(v); }
+      }
+      couplers.forEach(function (l) { lat.appendChild(l); });
+      for (var k = 0; k < 10; k++) { var p = siteXY(k); var s = el('circle', { 'class': 'site', cx: p[0], cy: p[1], r: 11 }); sites.push(s); lat.appendChild(s); }
+      countText = el('text', { 'class': 'count', x: X0 - 11, y: 190 }); lat.appendChild(countText);
+      var lt = el('text', { x: LX + LW / 2, y: 14, 'text-anchor': 'middle' }); lt.textContent = chartText.s1; lat.appendChild(lt);
+      lat.appendChild(el('rect', { 'class': 'ladder', x: LX, y: LT, width: LW, height: LB - LT }));
+      ladderG = el('g', {}); lat.appendChild(ladderG);
+    }
+    function drawLattice(n) {
+      var N = Math.pow(2, n);
+      sites.forEach(function (s, i) { s.setAttribute('class', i < n ? 'site on' : 'site'); });
+      couplers.forEach(function (l) { l.setAttribute('class', l._a < n && l._b < n ? 'coupler on' : 'coupler'); });
+      countText.textContent = n + chartText.s2 + N.toLocaleString('en-US') + chartText.s3;
+      latTitle.textContent = chartText.s4 + n + chartText.s5 + N.toLocaleString('en-US') + chartText.s6;
+      while (ladderG.lastChild) ladderG.removeChild(ladderG.lastChild);
+      var h = (LB - LT) / N, i;
+      if (N <= 64) { for (i = 1; i < N; i++) ladderG.appendChild(el('line', { 'class': 'lvl', x1: LX, x2: LX + LW, y1: LB - i * h, y2: LB - i * h })); }
+      else { for (i = 1; i < 16; i++) ladderG.appendChild(el('line', { 'class': 'lvl', x1: LX, x2: LX + LW, y1: LB - i * (LB - LT) / 16, y2: LB - i * (LB - LT) / 16 })); }
+      var top = 0, w = [], m;
+      for (m = 0; m < Math.min(N, 40); m++) { w[m] = Math.exp(-0.5 * Math.pow((m - 8) / 2, 2)); top = Math.max(top, w[m]); }
+      for (m = 0; m < w.length; m++) {
+        var y = LB - (m + 1) * h, bw = LW * w[m] / top;
+        if (bw < 0.6) continue;
+        ladderG.appendChild(el('rect', { 'class': 'state', x: LX, y: y, width: bw, height: Math.max(h - (h > 3 ? 1 : 0), 0.35) }));
+      }
+    }
+    buildLattice();
+
+    function draw() {
+      var n = +slider.value, reg = DATA.reg[n], q = mode;
+      out.textContent = n;
+      drawLattice(n);
+      while (chart.lastChild && chart.lastChild !== title) chart.removeChild(chart.lastChild);
+      var ymin = q === 'V' ? 5 : 1, ymax = q === 'V' ? 2000 : 1e5;
+      var lx = function (phi) { return L + (phi + phiMax) / (2 * phiMax) * (Wc - L - R); };
+      var ly = function (v) { return T + (Math.log10(ymax) - Math.log10(Math.max(v, ymin))) / (Math.log10(ymax) - Math.log10(ymin)) * (Hc - T - B); };
+      var limit = q === 'V' ? reg.phiV : reg.phiVar;
+      if (limit !== null) {
+        chart.appendChild(el('rect', { 'class': 'beyond', x: L, y: T, width: lx(-limit) - L, height: Hc - T - B }));
+        chart.appendChild(el('rect', { 'class': 'beyond', x: lx(limit), y: T, width: Wc - R - lx(limit), height: Hc - T - B }));
+      }
+      for (var e = Math.ceil(Math.log10(ymin)); e <= Math.floor(Math.log10(ymax)); e++) {
+        var y = ly(Math.pow(10, e));
+        chart.appendChild(el('line', { 'class': 'grid', x1: L, x2: Wc - R, y1: y, y2: y }));
+        var t = el('text', { x: L - 10, y: y + 4, 'text-anchor': 'end' }); t.textContent = Math.pow(10, e).toLocaleString('en-US'); chart.appendChild(t);
+      }
+      for (var p = -5; p <= 5; p++) {
+        var x = lx(p);
+        chart.appendChild(el('line', { 'class': 'axis', x1: x, x2: x, y1: Hc - B, y2: Hc - B + 5 }));
+        var tx = el('text', { x: x, y: Hc - B + 20, 'text-anchor': 'middle' }); tx.textContent = p < 0 ? '−' + (-p) : p; chart.appendChild(tx);
+      }
+      chart.appendChild(el('line', { 'class': 'axis', x1: L, x2: Wc - R, y1: Hc - B, y2: Hc - B }));
+      chart.appendChild(el('line', { 'class': 'axis', x1: L, x2: L, y1: T, y2: Hc - B }));
+      var xl = el('text', { x: (L + Wc - R) / 2, y: Hc - 6, 'text-anchor': 'middle' }); xl.textContent = chartText.s7; chart.appendChild(xl);
+      var yl = el('text', { x: 16, y: (T + Hc - B) / 2, 'text-anchor': 'middle', transform: 'rotate(-90 16 ' + (T + Hc - B) / 2 + ')' });
+      yl.textContent = q === 'V' ? chartText.s8 : chartText.s9; chart.appendChild(yl);
+
+      var dEx = '', dReg = '', dMom = '';
+      for (var i = -(npts - 1); i <= npts - 1; i++) {
+        var phi = i * step, k = Math.abs(i);
+        var ex = exact(q, phi), rv = reg[q][k], mo = MOM[q][i];
+        dEx += (dEx ? 'L' : 'M') + lx(phi).toFixed(1) + ' ' + ly(ex).toFixed(1);
+        dReg += (dReg ? 'L' : 'M') + lx(phi).toFixed(1) + ' ' + ly(rv).toFixed(1);
+        dMom += (dMom ? 'L' : 'M') + lx(phi).toFixed(1) + ' ' + ly(mo).toFixed(1);
+      }
+      chart.appendChild(el('path', { 'class': 'exact', d: dEx }));
+      chart.appendChild(el('path', { 'class': 'register', d: dReg }));
+      chart.appendChild(el('path', { 'class': 'moments2', d: dMom }));
+      if (q === 'V' && Math.pow(2, n) - 0.5 < ymax) {
+        var yc = ly(Math.pow(2, n) - 0.5);
+        chart.appendChild(el('line', { 'class': 'ceiling', x1: L, x2: Wc - R, y1: yc, y2: yc }));
+        var tl = el('text', { 'class': 'ceiling-label', x: lx(0), y: yc - 7, 'text-anchor': 'middle' }); tl.textContent = chartText.s10; chart.appendChild(tl);
+      }
+      if (limit !== null) {
+        [-limit, limit].forEach(function (ph) { chart.appendChild(el('line', { 'class': 'limit', x1: lx(ph), x2: lx(ph), y1: T, y2: Hc - B })); });
+      }
+      var what = q === 'V' ? chartText.s11 : chartText.s12;
+      title.textContent = (q === 'V' ? chartText.s8 : chartText.s9) + chartText.s13 + (n === 8 ? chartText.s14 : chartText.s15) + n + chartText.s16;
+      readout.innerHTML = chartText.s17 + n + chartText.s18 + Math.pow(2, n).toLocaleString('en-US') + chartText.s19 + what +
+        chartText.s20 + fmt(limit) + chartText.s21;
+    }
+    slider.addEventListener('input', draw);
+    function setMode(m) { mode = m; bMean.setAttribute('aria-pressed', m === 'V'); bVar.setAttribute('aria-pressed', m === 'Var'); draw(); }
+    bMean.addEventListener('click', function () { setMode('V'); });
+    bVar.addEventListener('click', function () { setMode('Var'); });
+    draw();
+  })();
+  
+}
+</script>
+  <script src="../data/moment_dial_tunneling.js"></script>
+  <script>
+{
+const chartText = {
+  s1: 'Posición q',
+  s2: 'Densidad de probabilidad',
+  s3: 'Tiempo t',
+  s4: 'Probabilidad tras la cima',
+  s5: 'Orden ',
+  s6: 'Densidad de probabilidad en t = ',
+  s7: ' del estado exacto y de la distribución reconstruida a partir de sus momentos de posición hasta el orden ',
+  s8: 'El orden <strong>',
+  s9: '</strong> conserva <strong>',
+  s10: '</strong> momentos de posición, de ⟨<i>q</i>⟩ a ⟨<i>q</i><sup>',
+  s11: '</sup>⟩. La desviación máxima respecto de la probabilidad exacta de estar más allá de la cima de la barrera es <strong>',
+  s12: '</strong> para <i>t</i> ≤ ',
+  s13: 'Reproducir',
+  s14: 'Pausar'
+};
+  (function () {
+    /* Moments of a tunneling state */
+    var D = window.MOMENT_DIAL;
+    if (!D) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    function el(name, attrs) { var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+    var orderIn = document.getElementById('momentOrder'), orderOut = document.getElementById('momentOrderOut');
+    var timeIn = document.getElementById('momentTime'), timeOut = document.getElementById('momentTimeOut');
+    var play = document.getElementById('momentPlay'), readout = document.getElementById('momentReadout');
+    var sv = document.getElementById('momentState'), pv = document.getElementById('momentBeyond');
+    var svTitle = document.getElementById('momentStateTitle');
+    var legState = document.getElementById('momentLegState'), legBeyond = document.getElementById('momentLegBeyond');
+    var q = D.q, times = D.times, nq = q.length, nt = times.length, qTop = D.model.barrier_top_q;
+    var ORDERS = ['2', '4', '6', '8'];
+
+    /* largest error of the probability beyond the barrier for each order, from the data */
+    var maxErr = {};
+    ORDERS.forEach(function (N) {
+      var m = 0;
+      for (var i = 0; i < nt; i++) m = Math.max(m, Math.abs(D.p_beyond_rebuilt[N][i] - D.p_beyond_exact[i]));
+      maxErr[N] = m;
+    });
+    var rhoMax = 0;
+    D.exact.forEach(function (f) { f.forEach(function (v) { rhoMax = Math.max(rhoMax, v); }); });
+    ORDERS.forEach(function (N) { D.rebuilt[N].forEach(function (f) { f.forEach(function (v) { rhoMax = Math.max(rhoMax, v); }); }); });
+    rhoMax = Math.ceil(rhoMax * 2) / 2;
+
+    /* the state: position against probability density */
+    var W = 640, H = 330, L = 84, R = 18, T = 16, B = 54, q0 = q[0], q1 = q[nq - 1];
+    var sx = function (x) { return L + (x - q0) / (q1 - q0) * (W - L - R); };
+    var sy = function (r) { return T + (1 - r / rhoMax) * (H - T - B); };
+    var clip = el('clipPath', { id: 'momentClip' }); clip.appendChild(el('rect', { x: L, y: T, width: W - L - R, height: H - T - B })); sv.appendChild(clip);
+    var r, x, t, i;
+    for (r = 0; r <= rhoMax + 1e-9; r += 0.5) {
+      sv.appendChild(el('line', { 'class': 'grid', x1: L, x2: W - R, y1: sy(r), y2: sy(r) }));
+      t = el('text', { x: L - 10, y: sy(r) + 4, 'text-anchor': 'end' }); t.textContent = r.toFixed(1); sv.appendChild(t);
+    }
+    for (x = -0.5; x <= 2.5 + 1e-9; x += 0.5) {
+      sv.appendChild(el('line', { 'class': 'axis', x1: sx(x), x2: sx(x), y1: H - B, y2: H - B + 5 }));
+      t = el('text', { x: sx(x), y: H - B + 24, 'text-anchor': 'middle' }); t.textContent = x < 0 ? '−' + (-x).toFixed(1) : x.toFixed(1); sv.appendChild(t);
+    }
+    sv.appendChild(el('line', { 'class': 'axis', x1: L, x2: W - R, y1: H - B, y2: H - B }));
+    sv.appendChild(el('line', { 'class': 'axis', x1: L, x2: L, y1: T, y2: H - B }));
+    t = el('text', { x: (L + W - R) / 2, y: H - 6, 'text-anchor': 'middle' }); t.textContent = chartText.s1; sv.appendChild(t);
+    t = el('text', { x: 20, y: (T + H - B) / 2, 'text-anchor': 'middle', transform: 'rotate(-90 20 ' + (T + H - B) / 2 + ')' }); t.textContent = chartText.s2; sv.appendChild(t);
+    /* the potential, faint, on its own scale: from below the far well to above the top of the barrier */
+    var V = D.potential, vLo = -2.2, vHi = 5.0, dV = '';
+    for (i = 0; i < nq; i++) dV += (i ? 'L' : 'M') + sx(q[i]).toFixed(1) + ' ' + (T + (vHi - V[i]) / (vHi - vLo) * (H - T - B)).toFixed(1);
+    sv.appendChild(el('path', { 'class': 'potential', d: dV, 'clip-path': 'url(#momentClip)' }));
+    sv.appendChild(el('line', { 'class': 'barrier', x1: sx(qTop), x2: sx(qTop), y1: T, y2: H - B }));
+    var gState = el('g', { 'clip-path': 'url(#momentClip)' }); sv.appendChild(gState);
+
+    /* the probability beyond the barrier against time */
+    var W2 = 640, H2 = 260, L2 = 84, R2 = 18, T2 = 14, B2 = 54, tMax = times[nt - 1];
+    var px = function (s) { return L2 + s / tMax * (W2 - L2 - R2); };
+    var py = function (p) { return T2 + (1 - p) * (H2 - T2 - B2); };
+    var p;
+    for (p = 0; p <= 1 + 1e-9; p += 0.25) {
+      pv.appendChild(el('line', { 'class': 'grid', x1: L2, x2: W2 - R2, y1: py(p), y2: py(p) }));
+      t = el('text', { x: L2 - 10, y: py(p) + 4, 'text-anchor': 'end' }); t.textContent = p === 0 || p === 1 ? p.toFixed(0) : p.toFixed(2); pv.appendChild(t);
+    }
+    for (var s = 0; s <= tMax; s += 1) {
+      pv.appendChild(el('line', { 'class': 'axis', x1: px(s), x2: px(s), y1: H2 - B2, y2: H2 - B2 + 5 }));
+      t = el('text', { x: px(s), y: H2 - B2 + 24, 'text-anchor': 'middle' }); t.textContent = s; pv.appendChild(t);
+    }
+    pv.appendChild(el('line', { 'class': 'axis', x1: L2, x2: W2 - R2, y1: H2 - B2, y2: H2 - B2 }));
+    pv.appendChild(el('line', { 'class': 'axis', x1: L2, x2: L2, y1: T2, y2: H2 - B2 }));
+    t = el('text', { x: (L2 + W2 - R2) / 2, y: H2 - 6, 'text-anchor': 'middle' }); t.textContent = chartText.s3; pv.appendChild(t);
+    t = el('text', { x: 20, y: (T2 + H2 - B2) / 2, 'text-anchor': 'middle', transform: 'rotate(-90 20 ' + (T2 + H2 - B2) / 2 + ')' }); t.textContent = chartText.s4; pv.appendChild(t);
+    var dEx = '';
+    for (i = 0; i < nt; i++) dEx += (i ? 'L' : 'M') + px(times[i]).toFixed(1) + ' ' + py(D.p_beyond_exact[i]).toFixed(1);
+    var gBeyond = el('g', {}); pv.appendChild(gBeyond);
+    pv.appendChild(el('path', { 'class': 'exact faint', d: dEx }));
+    var gTrace = el('g', {}); pv.appendChild(gTrace);
+    var gNow = el('g', {}); pv.appendChild(gNow);
+
+    function fmtT(v) { return v.toFixed(2).replace(/\.?0+$/, ''); }
+    function draw() {
+      var N = orderIn.value, k = +timeIn.value, now = times[k], ex = D.exact[k], rb = D.rebuilt[N][k];
+      orderOut.textContent = N; timeOut.textContent = fmtT(now);
+      legState.textContent = chartText.s5 + N; legBeyond.textContent = chartText.s5 + N;
+      while (gState.lastChild) gState.removeChild(gState.lastChild);
+      var dFill = 'M' + sx(q0).toFixed(1) + ' ' + sy(0).toFixed(1), dLine = '';
+      for (var j = 0; j < nq; j++) {
+        dFill += 'L' + sx(q[j]).toFixed(1) + ' ' + sy(ex[j]).toFixed(1);
+        dLine += (j ? 'L' : 'M') + sx(q[j]).toFixed(1) + ' ' + sy(rb[j]).toFixed(1);
+      }
+      dFill += 'L' + sx(q1).toFixed(1) + ' ' + sy(0).toFixed(1) + 'Z';
+      gState.appendChild(el('path', { 'class': 'density', d: dFill }));
+      gState.appendChild(el('path', { 'class': 'register', d: dLine }));
+      svTitle.textContent = chartText.s6 + fmtT(now) + chartText.s7 + N;
+      while (gBeyond.lastChild) gBeyond.removeChild(gBeyond.lastChild);
+      var dOr = '', pr = D.p_beyond_rebuilt[N];
+      for (var m = 0; m < nt; m++) dOr += (m ? 'L' : 'M') + px(times[m]).toFixed(1) + ' ' + py(pr[m]).toFixed(1);
+      gBeyond.appendChild(el('path', { 'class': 'register faint', d: dOr }));
+      /* the curves up to the current time, drawn over their faint full versions */
+      while (gTrace.lastChild) gTrace.removeChild(gTrace.lastChild);
+      var dExNow = '', dOrNow = '';
+      for (m = 0; m <= k; m++) {
+        dExNow += (m ? 'L' : 'M') + px(times[m]).toFixed(1) + ' ' + py(D.p_beyond_exact[m]).toFixed(1);
+        dOrNow += (m ? 'L' : 'M') + px(times[m]).toFixed(1) + ' ' + py(pr[m]).toFixed(1);
+      }
+      gTrace.appendChild(el('path', { 'class': 'register', d: dOrNow }));
+      gTrace.appendChild(el('path', { 'class': 'exact', d: dExNow }));
+      while (gNow.lastChild) gNow.removeChild(gNow.lastChild);
+      gNow.appendChild(el('line', { 'class': 'now', x1: px(now), x2: px(now), y1: T2, y2: H2 - B2 }));
+      gNow.appendChild(el('circle', { 'class': 'dot-exact', cx: px(now), cy: py(D.p_beyond_exact[k]), r: 4.5 }));
+      gNow.appendChild(el('circle', { 'class': 'dot-order', cx: px(now), cy: py(pr[k]), r: 4.5 }));
+      readout.innerHTML = chartText.s8 + N + chartText.s9 + N + chartText.s10 + N +
+        chartText.s11 + maxErr[N].toFixed(3) + chartText.s12 + fmtT(tMax) + '.';
+    }
+
+    var timer = null;
+    function stop() { if (timer) { clearInterval(timer); timer = null; } play.textContent = chartText.s13; play.setAttribute('aria-pressed', 'false'); }
+    play.addEventListener('click', function () {
+      if (timer) { stop(); return; }
+      if (+timeIn.value >= nt - 1) timeIn.value = 0;
+      play.textContent = chartText.s14; play.setAttribute('aria-pressed', 'true');
+      timer = setInterval(function () {
+        var k = +timeIn.value + 1;
+        if (k > nt - 1) { stop(); return; }
+        timeIn.value = k; draw();
+      }, 220);
+    });
+    orderIn.addEventListener('input', draw);
+    timeIn.addEventListener('input', function () { stop(); draw(); });
+    draw();
+  })();
+  
+}
+</script>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

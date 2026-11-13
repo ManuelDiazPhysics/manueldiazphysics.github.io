@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../dark-sector.html">
+  <link rel="alternate" hreflang="es-MX" href="sector-oscuro.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Una transición de fase en el sector oscuro | Manuel Díaz</title>
+  <meta name="description" content="Una transición de fase de primer orden en el caso de referencia BM1, en el que un sector oscuro SU(2) se acopla al Modelo Estándar mediante el portal de Higgs.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+    /* Moments example */
+    .lab { margin-block: 2.1rem; padding: 1.6rem clamp(1rem, 3vw, 1.8rem) 1.4rem; background: var(--night-deep); border-radius: 0.6rem; }
+    .lab__controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; }
+    .control-label { display: block; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--mist); }
+    .readout { margin-top: 1.1rem; min-height: 3.3em; font-size: 1rem; line-height: 1.6; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { display: block; width: 100%; height: auto; margin-top: 0.6rem; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .moments { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .classical { fill: none; stroke: var(--mist); stroke-width: 1.4; stroke-dasharray: 1.5 3; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.09); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-moments::before { border-top: 2.2px dashed var(--brick); }
+    .legend .leg-classical::before { border-top: 1.6px dotted var(--mist); }
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+      <a href="research.html" aria-current="page">Investigación</a>
+      <a href="publications.html">Publicaciones</a>
+      <a href="talks.html">Pláticas y conferencias</a>
+      <a href="teaching.html">Enseñanza y mentoría</a>
+      <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../dark-sector.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Una transición de fase en el sector oscuro</h1>
+      <p class="lede">Una transición de fase de primer orden en un sector oscuro SU(2) acoplado al Modelo Estándar mediante el portal de Higgs.</p>
+      <p class="who">Modelo y caso de referencia de Ghosh, Guo, Han y Liu (2021).</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="En esta página">
+        <ol>
+          <li><a href="#history">Dos etapas al enfriarse el universo</a></li>
+          <li><a href="#bubble">La burbuja crítica</a></li>
+          <li><a href="#model">El modelo</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="history">Dos etapas al enfriarse el universo</h2>
+        <p>Estudié el caso de referencia BM1 de <a href="https://arxiv.org/abs/2012.09758" target="_blank" rel="noopener">Ghosh, Guo, Han y Liu</a> (un sector oscuro SU(2) acoplado al Modelo Estándar mediante el portal de Higgs). En mi cálculo a orden dominante a <i>T</i> alta, el campo oscuro <i>w</i><sub>3</sub> adquiere de manera continua un valor distinto de cero a 191.5 GeV. Después ocurre una transición de fase de primer orden: la nucleación ocurre a 163.5 GeV y la percolación a 159.1 GeV (para una velocidad de la pared de la burbuja de 0.9<i>c</i>). La temperatura de nucleación es de alrededor del 92% de la temperatura crítica (177.1 GeV), por lo que el superenfriamiento es leve. La intensidad de la transición α, definida a partir del calor latente, es de 0.115 en la nucleación y de 0.154 en la percolación. La razón β/<i>H</i> vale 717 en la nucleación y 311 en la percolación. Calculé las acciones del efecto túnel con un programa propio para varios campos, que usa el método del potencial del efecto túnel de <a href="https://arxiv.org/abs/1811.09185" target="_blank" rel="noopener">Espinosa y Konstandin</a> (2019).</p>
+        <figure class="fig fig--m">
+          <img src="../figures/dark_phase_history.svg" width="480" height="365" alt="Valores de los campos al bajar la temperatura de 220 GeV a cero. El campo oscuro w3 empieza a crecer desde cero a 191.5 GeV. A 163.5 GeV cae a cero, mientras que phi2 salta a unos 430 GeV y el campo de Higgs a unos 70 GeV. A temperatura cero, los dos alcanzan 1000 GeV y 246 GeV, respectivamente.">
+          <figcaption>Mínimo que ocupa el universo al enfriarse, según mi cálculo a orden dominante. El campo <i>w</i><sub>3</sub> toma un valor distinto de cero a 191.5 GeV y crece hasta la transición a 163.5 GeV. La gráfica salta entonces a la fase en la que <i>h</i> y φ<sub>2</sub> tienen valores distintos de cero. A temperatura cero alcanzan 246 GeV y 1 TeV, respectivamente.</figcaption>
+        </figure>
+        <figure class="fig fig--m">
+          <img src="../figures/dark_action.svg" width="480" height="365" alt="La acción térmica S3/T baja de aproximadamente 210 a 170 GeV a cerca de 120 a 145 GeV. Cruza una línea discontinua en 140 cerca de 163 GeV. Un punto marca 163.5 GeV.">
+          <figcaption>Acción térmica <i>S</i><sub>3</sub>/<i>T</i> de la burbuja crítica en función de la temperatura. En el punto marcado (<i>T</i><sub>n</sub> = 163.5 GeV) se espera que se haya nucleado una burbuja por volumen de Hubble. La línea discontinua indica el criterio aproximado habitual, <i>S</i><sub>3</sub>/<i>T</i> = 140, que se cumple a 163.0 GeV.</figcaption>
+        </figure>
+
+        <h2 id="bubble">La burbuja crítica</h2>
+        <p>Calculé la acción térmica del efecto túnel al minimizar directamente en el espacio de campos el funcional O(3) del potencial del efecto túnel. Dejé variar tanto la trayectoria como el valor del campo en el centro de la burbuja. Las acciones coinciden con las de <a href="https://arxiv.org/abs/2002.00881" target="_blank" rel="noopener">FindBounce</a> con una diferencia menor que 0.004% en las tres temperaturas que comprobé. En la nucleación, el campo de Higgs se anula en toda la burbuja crítica. La fase de equilibrio de menor energía a la que la burbuja puede evolucionar tiene un campo de Higgs distinto de cero.</p>
+        <figure class="fig fig--m">
+          <img src="../figures/dark_barrier.svg" width="480" height="365" alt="A lo largo de la trayectoria, el potencial sube hasta una barrera de aproximadamente 0.2, en unidades de 10 a la octava GeV a la cuarta, cerca de s = 100 GeV. Después baja hasta aproximadamente −1.2 en el punto que corresponde al valor del campo en el centro de la burbuja, cerca de s = 380 GeV. El potencial del efecto túnel disminuye de manera continua por debajo del potencial y coincide con él en ese punto.">
+          <figcaption>Potencial <i>V</i> (línea continua) y potencial del efecto túnel <i>V</i><sub>t</sub> (línea discontinua), ambos medidos con respecto al falso vacío, a lo largo de la trayectoria de la burbuja crítica a <i>T</i><sub>n</sub>, en función de la longitud de arco <i>s</i> en el espacio de campos. Los dos potenciales vuelven a coincidir en el punto que corresponde al valor del campo en el centro de la burbuja.</figcaption>
+        </figure>
+        <figure class="fig fig--m">
+          <img src="../figures/dark_path.svg" width="480" height="365" alt="Trayectoria en el plano de phi2 y w3. Parte del falso vacío, con w3 cerca de 97 GeV y phi2 = 0, y desciende en curva hasta el punto que corresponde al valor del campo en el centro de la burbuja, cerca de phi2 = 362 GeV y w3 = 0.">
+          <figcaption>Trayectoria de la burbuja crítica en el espacio de campos a <i>T</i><sub>n</sub>, desde el falso vacío (círculo abierto), donde <i>w</i><sub>3</sub> vale unos 97 GeV, hasta el punto que corresponde al valor del campo en el centro de la burbuja (rombo), donde φ<sub>2</sub> vale unos 362 GeV. El campo de Higgs se anula a lo largo de toda la trayectoria.</figcaption>
+        </figure>
+
+        <h2 id="model">El modelo</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Electroweak Phase Transition with an SU(2) Dark Sector</span><span class="ref-meta">T. Ghosh, H.-K. Guo, T. Han y H. Liu, <i>Journal of High Energy Physics</i> 07, 045 (2021)</span><span class="ref-links"><a href="https://arxiv.org/abs/2012.09758" target="_blank" rel="noopener">arXiv:2012.09758</a><a href="https://doi.org/10.1007/JHEP07(2021)045" target="_blank" rel="noopener">Revista</a></span></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">Toda la investigación</a><a href="index.html">Inicio</a></p>
+    </div>
+  </footer>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>

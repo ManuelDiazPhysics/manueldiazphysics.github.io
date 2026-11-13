@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../bounce.html">
+  <link rel="alternate" hreflang="es-MX" href="bounce.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Antes del rebote | Manuel Díaz</title>
+  <meta name="description" content="El rebote de la cosmología cuántica de lazos y la singularidad que lo precede cuando se exige una geometría espaciotemporal consistente.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+    /* Moments example */
+    .lab { margin-block: 2.1rem; padding: 1.6rem clamp(1rem, 3vw, 1.8rem) 1.4rem; background: var(--night-deep); border-radius: 0.6rem; }
+    .lab__controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; }
+    .control-label { display: block; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--mist); }
+    .readout { margin-top: 1.1rem; min-height: 3.3em; font-size: 1rem; line-height: 1.6; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { display: block; width: 100%; height: auto; margin-top: 0.6rem; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .moments { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .classical { fill: none; stroke: var(--mist); stroke-width: 1.4; stroke-dasharray: 1.5 3; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.09); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-moments::before { border-top: 2.2px dashed var(--brick); }
+    .legend .leg-classical::before { border-top: 1.6px dotted var(--mist); }
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+      <a href="research.html" aria-current="page">Investigación</a>
+      <a href="publications.html">Publicaciones</a>
+      <a href="talks.html">Pláticas y conferencias</a>
+      <a href="teaching.html">Enseñanza y mentoría</a>
+      <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../bounce.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap page-head">
+      <h1>Antes del rebote</h1>
+      <p class="lede">En la cosmología cuántica de lazos, un rebote ocupa el lugar de la gran explosión. Si la geometría del espaciotiempo se deriva de manera consistente, el rebote va precedido por una singularidad de otro tipo.</p>
+      <p class="who">Con Martin Bojowald y Erick Duque. <i>Physical Review D</i> 113, 084060 (2026).</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="En esta página">
+        <ol>
+          <li><a href="#geometry">¿Qué geometría?</a></li>
+          <li><a href="#rip">Un rebote a un octavo de la densidad de Planck</a></li>
+          <li><a href="#after">Después del rebote</a></li>
+          <li><a href="#regular">Un modelo sin desgarramiento</a></li>
+          <li><a href="#papers">Artículos</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="geometry">¿Qué geometría?</h2>
+        <p>En la cosmología cuántica de lazos, la geometría cuántica modifica la expansión de un universo homogéneo a densidades altas. Al retroceder en el tiempo, el volumen del espacio no se reduce a cero: alcanza un mínimo y vuelve a crecer, de modo que un rebote ocupa el lugar de la gran explosión. Esta descripción se obtiene de las ecuaciones para las variables del espacio fase. Cabe preguntar si se mantiene al determinar qué geometría del espaciotiempo describen esas variables.</p>
+        <p>En relatividad general, las propias constricciones responden a esta pregunta. La función de estructura del corchete entre dos constricciones hamiltonianas es la inversa de la métrica espacial. El álgebra de constricciones determina así cuál es la métrica física. Si los efectos cuánticos modifican la constricción hamiltoniana, también cambia la función de estructura, que en la gravedad modificada emergente define la métrica espacial de un espaciotiempo emergente. La covariancia exige entonces una condición adicional al cierre del álgebra. Martin Bojowald, Erick Duque y yo extendimos estas condiciones a perturbaciones en torno a fondos cosmológicos y las aplicamos a los modelos existentes de cosmología cuántica de lazos. Encontramos que estos modelos o bien carecen de covariancia, o bien conservan una singularidad física al usar su métrica emergente, aunque el factor de escala nunca llegue a cero.</p>
+
+        <h2 id="rip">Un rebote a un octavo de la densidad de Planck</h2>
+        <p>El caso singular aparece en el modelo libre de anomalías de Cailleteau, Mielczarek, Barrau y Grain para perturbaciones escalares con correcciones de holonomía. Sus ecuaciones son consistentes como teoría de norma, pero la métrica del espaciotiempo que se había usado con ellas omitía un factor que exige la covariancia. Al incluir ese factor, el elemento de línea emergente da lugar a una nueva ecuación efectiva de Friedmann. En un universo con un campo escalar libre y sin masa, el factor de escala emergente alcanza un mínimo distinto de cero cuando el parámetro de densidad ρ̄ es igual a ρ<sub>Q</sub>/8. Aquí ρ<sub>Q</sub> = 3/(8π<i>G</i>Δ) es la densidad de Planck a la que ocurre el rebote tradicional de la cosmología cuántica de lazos, y Δ es el área constante que fija la escala de las correcciones de holonomía.</p>
+        <p>Más atrás en el tiempo, el factor de escala crece sin límite y el escalar de Ricci diverge a un tiempo propio finito antes del rebote. El universo comienza así en una singularidad con factor de escala infinito, análoga a un gran desgarramiento invertido en el tiempo.</p>
+        <figure class="fig fig--s">
+          <img src="../figures/bounce_density.svg" width="341" height="222" alt="Gráfica de la densidad de energía emergente en función del parámetro de densidad, ambos en unidades de la densidad de Planck. La curva sube desde cero, alcanza un máximo justo por debajo de 0.1 cerca de un parámetro de densidad de 0.2 y regresa a cero en 0.5.">
+          <figcaption>Densidad de energía emergente ρ̃ en función del parámetro de densidad ρ̄, ambos en unidades de ρ<sub>Q</sub>. El desgarramiento ocurre en ρ̄ = ρ<sub>Q</sub>/2, donde ρ̃ se anula porque el volumen es infinito, y el rebote ocurre en ρ̄ = ρ<sub>Q</sub>/8. Entre ambos, durante la contracción, ρ̃ alcanza su valor máximo, por debajo de un décimo de ρ<sub>Q</sub>.</figcaption>
+        </figure>
+        <p>El parámetro de densidad difiere de la densidad de energía de la materia en este espaciotiempo. Al dividir la energía del campo escalar entre el volumen emergente se obtiene la densidad de energía emergente</p>
+        <p class="eq">ρ̃ = ρ̄ (1 − 2ρ̄/ρ<sub>Q</sub>)<sup>3/2</sup> ,</p>
+        <p>que se anula en el desgarramiento. En este sentido, la singularidad es menos severa que la de un gran desgarramiento usual: la curvatura diverge, pero la densidad de energía tiende a cero. La densidad de energía máxima, que se alcanza durante la contracción, se mantiene por debajo de un décimo de ρ<sub>Q</sub>.</p>
+
+        <h2 id="after">Después del rebote</h2>
+        <div class="fig-pair">
+          <figure class="fig">
+            <img src="../figures/bounce_hubble_density.svg" width="341" height="300" alt="Gráfica del parámetro de Hubble emergente reescalado en función del parámetro de densidad, de 0 a 0.2. Sube con rapidez desde cero, alcanza un máximo cerca de 0.05, cruza por cero en 0.125 y toma valores negativos.">
+            <figcaption>Parámetro de Hubble emergente ℋ̃, en unidades de 1/√Δ, en función de ρ̄/ρ<sub>Q</sub>. Se anula en el rebote, ρ̄ = ρ<sub>Q</sub>/8, y es negativo durante la contracción que lo precede.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="../figures/bounce_hubble_time.svg" width="341" height="324" alt="Gráfica del parámetro de Hubble emergente reescalado en función de la coordenada temporal, de 0 a 0.5. Sube desde cero hasta un máximo cerca de 0.22, cruza por cero cerca de 0.36 y cae con rapidez.">
+            <figcaption>El mismo parámetro de Hubble en función de la coordenada temporal √Δ <i>T</i><sub>K</sub>, que disminuye hacia el futuro: el universo clásico en expansión corresponde a <i>T</i><sub>K</sub> → 0, el rebote a √Δ <i>T</i><sub>K</sub> ≈ 0.36 y el desgarramiento a π/4, más allá del borde derecho.</figcaption>
+          </figure>
+        </div>
+        <p>Después del rebote, el parámetro de Hubble emergente sube con rapidez desde cero hasta un máximo en ρ̄ ≈ 0.046 ρ<sub>Q</sub>, <i>es decir,</i> en √Δ <i>T</i><sub>K</sub> ≈ 0.22, y luego decrece hacia la expansión clásica de un universo con un campo escalar libre y sin masa.</p>
+        <figure class="fig fig--s">
+          <img src="../figures/bounce_hubble_radius.svg" width="341" height="345" alt="Gráfica del radio comóvil de Hubble reescalado en función de la coordenada temporal, de 0 a 0.35. Cae con rapidez desde valores grandes, alcanza un mínimo cercano a 3.9 alrededor de 0.20 y vuelve a subir con rapidez.">
+          <figcaption>Radio comóvil de Hubble después del rebote, en la forma reescalada Δ<sup>1/3</sup>/(<i>ã</i> ℋ̃). Su mínimo, en √Δ <i>T</i><sub>K</sub> ≈ 0.20 o ρ̄ ≈ 0.038 ρ<sub>Q</sub>, está cerca del máximo del parámetro de Hubble.</figcaption>
+        </figure>
+        <p>Mientras el radio comóvil de Hubble disminuye, la expansión se acelera, como sucede durante la inflación. Aquí, esta fase dura solo desde el rebote hasta el mínimo del radio. Durante ella, la densidad de energía se mantiene más de un orden de magnitud por debajo de ρ<sub>Q</sub>, más cerca de las escalas de los modelos inflacionarios que de la del rebote tradicional de la cosmología cuántica de lazos. En ese régimen, es razonable esperar que la geometría continua de la gravedad modificada emergente sea una buena aproximación.</p>
+
+        <h2 id="regular">Un modelo sin desgarramiento</h2>
+        <p>El mismo formalismo permite construir modelos covariantes sin estas singularidades, y en el artículo se presenta uno. Una elección distinta de las funciones de modificación en la constricción perturbada deja intacta la dinámica del fondo y hace que la inversa de la métrica de fondo tome su forma clásica. El elemento de línea es entonces regular, su escalar de Ricci es finito en todas partes y el rebote ocurre donde lo hace el tradicional, en ρ<sub>Q</sub>. La dificultad es que algunos coeficientes de las ecuaciones para las perturbaciones divergen cerca del rebote, lo que dificulta seguir su evolución a través de él.</p>
+        <p>Desde entonces encontré un modelo con rebote, covariante y sin singularidades, que no introduce grados de libertad adicionales y permite seguir las perturbaciones a través del rebote. El artículo está en preparación. También trabajo en el espectro de potencia escalar en cosmologías con rebote.</p>
+
+        <h2 id="papers">Artículos</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Singularities in loop quantum cosmology</span><span class="ref-meta">M. Bojowald, M. Díaz y E. I. Duque, <i>Physical Review D</i> 113, 084060 (2026)</span><span class="ref-links"><a href="https://arxiv.org/abs/2507.08116" target="_blank" rel="noopener">arXiv:2507.08116</a><a href="https://doi.org/10.1103/7g3z-2pgf" target="_blank" rel="noopener">Revista</a></span></li>
+          <li><span class="ref-title">Perturbative emergent modified gravity on cosmological backgrounds: Kinematics</span><span class="ref-meta">M. Bojowald, M. Díaz y E. I. Duque, <i>Physical Review D</i> 113, 084061 (2026)</span><span class="ref-links"><a href="https://arxiv.org/abs/2507.14358" target="_blank" rel="noopener">arXiv:2507.14358</a><a href="https://doi.org/10.1103/jwr9-48vn" target="_blank" rel="noopener">Revista</a></span></li>
+          <li><span class="ref-title">Anomaly-free scalar perturbations with holonomy corrections in loop quantum cosmology</span><span class="ref-meta">T. Cailleteau, J. Mielczarek, A. Barrau y J. Grain, <i>Classical and Quantum Gravity</i> 29, 095010 (2012)</span><span class="ref-links"><a href="https://arxiv.org/abs/1111.3535" target="_blank" rel="noopener">arXiv:1111.3535</a></span></li>
+        </ol>
+        <p class="note">Figuras adaptadas de M. Bojowald, M. Díaz y E. I. Duque, <i>Physical Review D</i> 113, 084060 (2026).</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">Toda la investigación</a><a href="index.html">Inicio</a></p>
+    </div>
+  </footer>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>
