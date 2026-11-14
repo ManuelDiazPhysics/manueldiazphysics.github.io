@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="alternate" hreflang="en" href="../inflation.html">
+  <link rel="alternate" hreflang="es-MX" href="inflacion.html">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agujeros negros e inflación | Manuel Díaz</title>
+  <meta name="description" content="Cuánto cambia el número de e-folds un agujero negro presente al comenzar la inflación.">
+  <meta name="author" content="Manuel Díaz">
+  <meta name="theme-color" content="#072a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23072a37'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23f2b23e' stroke-width='3' opacity='.9'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%2304202b'/%3E%3C/svg%3E">
+  <style>
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url("../fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/jost-latin-400-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/jost-latin-500-normal.woff2") format("woff2"); }
+    :root {
+      --night: #072a37;
+      --night-deep: #04202b;
+      --tide: #0d3a49;
+      --starlight: #ece5d3;
+      --mist: #9fb7bc;
+      --lamplight: #f2b23e;
+      --brick: #c8673a;
+      --rule: rgba(236, 229, 211, 0.14);
+      --display: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --text: "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --measure: 40rem;
+      --wrap-w: 76rem;
+      --edge: max(1rem, calc((100% - var(--wrap-w)) / 2));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--starlight);
+      font: 400 1.0625rem/1.72 var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul, ol, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--lamplight); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+    a:hover { color: var(--starlight); }
+    :focus-visible { outline: 2px solid var(--lamplight); outline-offset: 4px; border-radius: 2px; }
+    .skip { position: absolute; left: 1rem; top: -4rem; z-index: 10; padding: 0.5rem 0.9rem; background: var(--starlight); color: var(--night); }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(100% - 2rem, var(--wrap-w)); margin-inline: auto; }
+
+    /* Top bar */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem 2rem; flex-wrap: wrap;
+      padding: 1.4rem var(--edge); border-bottom: 1px solid var(--rule);
+    }
+    .topbar__name { font: 500 1.3rem/1 var(--display); color: var(--starlight); text-decoration: none; letter-spacing: 0.01em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+    .topbar nav a { color: var(--starlight); text-decoration: none; font-size: 0.95rem; opacity: 0.86; }
+    .topbar nav a:hover { opacity: 1; text-decoration: underline; }
+    .topbar nav a[aria-current="page"] { color: var(--lamplight); opacity: 1; }
+
+    /* Page head */
+    .page-head { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+    .page-head h1 { font: 500 clamp(2.9rem, 6.4vw, 5rem)/0.98 var(--display); letter-spacing: -0.012em; }
+    .lede { margin-top: 1.2rem; max-width: 36rem; font: 400 italic clamp(1.3rem, 2.1vw, 1.65rem)/1.35 var(--display); }
+    .who { margin-top: 1.2rem; max-width: var(--measure); font-size: 0.95rem; line-height: 1.6; color: var(--mist); }
+
+    /* Body: section list on the left, reading column on the right */
+    .page-body {
+      display: grid; grid-template-columns: minmax(11rem, 15rem) minmax(0, 46rem); gap: 2rem clamp(2rem, 5vw, 4.5rem);
+      padding-block: 2.4rem clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule);
+    }
+    .contents ol { position: sticky; top: 1.6rem; display: grid; gap: 0.5rem; font-size: 0.93rem; line-height: 1.45; }
+    .contents a { color: var(--mist); text-decoration: none; }
+    .contents a:hover { color: var(--starlight); text-decoration: underline; }
+    .article > p, .article > .eq, .article > .note { max-width: var(--measure); }
+    .article > p + p, .article > .eq + p, .article > p + .eq, .article > .eq + .eq { margin-top: 1rem; }
+    .article h2 { font: 500 clamp(1.95rem, 3.4vw, 2.6rem)/1.1 var(--display); letter-spacing: -0.005em; margin: 3.4rem 0 1.1rem; scroll-margin-top: 1.5rem; }
+    .article > h2:first-child { margin-top: 0; }
+    .eq {
+      font: 400 1.32rem/1.5 var(--display); padding: 0.35rem 0 0.35rem 1.2rem; border-left: 2px solid var(--tide);
+      overflow-x: auto; white-space: nowrap; font-variant-numeric: lining-nums;
+    }
+    .eq i, .article i { font-style: italic; }
+    .eq .gap { display: inline-block; width: 2.2rem; }
+    .fig { margin-block: 2.1rem; }
+    .fig img { display: block; width: 100%; height: auto; }
+    .fig figcaption { margin-top: 0.8rem; max-width: var(--measure); font-size: 0.9rem; line-height: 1.55; color: var(--mist); }
+    .fig--s { max-width: 27rem; }
+    .fig--m { max-width: 34rem; }
+    .fig--l { max-width: 42rem; }
+    .fig-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-block: 2.1rem; }
+    .fig-pair .fig { margin: 0; }
+    .note { margin-top: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--mist); }
+    .refs { margin-top: 0.4rem; }
+    .refs li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+    .refs .ref-title { display: block; font: 500 1.22rem/1.3 var(--display); color: var(--starlight); }
+    .refs .ref-meta { display: block; margin-top: 0.15rem; font-size: 0.93rem; color: var(--mist); }
+    .refs .ref-links { display: flex; flex-wrap: wrap; gap: 0.2rem 1.2rem; margin-top: 0.25rem; font-size: 0.93rem; }
+
+    /* Switch between the views of a figure */
+    .switch { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 1.3rem; padding: 3px; width: fit-content; }
+    .switch button {
+      font: inherit; font-size: 0.92rem; color: var(--mist); background: none; border: 0; border-radius: 999px;
+      padding: 0.38rem 0.95rem; cursor: pointer;
+    }
+    .switch button[aria-pressed="true"] { background: var(--tide); color: var(--starlight); }
+    .fig--switch .switch { display: inline-grid; grid-template-columns: repeat(2, auto); margin-bottom: 1.1rem; }
+    .fig--switch img[hidden], .fig--switch [data-pane][hidden] { display: none; }
+
+    /* Moments example */
+    .lab { margin-block: 2.1rem; padding: 1.6rem clamp(1rem, 3vw, 1.8rem) 1.4rem; background: var(--night-deep); border-radius: 0.6rem; }
+    .lab__controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: end; }
+    .control-label { display: block; margin-bottom: 0.45rem; font-size: 0.92rem; color: var(--mist); }
+    .readout { margin-top: 1.1rem; min-height: 3.3em; font-size: 1rem; line-height: 1.6; }
+    .readout strong { font-weight: 500; color: var(--starlight); }
+    .chart { display: block; width: 100%; height: auto; margin-top: 0.6rem; }
+    .chart text { fill: var(--mist); font: 400 12px var(--text); }
+    .chart .axis { stroke: rgba(159, 183, 188, 0.45); stroke-width: 1; }
+    .chart .grid { stroke: rgba(159, 183, 188, 0.12); stroke-width: 1; }
+    .chart .exact { fill: none; stroke: var(--lamplight); stroke-width: 2.2; }
+    .chart .moments { fill: none; stroke: var(--brick); stroke-width: 2.2; stroke-dasharray: 5 4; }
+    .chart .classical { fill: none; stroke: var(--mist); stroke-width: 1.4; stroke-dasharray: 1.5 3; }
+    .chart .limit { stroke: var(--starlight); stroke-width: 1; stroke-dasharray: 2 4; opacity: 0.55; }
+    .chart .beyond { fill: rgba(200, 103, 58, 0.09); }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.8rem; font-size: 0.9rem; color: var(--mist); }
+    .legend span::before { content: ""; display: inline-block; width: 1.6rem; height: 0; margin-right: 0.5rem; vertical-align: middle; border-top: 2.2px solid var(--lamplight); }
+    .legend .leg-moments::before { border-top: 2.2px dashed var(--brick); }
+    .legend .leg-classical::before { border-top: 1.6px dotted var(--mist); }
+
+    .foot { border-top: 1px solid var(--rule); background: var(--night-deep); padding-block: 2.2rem 2.6rem; font-size: 0.92rem; color: var(--mist); }
+    .foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.8rem 2rem; }
+    .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; }
+
+    @media (max-width: 48rem) {
+      .page-body { grid-template-columns: 1fr; padding-top: 1.8rem; }
+      .contents { display: none; }
+      .fig-pair { grid-template-columns: 1fr; }
+      .eq { font-size: 1.18rem; }
+      .chart text { font-size: 19px; }
+    }
+  
+    /* Two groups of buttons above one figure, each laid out two by two as on the other pages */
+    .fig--switch .switches { display: grid; gap: 0.55rem; justify-items: start; margin-bottom: 1.1rem; }
+    .fig--switch .switches .switch { margin-bottom: 0; }
+</style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="d681f403-7436-4d73-9eee-f1fe722fb194" data-domains="manueldiazphysics.github.io"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="topbar__name" href="index.html">Manuel Díaz</a>
+    <nav aria-label="Páginas">
+      <a href="research.html" aria-current="page">Investigación</a>
+      <a href="publications.html">Publicaciones</a>
+      <a href="talks.html">Pláticas y conferencias</a>
+      <a href="teaching.html">Enseñanza y mentoría</a>
+      <a href="../Manuel_Diaz_CV.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="language-switch" href="../inflation.html" hreflang="en" lang="en">English</a>
+    </nav>
+  </header>
+
+    <main id="main">
+    <div class="wrap page-head">
+      <h1>Agujeros negros e inflación</h1>
+      <p class="lede">Cuánto cambia el número de <i>e</i>-folds un agujero negro presente al comenzar la inflación.</p>
+      <p class="who">Con Jennie Traschen y Sofia Corbà. Artículo en preparación.</p>
+    </div>
+    <div class="wrap page-body">
+      <nav class="contents" aria-label="En esta página">
+        <ol>
+          <li><a href="#before">Un agujero negro antes de la inflación</a></li>
+          <li><a href="#time">Un tiempo que sigue al inflatón</a></li>
+          <li><a href="#efolds">Cómo contamos los <i>e</i>-folds</a></li>
+          <li><a href="#papers">Artículos</a></li>
+        </ol>
+      </nav>
+      <article class="article">
+        <h2 id="before">Un agujero negro antes de la inflación</h2>
+        <p>La inflación suele estudiarse en un universo homogéneo. Si un agujero negro quedó de una época anterior a la inflación, el espaciotiempo durante la inflación es el de un agujero negro en el espacio de de Sitter. Tiene dos horizontes, el del agujero negro, de radio <i>r</i><sub>b</sub>, y más afuera el horizonte cosmológico, de radio <i>r</i><sub>c</sub>. El agujero negro no puede ser más grande que el horizonte cosmológico, y los dos horizontes coinciden para el agujero negro más grande posible. La pregunta es cuánto cambia el agujero negro la cantidad de inflación, medida en <i>e</i>-folds, que produce un potencial dado.</p>
+
+        <h2 id="time">Un tiempo que sigue al inflatón</h2>
+        <p>Sin agujero negro, el inflatón es constante en las secciones de tiempo cosmológico constante. Con un agujero negro, ya no lo es. Gregory, Kastor y Traschen encontraron una coordenada temporal <i>T</i>, regular en ambos horizontes, en la que las soluciones de rodamiento lento dependen solo de <i>T</i>,</p>
+        <p class="eq">3<i>γ</i> d<i>φ</i>/d<i>T</i> = −d<i>W</i>/d<i>φ</i> ,</p>
+        <p>donde <i>W</i> es el potencial y <i>γ</i> = <i>H</i> cuando no hay agujero negro. Las superficies de <i>T</i> constante son superficies de inflatón constante.</p>
+        <figure class="fig fig--m fig--switch">
+          <div class="switches">
+            <div class="switch" role="group" aria-label="Elegir el agujero negro">
+              <button type="button" data-view="m0" aria-pressed="false">Sin agujero negro</button>
+              <button type="button" data-view="01" aria-pressed="false"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.1</button>
+              <button type="button" data-view="04" aria-pressed="true"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.4</button>
+              <button type="button" data-view="07" aria-pressed="false"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.7</button>
+            </div>
+            <div class="switch" role="group" aria-label="Elegir el eje horizontal">
+              <button type="button" data-view="rho" aria-pressed="true">Contra <i>ρ</i></button>
+              <button type="button" data-view="areal" aria-pressed="false">Contra <i>a</i>(<i>τ</i>)<i>ρ</i></button>
+            </div>
+          </div>
+          <img data-pane="m0-rho" src="../figures/inflation_slices_m0.svg" width="375" height="269" alt="Sin agujero negro, las superficies T = 0, 2 y 4 son tres líneas horizontales en función del radio comóvil. El horizonte cosmológico es una curva discontinua." hidden>
+          <img data-pane="m0-areal" src="../figures/inflation_slices_areal_m0.svg" width="375" height="269" alt="Sin agujero negro, las superficies T = 0, 2 y 4 son líneas horizontales en función de a(τ)ρ, y el horizonte cosmológico es una línea vertical discontinua en 1/H." hidden>
+          <img data-pane="01-rho" src="../figures/inflation_slices_01.svg" width="375" height="269" alt="Con un agujero negro pequeño, las superficies de T constante son casi planas y se curvan hacia arriba únicamente cerca de su horizonte." hidden>
+          <img data-pane="01-areal" src="../figures/inflation_slices_areal_01.svg" width="375" height="269" alt="Con un agujero negro pequeño, las superficies de T constante son casi planas en función de a(τ)ρ y cruzan el horizonte cosmológico, una línea vertical discontinua. El horizonte del agujero negro es una línea vertical discontinua cerca de cero." hidden>
+          <img data-pane="04-rho" src="../figures/inflation_slices_04.svg" width="375" height="269" alt="Con un agujero negro cuyo horizonte tiene 0.4 veces el radio del horizonte cosmológico, las superficies de T constante suben de forma pronunciada hacia el horizonte del agujero negro.">
+          <img data-pane="04-areal" src="../figures/inflation_slices_areal_04.svg" width="375" height="269" alt="Con un agujero negro cuyo horizonte tiene 0.4 veces el radio del horizonte cosmológico, las superficies de T constante en función de a(τ)ρ empiezan cerca del horizonte del agujero negro, decrecen hacia afuera y cruzan el horizonte cosmológico. Ambos horizontes son líneas verticales discontinuas." hidden>
+          <img data-pane="07-rho" src="../figures/inflation_slices_07.svg" width="375" height="269" alt="Con un agujero negro grande, las superficies de T constante se curvan de forma pronunciada en toda la región entre los horizontes." hidden>
+          <img data-pane="07-areal" src="../figures/inflation_slices_areal_07.svg" width="375" height="269" alt="Con un agujero negro grande, las superficies de T constante en función de a(τ)ρ bajan de forma pronunciada entre los dos horizontes, líneas verticales discontinuas, y siguen más allá del horizonte cosmológico." hidden>
+          <figcaption>Superficies de <i>T</i> constante, en las que el inflatón es constante, representadas en función del tiempo cosmológico <i>τ</i> y el radio comóvil <i>ρ</i>. Sin agujero negro, son secciones de <i>τ</i> constante. Con un agujero negro (cuyo radio del horizonte <i>r</i><sub>b</sub> se expresa como fracción del radio del horizonte cosmológico <i>r</i><sub>c</sub>), las superficies se curvan hacia arriba al acercarse al agujero negro. Cerca de él, el inflatón alcanza cada valor más tarde. Las líneas discontinuas indican el horizonte cosmológico (claro) y el del agujero negro (naranja). Del artículo en preparación con Sofia Corbà y Jennie Traschen. En la segunda vista, las mismas superficies se grafican contra <i>a</i>(<i>τ</i>)<i>ρ</i>, en la que ambos horizontes son líneas verticales.</figcaption>
+        </figure>
+        <figure class="fig fig--m fig--switch">
+          <div class="switch" role="group" aria-label="Elegir el agujero negro">
+            <button type="button" data-view="04" aria-pressed="true"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.4</button>
+            <button type="button" data-view="07" aria-pressed="false"><i>r</i><sub>b</sub>/<i>r</i><sub>c</sub> = 0.7</button>
+          </div>
+          <img data-pane="04" src="../figures/inflation_penrose_04.svg" width="221" height="135" alt="Diagrama de Penrose de un agujero negro en el espacio de de Sitter cuyo radio del horizonte es 0.4 veces el radio del horizonte cosmológico. Cinco superficies doradas de T constante van desde la singularidad, arriba a la izquierda, cruzan el horizonte del agujero negro y el cosmológico, y llegan al infinito futuro, arriba a la derecha. La mitad inferior muestra la singularidad pasada y el infinito pasado.">
+          <img data-pane="07" src="../figures/inflation_penrose_07.svg" width="221" height="135" alt="Diagrama de Penrose de un agujero negro en el espacio de de Sitter cuyo radio del horizonte es 0.7 veces el radio del horizonte cosmológico. Cinco superficies doradas de T constante van desde la singularidad, arriba a la izquierda, cruzan el horizonte del agujero negro y el cosmológico, y llegan al infinito futuro, arriba a la derecha. La mitad inferior muestra la singularidad pasada y el infinito pasado." hidden>
+          <figcaption>Diagrama de Penrose de un agujero negro en el espacio de de Sitter con superficies de <i>T</i> constante, es decir, de inflatón constante. Van desde la singularidad dentro del agujero negro, cruzan ambos horizontes y llegan al infinito futuro en la región que se infla. Las líneas discontinuas son el horizonte del agujero negro (naranja) y el cosmológico (claro). El diagrama está dibujado en coordenadas suaves a través de ambos horizontes, por lo que <i>r</i> = 0 y <i>r</i> = ∞ no son exactamente rectas.</figcaption>
+        </figure>
+
+        <h2 id="efolds">Cómo contamos los <i>e</i>-folds</h2>
+        <p>Sin agujero negro, la longitud, el área y el volumen de una región que se infla crecen por el mismo factor, así que cualquiera de ellos da el mismo conteo. Con un agujero negro ya no es así, y contamos con volúmenes. La región inicial es la que está entre los dos horizontes en una sección de <i>T</i> constante. Su borde exterior se aleja siguiendo una geodésica saliente, y al final de la inflación la región final va del horizonte del agujero negro hasta esa geodésica. El número de <i>e</i>-folds <i>N</i> se obtiene de <i>e</i><sup>3<i>N</i></sup> = <i>V</i><sub>f</sub>/<i>V</i><sub>i</sub>, que da el conteo usual cuando no hay agujero negro.</p>
+        <p>El siguiente paso es terminar de incorporar la retroacción del inflatón sobre la métrica conforme evoluciona.</p>
+
+        <h2 id="papers">Artículos</h2>
+        <ol class="refs">
+          <li><span class="ref-title">Black hole thermodynamics with dynamical Lambda</span><span class="ref-meta">R. Gregory, D. Kastor y J. Traschen, <i>Journal of High Energy Physics</i> 10, 118 (2017)</span><span class="ref-links"><a href="https://arxiv.org/abs/1707.06586" target="_blank" rel="noopener">arXiv:1707.06586</a></span></li>
+          <li><span class="ref-title">Evolving black holes in inflation</span><span class="ref-meta">R. Gregory, D. Kastor y J. Traschen, <i>Classical and Quantum Gravity</i> 35, 155008 (2018)</span><span class="ref-links"><a href="https://arxiv.org/abs/1804.03462" target="_blank" rel="noopener">arXiv:1804.03462</a></span></li>
+          <li><span class="ref-title">The mass-particle in an expanding universe</span><span class="ref-meta">G. C. McVittie, <i>Monthly Notices of the Royal Astronomical Society</i> 93, 325 (1933)</span></li>
+          <li><span class="ref-title">McVittie's legacy: black holes in an expanding universe</span><span class="ref-meta">N. Kaloper, M. Kleban y D. Martin, <i>Physical Review D</i> 81, 104044 (2010)</span><span class="ref-links"><a href="https://arxiv.org/abs/1003.4777" target="_blank" rel="noopener">arXiv:1003.4777</a></span></li>
+          <li><span class="ref-title">Phase space of SdS geodesics and using the cosmological horizon to observe a black hole</span><span class="ref-meta">B. Nelson, A. Powell y J. Traschen</span><span class="ref-links"><a href="https://arxiv.org/abs/2511.13995" target="_blank" rel="noopener">arXiv:2511.13995</a></span></li>
+        </ol>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Manuel Díaz, Amherst Center for Fundamental Interactions, University of Massachusetts Amherst. <a href="mailto:manueldiaz@umass.edu">manueldiaz@umass.edu</a></p>
+      <p class="foot__links"><a href="research.html">Toda la investigación</a><a href="index.html">Inicio</a></p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      document.querySelectorAll('.fig--switch').forEach(function (fig) {
+        var groups = fig.querySelectorAll('.switch');
+        function update() {
+          var key = [];
+          groups.forEach(function (g) { key.push(g.querySelector('button[aria-pressed="true"]').getAttribute('data-view')); });
+          key = key.join('-');
+          fig.querySelectorAll('[data-pane]').forEach(function (el) { el.hidden = el.getAttribute('data-pane') !== key; });
+        }
+        groups.forEach(function (g) {
+          var buttons = g.querySelectorAll('button');
+          buttons.forEach(function (b) {
+            b.addEventListener('click', function () {
+              buttons.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+              update();
+            });
+          });
+        });
+      });
+    })();
+  </script>
+<script>
+(function () {
+  const link = document.querySelector('.language-switch');
+  const page = link.getAttribute('href');
+  function keepSection() { link.setAttribute('href', page + window.location.hash); }
+  keepSection();
+  window.addEventListener('hashchange', keepSection);
+})();
+</script>
+</body>
+</html>
